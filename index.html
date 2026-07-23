@@ -1,0 +1,3381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>強み発見カルテ | 強み発見カルテ by ツヨミ</title>
+<meta name="description" content="あなたの強みを見つけ最大限に活かせる業界・職種・環境を診断。45問の本格自己分析アプリ。">
+<meta property="og:title" content="強みTOP3を無料診断 | 強み発見カルテ">
+<meta property="og:description" content="あなたの強みを見つけ最大限に活かせる業界・職種・環境を診断。45問の本格自己分析アプリ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tenshoku-shinda.vercel.app">
+<meta property="og:image" content="https://tenshoku-shinda.vercel.app/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="強みTOP3を無料診断 | 強み発見カルテ">
+<meta name="twitter:description" content="あなたの強みを見つけ最大限に活かせる業界・職種・環境を診断。45問の本格自己分析アプリ。">
+<meta name="twitter:image" content="https://tenshoku-shinda.vercel.app/ogp.png">
+<meta name="description" content="あなたの強みを見つけ最大限に活かせる業界・職種・環境を診断。45問の本格自己分析アプリ。">
+<meta property="og:title" content="強みTOP3を無料診断 | 強み発見カルテ">
+<meta property="og:description" content="あなたの強みを見つけ最大限に活かせる業界・職種・環境を診断。45問の本格自己分析アプリ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tenshoku-shinda.vercel.app">
+<meta property="og:image" content="https://tenshoku-shinda.vercel.app/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="強みTOP3を無料診断 | 強み発見カルテ">
+<meta name="twitter:description" content="あなたの強みを見つけ最大限に活かせる業界・職種・環境を診断。45問の本格自己分析アプリ。">
+<meta name="twitter:image" content="https://tenshoku-shinda.vercel.app/ogp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans JP',sans-serif;background:#f8fafc;color:#0f172a;min-height:100vh}
+.screen{display:none}.screen.active{display:block}
+
+/* ── TOP ── */
+.top-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(160deg,#f0f7ff 0%,#f8fafc 60%,#fff7f0 100%)}
+.top-card{background:white;border-radius:24px;padding:44px 28px;max-width:420px;width:100%;box-shadow:0 8px 40px rgba(37,99,235,0.10);text-align:center}
+.top-badge{display:inline-block;background:#eff6ff;color:#2563eb;font-size:11px;font-weight:700;letter-spacing:0.15em;padding:6px 16px;border-radius:20px;margin-bottom:20px}
+.top-title{font-family:'Noto Serif JP',serif;font-size:36px;font-weight:700;color:#0f172a;line-height:1.2;margin-bottom:6px}
+.top-sub{font-size:13px;color:#64748b;margin-bottom:28px}
+.top-features{text-align:left;margin-bottom:32px;display:flex;flex-direction:column;gap:8px}
+.top-feature{display:flex;align-items:center;gap:12px;background:#f8fafc;border-radius:10px;padding:11px 14px;border:1px solid #e2e8f0}
+.top-feature-icon{font-size:18px;flex-shrink:0}
+.top-feature-text{font-size:13px;color:#374151;font-weight:500;line-height:1.4}
+.btn-primary{background:#2563eb;color:white;border:none;border-radius:14px;padding:17px 0;font-size:16px;font-weight:700;width:100%;cursor:pointer;box-shadow:0 4px 16px rgba(37,99,235,0.3);font-family:inherit;transition:all 0.2s}
+.btn-primary:active{transform:scale(0.98)}
+.top-note{font-size:11px;color:#94a3b8;margin-top:10px;line-height:1.6}
+
+/* ── QUIZ ── */
+.quiz-wrap{min-height:100vh;display:flex;flex-direction:column;background:#f8fafc}
+.quiz-header{background:white;padding:12px 18px;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:10}
+.quiz-progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.quiz-counter{font-size:12px;font-weight:700;color:#2563eb}
+.quiz-remaining{font-size:11px;color:#94a3b8}
+.progress-bar{height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;margin-bottom:5px}
+.progress-fill{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);border-radius:3px;transition:width 0.4s ease}
+.quiz-phase-row{display:flex;align-items:center;gap:8px}
+.quiz-phase-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+.phase-interest{background:#eff6ff;color:#2563eb}
+.phase-strength{background:#f5f3ff;color:#7c3aed}
+.phase-value{background:#ecfdf5;color:#059669}
+.phase-life{background:#fff7ed;color:#ea580c}
+.quiz-phase-status{font-size:11px;color:#64748b}
+.quiz-body{flex:1;padding:20px 18px 32px;max-width:520px;margin:0 auto;width:100%}
+.quiz-q-label{font-size:11px;font-weight:700;letter-spacing:0.1em;margin-bottom:6px;text-transform:uppercase}
+.quiz-q-label.interest{color:#2563eb}.quiz-q-label.strength{color:#7c3aed}.quiz-q-label.value{color:#0891b2}.quiz-q-label.life{color:#059669}
+.quiz-q-text{font-size:17px;font-weight:700;color:#0f172a;line-height:1.5;margin-bottom:4px}
+.quiz-q-hint{font-size:12px;color:#94a3b8;margin-bottom:18px}
+.choices-grid{display:flex;flex-direction:column;gap:7px;margin-bottom:20px}
+.choice-btn{background:white;border:2px solid #e2e8f0;border-radius:12px;padding:12px 15px;font-size:14px;font-weight:500;color:#374151;cursor:pointer;text-align:left;font-family:inherit;transition:all 0.15s;line-height:1.4}
+.choice-btn.selected{border-color:#2563eb;background:#eff6ff;color:#1d4ed8;font-weight:700}
+.choice-btn.selected::before{content:'✓ ';color:#2563eb}
+.quiz-footer{background:white;padding:14px 18px;border-top:1px solid #e2e8f0;max-width:520px;margin:0 auto;width:100%;position:sticky;bottom:0}
+.btn-next{background:#2563eb;color:white;border:none;border-radius:12px;padding:15px 0;font-size:15px;font-weight:700;width:100%;cursor:pointer;font-family:inherit;opacity:0.35;pointer-events:none;transition:all 0.2s}
+.btn-next.active{opacity:1;pointer-events:all;box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+
+/* ── LIFE GRAPH QUIZ ── */
+.life-period-header{background:linear-gradient(135deg,#ecfdf5,#f0fdf4);border:1.5px solid #86efac;border-radius:14px;padding:16px;margin-bottom:18px;text-align:center}
+.life-period-age{font-size:13px;font-weight:700;color:#059669;margin-bottom:2px}
+.life-period-name{font-size:18px;font-weight:900;color:#0f172a}
+.slider-wrap{background:white;border-radius:14px;padding:18px;margin-bottom:14px;border:1.5px solid #e2e8f0}
+.slider-label{font-size:13px;font-weight:700;color:#374151;margin-bottom:12px}
+.slider-score-display{text-align:center;margin-bottom:10px}
+.slider-score-num{font-size:36px;font-weight:900;transition:color 0.2s}
+.slider-score-text{font-size:12px;color:#64748b;margin-top:2px}
+.life-slider{width:100%;height:8px;-webkit-appearance:none;appearance:none;border-radius:4px;outline:none;margin-bottom:8px;cursor:pointer}
+.slider-labels{display:flex;justify-content:space-between;font-size:10px;color:#94a3b8}
+.section-break{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:1.5px solid #7dd3fc;border-radius:14px;padding:18px;margin:20px 0;text-align:center}
+.section-break-icon{font-size:28px;margin-bottom:8px}
+.section-break-title{font-size:16px;font-weight:700;color:#0369a1;margin-bottom:4px}
+.section-break-text{font-size:12px;color:#0284c7}
+
+/* ── LOADING ── */
+.loading-wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f8fafc;padding:32px;text-align:center}
+.loading-spinner{width:52px;height:52px;border:4px solid #e2e8f0;border-top-color:#2563eb;border-radius:50%;animation:spin 0.8s linear infinite;margin-bottom:24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-steps{display:flex;flex-direction:column;gap:8px;margin-top:20px;text-align:left}
+.loading-step{font-size:13px;color:#94a3b8;display:flex;align-items:center;gap:8px}
+.loading-step.done{color:#059669}.loading-step.active{color:#2563eb;font-weight:700}
+
+/* ── RESULT FREE ── */
+.result-wrap{min-height:100vh;background:#f8fafc;padding:20px 16px 60px}
+.result-inner{max-width:480px;margin:0 auto}
+.result-header{text-align:center;background:white;border-radius:20px;padding:24px 20px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.result-badge{display:inline-block;background:#eff6ff;color:#2563eb;font-size:11px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:10px}
+.result-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:700;color:#0f172a;margin-bottom:3px}
+.result-sub{font-size:12px;color:#94a3b8}
+.section-card{background:white;border-radius:16px;padding:18px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.section-title{font-size:12px;font-weight:700;color:#64748b;letter-spacing:0.08em;margin-bottom:14px}
+.top1-item{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:12px;padding:14px 16px;margin-bottom:8px;border:1.5px solid #bfdbfe}
+.top1-rank{font-size:20px;font-weight:900;color:#2563eb;min-width:28px}
+.top1-name{font-size:15px;font-weight:700;color:#0f172a;flex:1}
+.top1-score{font-size:12px;color:#6b7280;background:#f1f5f9;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.lock-item{display:flex;align-items:center;gap:10px;background:#f8fafc;border-radius:10px;padding:11px 14px;margin-bottom:6px;border:1.5px dashed #e2e8f0}
+.lock-rank{font-size:14px;font-weight:900;color:#cbd5e1;min-width:24px}
+.lock-name{font-size:13px;color:#94a3b8;font-weight:500;flex:1}
+.lock-icon{font-size:14px}
+.mismatch-teaser{background:linear-gradient(135deg,#fff1f2,#fff7ed);border:1.5px solid #fecaca;border-radius:14px;padding:16px;margin-bottom:12px}
+.mismatch-title{font-size:13px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.mismatch-body{font-size:13px;color:#7f1d1d;line-height:1.7;margin-bottom:8px}
+.mismatch-count{font-size:26px;font-weight:900;color:#dc2626}
+.paywall-card{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:20px;padding:26px 22px;margin-bottom:14px;text-align:center;color:white}
+.paywall-crown{font-size:32px;margin-bottom:10px}
+.paywall-title{font-size:19px;font-weight:900;margin-bottom:6px}
+.paywall-sub{font-size:13px;opacity:0.8;line-height:1.7;margin-bottom:18px}
+.paywall-features{text-align:left;margin-bottom:20px;display:flex;flex-direction:column;gap:7px}
+.paywall-feature{display:flex;align-items:center;gap:8px;font-size:13px}
+.btn-pay{background:linear-gradient(135deg,#f59e0b,#f97316);color:white;border:none;border-radius:14px;padding:17px 0;font-size:16px;font-weight:900;width:100%;cursor:pointer;font-family:inherit;box-shadow:0 4px 20px rgba(251,146,60,0.4)}
+.btn-pay-note{font-size:11px;opacity:0.65;margin-top:8px}
+
+/* ── RESULT PAID ── */
+.radar-wrap{position:relative;width:100%;margin:0 auto 8px;height:420px}
+.tabs{display:flex;gap:4px;background:#f1f5f9;border-radius:10px;padding:4px;margin-bottom:14px}
+.tab{flex:1;background:none;border:none;border-radius:8px;padding:8px 4px;font-size:11px;font-weight:600;color:#64748b;cursor:pointer;font-family:inherit;transition:all 0.2s}
+.tab.active{background:white;color:#2563eb;box-shadow:0 1px 4px rgba(0,0,0,0.1)}
+.tab-content{display:none}.tab-content.active{display:block}
+.bar-item{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.bar-rank{font-size:11px;font-weight:700;color:#94a3b8;min-width:18px;text-align:right}
+.bar-label{font-size:11px;color:#374151;width:100px;flex-shrink:0;line-height:1.3}
+.bar-track{flex:1;height:7px;background:#f1f5f9;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width 0.6s ease}
+.bar-top1{background:linear-gradient(90deg,#2563eb,#7c3aed)}
+.bar-top3{background:#93c5fd}
+.bar-other{background:#e2e8f0}
+.bar-pct{font-size:10px;color:#94a3b8;min-width:28px;text-align:right}
+
+/* ── LIFE GRAPH RESULT ── */
+.life-graph-wrap{position:relative;height:200px;margin-bottom:8px}
+.life-insight{background:#f8fafc;border-radius:10px;padding:12px;margin-top:10px;font-size:13px;color:#374151;line-height:1.7;border:1px solid #e2e8f0}
+
+/* ── SALARY ── */
+.salary-result{text-align:center;background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:12px;padding:18px;margin-bottom:14px}
+.salary-amount{font-size:40px;font-weight:900;color:#2563eb;line-height:1}
+.salary-range-text{font-size:12px;color:#64748b;margin-top:4px}
+.salary-breakdown{font-size:11px;color:#94a3b8;margin-top:3px}
+.salary-selects{display:flex;flex-direction:column;gap:9px;margin-bottom:10px}
+.salary-select-wrap label{display:block;font-size:11px;font-weight:700;color:#64748b;margin-bottom:4px}
+.salary-select{width:100%;border:1.5px solid #e2e8f0;border-radius:8px;padding:9px 11px;font-size:13px;color:#0f172a;background:white;font-family:inherit;outline:none}
+.salary-note{font-size:10px;color:#94a3b8;line-height:1.6}
+
+/* ── MISMATCH FULL ── */
+.mismatch-full-item{background:#fff1f2;border:1.5px solid #fecaca;border-radius:10px;padding:13px;margin-bottom:8px}
+.mismatch-full-title{font-size:13px;font-weight:700;color:#dc2626;margin-bottom:4px}
+.mismatch-full-text{font-size:12px;color:#7f1d1d;line-height:1.6}
+
+/* ── ROADMAP ── */
+.roadmap-item{display:flex;gap:12px;margin-bottom:14px}
+.roadmap-month{background:#2563eb;color:white;border-radius:8px;padding:6px 10px;font-size:11px;font-weight:700;white-space:nowrap;align-self:flex-start;min-width:60px;text-align:center}
+.roadmap-content{flex:1}
+.roadmap-title{font-size:13px;font-weight:700;color:#0f172a;margin-bottom:3px}
+.roadmap-text{font-size:12px;color:#64748b;line-height:1.6}
+
+/* ── SELF PR ── */
+.pr-box{background:#f8fafc;border-radius:10px;padding:14px;border:1px solid #e2e8f0;font-size:13px;color:#374151;line-height:1.8;white-space:pre-wrap;margin-bottom:10px}
+.pr-copy-btn{background:#eff6ff;color:#2563eb;border:1.5px solid #bfdbfe;border-radius:8px;padding:9px 0;font-size:13px;font-weight:700;width:100%;cursor:pointer;font-family:inherit}
+
+/* ── LIFE MANUAL ── */
+.manual-theme{background:linear-gradient(135deg,#1e1b4b,#312e81);border-radius:14px;padding:18px;margin-bottom:14px;text-align:center;color:white}
+.manual-theme-label{font-size:11px;opacity:0.7;letter-spacing:0.1em;margin-bottom:8px}
+.manual-theme-text{font-size:17px;font-weight:700;line-height:1.5}
+.manual-section{margin-bottom:14px}
+.manual-section-title{font-size:12px;font-weight:700;color:#64748b;letter-spacing:0.08em;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.manual-items{display:flex;flex-direction:column;gap:6px}
+.manual-item-good{display:flex;align-items:flex-start;gap:10px;background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:11px 13px}
+.manual-item-bad{display:flex;align-items:flex-start;gap:10px;background:#fff1f2;border:1.5px solid #fca5a5;border-radius:10px;padding:11px 13px}
+.manual-item-icon{font-size:16px;flex-shrink:0;margin-top:1px}
+.manual-item-text{font-size:13px;font-weight:500;color:#0f172a;line-height:1.5}
+
+/* ── STRENGTH TEXT ── */
+.strength-box{background:linear-gradient(135deg,#f5f3ff,#eff6ff);border-radius:12px;padding:16px;border:1.5px solid #ddd6fe;margin-bottom:10px}
+.strength-box-title{font-size:12px;font-weight:700;color:#7c3aed;margin-bottom:8px}
+.strength-box-text{font-size:13px;color:#374151;line-height:1.8}
+
+/* ── SHARE ── */
+.share-card{background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border:1.5px solid #7dd3fc;border-radius:16px;padding:18px;margin-bottom:12px}
+.share-title{font-size:12px;font-weight:700;color:#0369a1;margin-bottom:12px}
+.share-preview{background:white;border-radius:10px;padding:12px;margin-bottom:12px;font-size:12px;color:#374151;line-height:1.7;border:1px solid #e2e8f0}
+.share-btns{display:flex;gap:8px}
+.btn-share-x{flex:1;background:#000;color:white;border:none;border-radius:10px;padding:12px 0;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:6px}
+.btn-share-copy{flex:1;background:#f1f5f9;color:#374151;border:1.5px solid #e2e8f0;border-radius:10px;padding:12px 0;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+
+/* ── DOWNLOAD ── */
+.download-btns{display:flex;gap:8px;margin-bottom:14px}
+.btn-dl{flex:1;border:none;border-radius:10px;padding:13px 0;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:5px}
+.btn-dl-pdf{background:#fee2e2;color:#dc2626}
+.btn-dl-word{background:#dbeafe;color:#2563eb}
+
+/* ── AFFILI ── */
+.affili-section{background:white;border-radius:14px;padding:16px;margin-bottom:14px;border:1px solid #e2e8f0}
+.affili-title{font-size:11px;font-weight:700;color:#64748b;margin-bottom:10px}
+.affili-link{display:flex;align-items:center;gap:10px;border-radius:8px;padding:10px 12px;text-decoration:none;margin-bottom:7px}
+.affili-doda{background:#fff7ed;border:1.5px solid #fed7aa}
+.affili-mynavi{background:#eff6ff;border:1.5px solid #bfdbfe}
+.affili-recruit{background:#f0fdf4;border:1.5px solid #86efac}
+.affili-name{font-size:12px;font-weight:700;color:#0f172a;flex:1}
+.affili-desc{font-size:10px;color:#64748b}
+.affili-cta{font-size:11px;font-weight:700;margin-left:auto}
+.affili-note{font-size:10px;color:#94a3b8;text-align:center;margin-top:6px}
+</style>
+</head>
+<body>
+
+<!-- ══ TOP SCREEN ══ -->
+<div id="screen-top" class="screen active">
+<div class="top-wrap">
+  <div class="top-card">
+    <div class="top-badge">AI × 強み診断</div>
+    <h1 class="top-title">強み発見カルテ</h1>
+    <p class="top-sub">あなたの強みを見つけ最大限に活かせる<br>業界・職種・環境も診断します</p>
+    <!-- この診断でわかること -->
+    <div style="background:linear-gradient(135deg,#eff6ff,#f5f3ff);border-radius:16px;padding:18px;margin-bottom:20px;text-align:left">
+      <div style="font-size:12px;font-weight:700;color:#7c3aed;margin-bottom:12px;text-align:center;letter-spacing:0.1em">この診断を受けるとわかること※</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:10px;padding:10px 12px">
+          <span style="font-size:18px">💪</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#0f172a">あなたの強み</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:10px;padding:10px 12px">
+          <span style="font-size:18px">🏭</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#0f172a">向いている業界・職種・職場</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:10px;padding:10px 12px">
+          <span style="font-size:18px">⚠️</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#dc2626">絶対に避けるべき地雷職場</div>
+            
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;background:white;border-radius:10px;padding:10px 12px">
+          <span style="font-size:18px">💰</span>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#0f172a">あなたの推定年収レンジ</div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-features">
+      <div class="top-feature"><span class="top-feature-icon">📈</span><span class="top-feature-text">人生グラフで一貫性を可視化</span></div>
+      <div class="top-feature"><span class="top-feature-icon">🗺️</span><span class="top-feature-text">転職6ヶ月ロードマップ生成</span></div>
+      <div class="top-feature"><span class="top-feature-icon">🎯</span><span class="top-feature-text">自己PR文を自動生成</span></div>
+    </div>
+    <button class="btn-primary" onclick="startQuiz()">診断をはじめる（無料）→</button>
+    <p class="top-note">※詳細レポートの解放は500円となります<br>※所要時間：約5〜10分</p>
+  </div>
+</div>
+</div>
+
+<!-- ══ QUIZ SCREEN ══ -->
+<div id="screen-quiz" class="screen">
+<div class="quiz-wrap">
+  <div class="quiz-header">
+    <div class="quiz-progress-info">
+      <span class="quiz-counter" id="q-counter">Q1 / 45</span>
+      <span class="quiz-remaining" id="q-remaining">残り44問</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    <div class="quiz-phase-row">
+      <span class="quiz-phase-badge phase-interest" id="q-phase-badge">🔍 興味・関心</span>
+      <span class="quiz-phase-status" id="q-phase-status">あなたの業界適性を分析中...</span>
+      <span id="q-axis-label" style="display:none"></span>
+    </div>
+  </div>
+  <div class="quiz-body" id="quiz-body">
+    <!-- rendered by JS -->
+  </div>
+  <div class="quiz-footer">
+    <button class="btn-next" id="btn-next">次へ →</button>
+  </div>
+</div>
+</div>
+
+<!-- ══ LOADING SCREEN ══ -->
+<div id="screen-loading" class="screen">
+<div class="loading-wrap">
+  <div class="loading-spinner"></div>
+  <div style="font-size:16px;font-weight:700;color:#0f172a;margin-bottom:6px">あなたの強みを分析中...</div>
+  <div style="font-size:13px;color:#64748b">45問の回答を解析しています</div>
+  <div class="loading-steps">
+    <div class="loading-step done" id="ls1">✅ 興味・関心の分析完了</div>
+    <div class="loading-step done" id="ls2">✅ 強み・職種の分析完了</div>
+    <div class="loading-step done" id="ls3">✅ 価値観・会社タイプの分析完了</div>
+    <div class="loading-step active" id="ls4">⏳ 人生グラフの一貫性を解析中...</div>
+    <div class="loading-step" id="ls5">　　年収データと照合中...</div>
+  </div>
+</div>
+</div>
+
+<!-- ══ RESULT FREE SCREEN ══ -->
+<div id="screen-result-free" class="screen">
+<div class="result-wrap">
+  <div class="result-inner">
+    <div class="result-header">
+      <div class="result-badge">診断完了</div>
+      <div class="result-title">あなたの診断結果</div>
+      <div class="result-sub">強みTOP3を表示しています</div>
+      <div style="font-size:10px;color:#94a3b8;margin-top:8px;line-height:1.6">※診断結果は参考情報です。職業選択の最終判断はご自身でお願いします。</div>
+    </div>
+
+    <!-- 強みTOP3 -->
+    <div class="section-card">
+      <div class="section-title">💪 あなたの強みTOP3</div>
+      <div id="free-job"></div>
+    </div>
+    <div class="mismatch-teaser">
+      <div class="mismatch-title">⚠️ 地雷職場・ミスマッチ警告</div>
+      <div class="mismatch-body">あなたには<span class="mismatch-count" id="free-mismatch-count">0</span>件の「絶対に避けるべき環境」が検出されました。このまま就職・転職すると後悔するリスクがあります。</div>
+      <div style="font-size:12px;color:#9f1239">👆 強み発見カルテで詳細を確認できます</div>
+    </div>
+    <!-- コード入力モーダル -->
+    <div id="code-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:200;display:none;align-items:center;justify-content:center;padding:20px">
+      <div style="background:white;border-radius:20px;padding:28px 24px;max-width:360px;width:100%;text-align:center">
+        <div style="font-size:28px;margin-bottom:12px">🔑</div>
+        <div style="font-size:17px;font-weight:700;color:#0f172a;margin-bottom:8px">認証コードを入力</div>
+        <div style="font-size:13px;color:#64748b;margin-bottom:16px;line-height:1.6">Stripeの決済完了画面に表示された<br>認証コードを入力してください</div>
+        <input id="code-input" type="text" placeholder="認証コードを入力" style="width:100%;border:2px solid #e2e8f0;border-radius:10px;padding:12px 16px;font-size:15px;font-family:inherit;outline:none;margin-bottom:8px;text-align:center;letter-spacing:0.1em">
+        <div id="code-error" style="display:none;font-size:12px;color:#dc2626;margin-bottom:8px">コードが正しくありません。もう一度確認してください。</div>
+        <button onclick="submitCode()" style="background:#2563eb;color:white;border:none;border-radius:12px;padding:14px 0;font-size:15px;font-weight:700;width:100%;cursor:pointer;font-family:inherit;margin-bottom:10px">強み発見カルテを解放する →</button>
+        <button onclick="document.getElementById('code-modal').style.display='none'" style="background:#f1f5f9;color:#64748b;border:none;border-radius:10px;padding:10px 0;font-size:13px;width:100%;cursor:pointer;font-family:inherit">閉じる</button>
+        <div style="font-size:11px;color:#94a3b8;margin-top:10px">コードはStripeの決済完了メールにも記載されています</div>
+      </div>
+    </div>
+
+    <!-- エージェント誘導モーダル（非表示） -->
+    <div id="agent-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:100;overflow-y:auto;padding:20px">
+      <div style="background:white;border-radius:20px;padding:24px;max-width:480px;margin:20px auto">
+        <div style="font-size:13px;font-weight:700;color:#2563eb;margin-bottom:12px">🎯 人事の視点：転職エージェント × 強み発見カルテで「鬼に金棒」</div>
+        <div style="font-size:13px;color:#374151;line-height:1.8;margin-bottom:16px">
+          転職エージェントを利用する企業は、高い採用コストをかけてでも、本当に必要な人材と出会いたいと考えています。そのため、一般の求人サイトには掲載されていない非公開求人や、優良企業の求人に出会える可能性が高いのが大きな魅力です。<br><br>
+          ただし、どれだけ優秀なエージェントを利用しても、自分の強みや価値観、向いている環境が曖昧なままでは、その価値を十分に活かしきれません。<br><br>
+          そこで役立つのが『強み発見カルテ』です。<br><br>
+          強み発見カルテで「自分はどんな環境で力を発揮できるのか」「どのような仕事にやりがいを感じるのか」が明確になると、エージェントにも自分の希望や強みを具体的に伝えられるようになります。<br><br>
+          <strong>転職エージェントは『良い求人と出会う力』。<br>
+          強み発見カルテは『自分に合う求人を見極める力』。</strong><br><br>
+          この2つが揃ったとき、転職活動は単なる求人探しではなく、「自分らしく活躍できる場所」を見つけるための活動へと変わります。<br><br>
+          まさに、『良い求人と出会う力 × 自分に合う求人を見極める力』＝<strong>成功する転職</strong><br><br>
+          まずは提携転職エージェントに無料登録し、あなた専用の強み発見カルテを受け取ってください。理想のキャリアへの第一歩が、ここから始まります。
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px">
+          <a href="https://af.moshimo.com/af/c/click?a_id=5696678&p_id=5870&pc_id=16301&pl_id=75201" target="_blank" rel="nofollow" onclick="agentClicked()" style="display:flex;align-items:center;gap:10px;background:#fff7ed;border:1.5px solid #fed7aa;border-radius:10px;padding:12px 14px;text-decoration:none">
+            <span style="font-size:20px">💼</span>
+            <div><div style="font-size:13px;font-weight:700;color:#0f172a">Remoful（リモフル）</div><div style="font-size:11px;color:#64748b">リモートワーク転職に特化・面談申込</div></div>
+            <span style="margin-left:auto;font-size:12px;font-weight:700;color:#f97316">無料登録 →</span>
+          </a>
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B7T8X+CNGMK2+5BJK+5Z6WY" target="_blank" rel="nofollow" onclick="agentClicked()" style="display:flex;align-items:center;gap:10px;background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:12px 14px;text-decoration:none">
+            <span style="font-size:20px">🔍</span>
+            <div><div style="font-size:13px;font-weight:700;color:#0f172a">転職AGENT Navi</div><div style="font-size:11px;color:#64748b">300人以上のプロからパーソナルマッチング</div></div>
+            <span style="margin-left:auto;font-size:12px;font-weight:700;color:#2563eb">無料登録 →</span>
+          </a>
+          <a href="https://px.a8.net/svt/ejp?a8mat=4B7T8X+CNGMK2+5BJK+5Z6WY" target="_blank" rel="nofollow" onclick="agentClicked()" style="display:flex;align-items:center;gap:10px;background:#f0fdf4;border:1.5px solid #86efac;border-radius:10px;padding:12px 14px;text-decoration:none">
+            <span style="font-size:20px">🚀</span>
+            <div><div style="font-size:13px;font-weight:700;color:#0f172a">転職AGENT Navi</div><div style="font-size:11px;color:#64748b">完全無料・あなたに合うエージェントを紹介</div></div>
+            <span style="margin-left:auto;font-size:12px;font-weight:700;color:#16a34a">無料登録 →</span>
+          </a>
+        </div>
+        <div id="agent-complete-btn" style="display:none">
+          <button onclick="agentUnlock()" style="background:linear-gradient(135deg,#059669,#10b981);color:white;border:none;border-radius:12px;padding:16px 0;font-size:15px;font-weight:700;width:100%;cursor:pointer;font-family:inherit;box-shadow:0 4px 12px rgba(5,150,105,0.3);margin-bottom:8px">✅ 登録完了！強み発見カルテを無料解放する →</button>
+          <div style="font-size:10px;color:#94a3b8;text-align:center">※登録完了後にボタンが有効になります</div>
+        </div>
+        <div id="agent-waiting" style="text-align:center;padding:8px">
+          <div style="font-size:12px;color:#64748b">👆 上記いずれかに無料登録後、解放ボタンが表示されます</div>
+        </div>
+        <button onclick="document.getElementById('agent-modal').style.display='none'" style="background:#f1f5f9;color:#64748b;border:none;border-radius:10px;padding:12px 0;font-size:13px;font-weight:600;width:100%;cursor:pointer;font-family:inherit;margin-top:8px">閉じる</button>
+      </div>
+    </div>
+
+    <!-- 強み発見カルテ受け取り -->
+    <div class="paywall-card">
+      <div class="paywall-crown">👑</div>
+      <div class="paywall-title">強み発見カルテを受け取る</div>
+      <div class="paywall-sub">45問に真剣に答えたあなたへ。<br>ワンコインで、自分の強みとキャリアの方向性を明確にしよう。</div>
+      <div class="paywall-features">
+        <div class="paywall-feature">📊 全業界・職種・会社タイプの完全ランキング</div>
+        <div class="paywall-feature">📈 人生グラフ＆一貫性分析</div>
+        <div class="paywall-feature">💰 推定年収シミュレーター（30代）</div>
+        <div class="paywall-feature">⚠️ 地雷職場・ミスマッチ警告の詳細</div>
+        <div class="paywall-feature">💪 強みの文章化（職務経歴書に使える）</div>
+        <div class="paywall-feature">🗺️ 転職6ヶ月ロードマップ</div>
+        <div class="paywall-feature">🎯 自己PR文生成（2パターン）</div>
+        <div class="paywall-feature">📄 PDFで保存（一生モノのキャリア取扱説明書）</div>
+      </div>
+      <!-- 500円ボタン（上） -->
+      <button class="btn-pay" onclick="unlockPaid()" style="margin-bottom:6px">👑 500円で今すぐ受け取る →</button>
+      <div style="text-align:center;font-size:11px;color:#94a3b8;margin-bottom:12px">※Stripeの安全な決済ページに移動します</div>
+      <div style="text-align:center;font-size:12px;color:#94a3b8;margin-bottom:10px">または</div>
+      <!-- エージェントボタン（上） -->
+      <button onclick="document.getElementById('agent-modal').style.display='block';window.scrollTo(0,0)" style="background:linear-gradient(135deg,#059669,#10b981);color:white;border:none;border-radius:14px;padding:17px 0;font-size:14px;font-weight:700;width:100%;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(5,150,105,0.3)">🎁 エージェント登録で無料で受け取る →</button>
+    </div>
+
+    <!-- 鬼に金棒メッセージ -->
+    <div style="background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border:1.5px solid #86efac;border-radius:16px;padding:20px;margin-bottom:12px">
+      <div style="font-size:13px;font-weight:700;color:#059669;margin-bottom:10px">🎯 人事の視点：転職エージェント × 強み発見カルテで「鬼に金棒」</div>
+      <div style="font-size:13px;color:#374151;line-height:1.8">
+        転職エージェントを利用する企業は、高い採用コストをかけてでも、本当に必要な人材と出会いたいと考えています。<br>
+        そのため、一般の求人サイトには掲載されていない非公開求人や、優良企業の求人に出会える可能性が高いのが大きな魅力です。<br><br>
+        ただし、自分の強みや価値観、向いている環境が曖昧なままでは、その価値を十分に活かしきれません。<br><br>
+        そこで役立つのが『強み発見カルテ』です。<br>
+        強み発見カルテで「自分はどんな環境で力を発揮できるのか」「どのような仕事にやりがいを感じるのか」が明確になると、エージェントにも自分の希望や強みを具体的に伝えられるようになります。<br><br>
+        <strong>転職エージェントは『良い求人と出会う力』。<br>
+        強み発見カルテは『自分に合う求人を見極める力』。</strong><br><br>
+        この2つが揃ったとき、転職活動は単なる求人探しではなく、「自分らしく活躍できる場所」を見つけるための活動へと変わります。<br><br>
+        まさに、<br>
+        『良い求人と出会う力 × 自分に合う求人を見極める力』<br>
+        ＝ <strong>成功する転職</strong><br><br>
+        まずは提携転職エージェントに無料登録し、あなた専用の強み発見カルテを受け取ってください。<br>
+        理想のキャリアへの第一歩が、ここから始まります。
+      </div>
+      <div style="font-size:10px;color:#94a3b8;margin-top:10px;text-align:center">※本コンテンツにはアフィリエイト広告が含まれます</div>
+      <!-- エージェントボタン（下・文章の後） -->
+      <button onclick="document.getElementById('agent-modal').style.display='block';window.scrollTo(0,0)" style="background:linear-gradient(135deg,#059669,#10b981);color:white;border:none;border-radius:14px;padding:16px 0;font-size:14px;font-weight:700;width:100%;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(5,150,105,0.3);margin-top:16px">🎁 エージェント登録で無料で受け取る →</button>
+    </div>
+    <!-- 無料版シェアボタン -->
+    <div class="share-card">
+      <div class="share-title">📣 診断結果をシェアして友達にも教えよう</div>
+      <div class="share-preview" id="free-share-preview">読み込み中...</div>
+      <div class="share-btns">
+        <button class="btn-share-x" onclick="freeShareToX()">
+          <span style="font-size:16px;font-weight:900">𝕏</span> Xでシェア
+        </button>
+        <button class="btn-share-copy" onclick="freeShareCopy()">📋 コピー</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
+<!-- ══ RESULT PAID SCREEN ══ -->
+<div id="screen-result-paid" class="screen">
+<div class="result-wrap">
+  <div class="result-inner" id="paid-content">
+    <div class="result-header">
+      <div class="result-badge">👑 強み発見カルテ</div>
+      <div class="result-title">あなたの完全診断レポート</div>
+      <div class="result-sub" id="paid-date"></div>
+      <div style="font-size:10px;color:#94a3b8;margin-top:8px;line-height:1.6">※診断結果は参考情報です。職業選択の最終判断はご自身でお願いします。</div>
+    </div>
+
+    <!-- レーダーチャート -->
+    <div class="section-card">
+      <div class="section-title">💪 あなたの強み全18項目ランキング</div>
+      <div class="radar-wrap"><canvas id="radar-chart"></canvas></div>
+    </div>
+
+    <!-- プレミアム特典：人生グラフ -->
+    <div class="section-card" id="life-premium-card">
+      <div class="section-title">🌟 プレミアム特典</div>
+      <div id="life-premium-teaser" style="background:linear-gradient(135deg,#fef9c3,#fef3c7);border:1.5px solid #fcd34d;border-radius:12px;padding:18px;text-align:center">
+        <div style="font-size:24px;margin-bottom:8px">📈</div>
+        <div style="font-size:15px;font-weight:700;color:#92400e;margin-bottom:6px">人生グラフ診断</div>
+        <div style="font-size:12px;color:#78350f;line-height:1.7;margin-bottom:14px">強み発見カルテ購入者限定の特別分析です。<br>人生の充実度・転換点を可視化し、<br>一貫性分析・人生の取扱説明書が追加されます。</div>
+        <button onclick="startLifeQuiz()" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:white;border:none;border-radius:12px;padding:14px 0;font-size:14px;font-weight:700;width:100%;cursor:pointer;font-family:inherit;box-shadow:0 4px 12px rgba(245,158,11,0.3)">🌟 人生グラフ診断を受ける（任意）→</button>
+        <div style="font-size:11px;color:#92400e;margin-top:8px">所要時間：約5分・30問</div>
+      </div>
+      <div id="life-graph-result" style="display:none">
+        <div class="life-graph-wrap"><canvas id="life-chart"></canvas></div>
+        <div class="life-insight" id="life-insight"></div>
+      </div>
+    </div>
+
+
+
+    <!-- 完全ランキング -->
+    <div class="section-card">
+      <div class="section-title">🏆 完全ランキング</div>
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab(event,'industry')">業界</button>
+        <button class="tab" onclick="switchTab(event,'job')">職種</button>
+        <button class="tab" onclick="switchTab(event,'company')">会社タイプ</button>
+      </div>
+      <div class="tab-content active" id="tab-industry"></div>
+      <div class="tab-content" id="tab-job"></div>
+      <div class="tab-content" id="tab-company"></div>
+    </div>
+
+    <!-- 年収シミュレーター -->
+    <div class="section-card">
+      <div class="section-title">💰 推定年収レンジ（30代・参考値）</div>
+      <div class="salary-result">
+        <div id="salary-range" style="font-size:28px;font-weight:900;color:#2563eb;line-height:1.2;margin-bottom:4px">--- 万円 〜 --- 万円</div>
+        <div style="font-size:11px;color:#94a3b8;margin-bottom:6px">推定年収レンジ（参考値）</div>
+        <div class="salary-breakdown" id="salary-breakdown"></div>
+        <div id="salary-amount" style="display:none">---万円</div>
+      </div>
+      <div class="salary-selects">
+        <div class="salary-select-wrap"><label>業界</label><select class="salary-select" id="sal-industry" onchange="calcSalary()"></select></div>
+        <div class="salary-select-wrap"><label>職種</label><select class="salary-select" id="sal-job" onchange="calcSalary()"></select></div>
+        <div class="salary-select-wrap"><label>会社タイプ</label><select class="salary-select" id="sal-company" onchange="calcSalary()"></select></div>
+      </div>
+      <div class="salary-note">※年収はツヨミ独自の推計値です（doda「平均年収ランキング2025」・厚生労働省「賃金構造基本統計調査2024」を参考に算出）。実際の年収を保証するものではありません。あくまで目安としてご参照ください。</div>
+    </div>
+
+    <!-- 地雷職場・ミスマッチ警告 -->
+    <div class="section-card">
+      <div class="section-title">⚠️ 地雷職場・ミスマッチ警告</div>
+      <div id="mismatch-full"></div>
+    </div>
+
+    <!-- 人生の取扱説明書 -->
+    <div class="section-card" id="life-manual-card">
+      <div class="section-title">📖 人生の取扱説明書</div>
+      <div id="life-manual"></div>
+    </div>
+
+    <!-- 強みの文章化 -->
+    <div class="section-card">
+      <div class="section-title">💪 あなたの強みの文章化</div>
+      <div id="strength-text"></div>
+    </div>
+
+    <!-- 転職ロードマップ -->
+    <div class="section-card">
+      <div class="section-title">🗺️ 転職6ヶ月ロードマップ</div>
+      <div id="roadmap"></div>
+    </div>
+
+    <!-- 自己PR -->
+    <div class="section-card">
+      <div class="section-title">🎯 自己PR文（2パターン）</div>
+      <div style="font-size:12px;font-weight:700;color:#64748b;margin-bottom:8px">パターンA：論理型</div>
+      <div class="pr-box" id="pr-a"></div>
+      <div style="font-size:12px;font-weight:700;color:#64748b;margin:10px 0 8px">パターンB：情熱型</div>
+      <div class="pr-box" id="pr-b"></div>
+      <button class="pr-copy-btn" onclick="copyPR()">📋 自己PRをコピーする</button>
+    </div>
+
+    <!-- シェア -->
+    <div class="share-card">
+      <div class="share-title">📣 診断結果をシェアして友達にも教えよう</div>
+      <div class="share-preview" id="share-preview">読み込み中...</div>
+      <div class="share-btns">
+        <button class="btn-share-x" onclick="shareToX()">
+          <span style="font-size:16px;font-weight:900">𝕏</span> Xでシェア
+        </button>
+        <button class="btn-share-copy" onclick="copyShareText()">📋 コピー</button>
+      </div>
+    </div>
+
+    <!-- ダウンロード -->
+    <div class="download-btns">
+      <button class="btn-dl btn-dl-pdf" onclick="downloadPDF()">📄 PDFで保存</button>
+      <button class="btn-dl btn-dl-word" onclick="downloadWord()">📝 テキスト保存</button>
+    </div>
+
+
+
+    <button class="btn-primary" onclick="location.reload()" style="margin-top:8px">もう一度診断する</button>
+  </div>
+</div>
+</div>
+
+<!-- フッター -->
+<div style="text-align:center;padding:14px 16px;background:#f8fafc;border-top:1px solid #e2e8f0">
+  <div style="font-size:11px;color:#94a3b8;line-height:1.8;margin-bottom:8px">「一人でも多くの人が幸せにイキイキと働ける社会の創造」<br>© ツヨミ</div>
+  <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+    <a href="#" onclick="showLegal('tokusho')" style="font-size:11px;color:#64748b;text-decoration:none">特定商取引法に基づく表記</a>
+    <a href="#" onclick="showLegal('privacy')" style="font-size:11px;color:#64748b;text-decoration:none">プライバシーポリシー</a>
+    <a href="#" onclick="showLegal('terms')" style="font-size:11px;color:#64748b;text-decoration:none">利用規約</a>
+  </div>
+</div>
+
+<!-- 法的ページモーダル -->
+<div id="legal-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:300;overflow-y:auto;padding:20px">
+  <div style="background:white;border-radius:16px;padding:24px;max-width:480px;margin:20px auto">
+    <div id="legal-content" style="font-size:13px;color:#374151;line-height:1.8"></div>
+    <button onclick="document.getElementById('legal-modal').style.display='none'" style="background:#f1f5f9;color:#64748b;border:none;border-radius:10px;padding:12px 0;font-size:13px;font-weight:600;width:100%;cursor:pointer;font-family:inherit;margin-top:16px">閉じる</button>
+  </div>
+</div>
+
+<script>
+// 強み発見カルテ データファイル
+// 業界コード: A=IT・情報通信, B=医療・福祉, C=金融・保険, D=教育, E=製造・メーカー
+//             F=小売・卸売, G=不動産・建設, H=美容・ファッション, I=エンタメ・メディア
+//             J=コンサルティング, K=公務員・行政, L=農業・林業, M=漁業, N=宿泊・飲食, O=運輸・物流
+// 職種コード: P1=売る・提案, P2=企画・戦略, P3=作る・開発, P4=デザイン・表現
+//             P5=管理・整理, P6=育てる・教える, P7=数字・分析, P8=問題解決・アドバイス
+//             P9=癒す・支える, P10=教える・伝える・導く, P11=研究・追求
+//             P12=もてなす・接客, P13=運ぶ・動かす, P14=育てる・収穫・自然
+//             P15=美しくする, P16=発信・表現, P17=まとめる・率いる, P18=修理・整備
+// 会社タイプ: C1=ベンチャー, C2=大手, C3=中堅中小, C4=零細・家族, C5=外資, C6=公務員, C7=NPO
+
+const INDUSTRIES = [
+  'IT・情報通信', '医療・福祉', '金融・保険', '教育', '製造・メーカー',
+  '小売・卸売', '不動産・建設', '美容・ファッション', 'エンタメ・メディア',
+  'コンサルティング', '公務員・行政', '農業・林業', '漁業', '宿泊・飲食', '運輸・物流'
+];
+
+const JOBS = [
+  '売る・提案する・交渉する', '企画する・考える・戦略を立てる',
+  '作る・開発する・プログラムする', 'デザインする・表現する・描く',
+  '管理する・整理する・正確にこなす', '育てる・教える・引き出す',
+  '数字を扱う・分析する・計算する', '問題を解決する・アドバイスする',
+  '癒す・支える・ケアする', '教える・伝える・導く',
+  '研究する・深く追求する・発見する', 'もてなす・接客する・気配りする',
+  '運ぶ・動かす・効率化する', '育てる・収穫する・自然と関わる',
+  '美しくする・スタイリングする', '発信する・伝える・表現する',
+  'まとめる・決断する・率いる', '修理する・整備する・メンテナンスする'
+];
+
+const COMPANY_TYPES = [
+  'ベンチャー・スタートアップ', '大手・上場企業', '中堅・中小企業',
+  '零細・家族経営', '外資系企業', '公務員・行政', 'NPO・社会貢献団体'
+];
+
+// 各質問の選択肢と業界ポイント[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O]
+// 強みポイント[P1-P18]
+// 会社タイプポイント[C1-C7]
+
+const QUESTIONS = [
+  // ── 興味・関心（Q1〜Q15）──
+  {
+    id: 'Q1', axis: 'interest', label: '幼少期に好きだったことは？',
+    choices: [
+      { text: 'ゲーム・パソコン', industry: [3,0,1,0,2,0,0,0,2,1,0,0,0,0,0] },
+      { text: '体を動かす・スポーツ', industry: [0,2,0,1,0,0,0,1,2,0,0,1,1,0,1] },
+      { text: '絵を描く・工作', industry: [1,0,0,1,2,0,2,2,2,0,0,0,0,0,0] },
+      { text: '音楽・ダンス・演技', industry: [0,0,0,1,0,0,0,1,3,0,0,0,0,1,0] },
+      { text: '読書・勉強', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '料理・お菓子作り', industry: [0,1,0,0,1,1,0,0,0,0,0,1,1,3,0] },
+      { text: '動物・自然・植物', industry: [0,1,0,0,0,0,0,0,0,0,1,3,2,0,0] },
+      { text: '人と話す・友達と遊ぶ', industry: [0,1,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: 'お医者さんごっこ・病院', industry: [0,3,0,1,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'お店屋さんごっこ・買い物', industry: [0,0,1,0,0,3,0,1,0,1,0,0,0,1,0] },
+      { text: '積み木・ブロック・建物', industry: [1,0,0,0,2,0,3,0,0,0,0,0,0,0,0] },
+      { text: 'おしゃれ・着せ替え', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '海・釣り・水遊び', industry: [0,0,0,0,0,0,0,0,1,0,0,1,3,1,0] },
+      { text: '乗り物・電車・車', industry: [1,0,0,0,2,0,0,0,0,0,0,0,0,0,3] },
+      { text: 'お金・交換遊び', industry: [0,0,3,0,0,1,1,0,0,2,0,0,0,0,0] },
+      { text: '困っている人を助ける', industry: [0,3,0,1,0,0,0,0,0,0,2,0,0,0,0] },
+      { text: '畑・農業・虫', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: 'リーダー・仕切る役', industry: [1,0,1,1,0,1,0,0,1,3,2,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q2', axis: 'interest', label: '中学・高校時代に好きだったことは？',
+    choices: [
+      { text: 'プログラミング・パソコン・ゲーム', industry: [3,0,1,0,2,0,0,0,1,1,0,0,0,0,0] },
+      { text: '部活・スポーツ・体を動かすこと', industry: [0,2,0,1,0,0,0,1,2,0,0,1,1,0,1] },
+      { text: '美術・デザイン・工作', industry: [1,0,0,1,2,0,2,2,2,0,0,0,0,0,0] },
+      { text: '音楽・演劇・ダンス', industry: [0,0,0,1,0,0,0,1,3,0,0,0,0,1,0] },
+      { text: '読書・文章を書くこと', industry: [1,1,1,3,0,0,0,0,1,2,1,0,0,0,0] },
+      { text: '料理・製菓・食べること', industry: [0,1,0,0,1,1,0,0,0,0,0,1,1,3,0] },
+      { text: '自然・生物・環境', industry: [0,1,0,1,0,0,0,0,0,0,1,3,2,0,0] },
+      { text: '友達と話す・グループ活動', industry: [0,1,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: '保健・体の仕組み・美容健康', industry: [0,3,0,1,0,0,0,2,0,0,0,0,0,0,0] },
+      { text: 'アルバイト・販売・接客', industry: [0,0,1,0,0,3,0,1,0,1,0,0,0,2,0] },
+      { text: '建築・インテリア・街づくり', industry: [1,0,0,0,2,0,3,0,0,0,0,0,0,0,0] },
+      { text: 'ファッション・メイク・おしゃれ', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '釣り・海・アウトドア', industry: [0,0,0,0,0,0,0,0,1,0,0,1,3,1,0] },
+      { text: '電車・車・乗り物', industry: [1,0,0,0,2,0,0,0,0,0,0,0,0,0,3] },
+      { text: '家計・節約・お小遣い管理', industry: [0,0,3,0,0,1,1,0,0,2,0,0,0,0,0] },
+      { text: 'ボランティア・人助け・福祉', industry: [0,3,0,1,0,0,0,0,0,0,2,0,0,0,0] },
+      { text: '農業・キャンプ・自然体験', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '生徒会・部活のキャプテン・まとめ役', industry: [1,0,1,1,0,1,0,0,1,3,2,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q3', axis: 'interest', label: '大学・社会人になってから好きなことは？',
+    choices: [
+      { text: 'プログラミング・アプリ・AI', industry: [3,0,1,0,2,0,0,0,1,1,0,0,0,0,0] },
+      { text: 'ジム・スポーツ・ランニング', industry: [0,2,0,1,0,0,0,1,1,0,0,1,0,0,1] },
+      { text: '写真・デザイン・クリエイティブ', industry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: 'ライブ・音楽・映画・エンタメ', industry: [0,0,0,1,0,0,0,1,3,0,0,0,0,1,0] },
+      { text: '読書・自己啓発・学び', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '料理・カフェ巡り・グルメ', industry: [0,1,0,0,0,1,0,0,0,0,0,1,1,3,0] },
+      { text: '自然・登山・キャンプ', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '人と話す・コミュニティ・交流', industry: [0,1,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: '美容・健康・ダイエット', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ショッピング・トレンド・EC', industry: [0,0,1,0,0,3,0,1,1,0,0,0,0,0,0] },
+      { text: '旅行・ホテル・インテリア', industry: [0,0,0,0,0,1,2,0,1,0,0,0,0,2,1] },
+      { text: 'ファッション・コスメ定期購入', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '釣り・海・アウトドア', industry: [0,0,0,0,0,0,0,0,1,0,0,1,3,0,0] },
+      { text: 'ドライブ・旅行・乗り物', industry: [0,0,0,0,1,0,0,0,1,0,0,0,0,1,3] },
+      { text: '投資・節約・お金の勉強', industry: [0,0,3,0,0,1,1,0,0,2,0,0,0,0,0] },
+      { text: 'ボランティア・社会貢献・NPO', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '家庭菜園・農業体験・自然農法', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '起業・ビジネス・マネジメント', industry: [2,0,1,0,0,1,0,0,1,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q4', axis: 'interest', label: '日常的にお金を使うものは？',
+    choices: [
+      { text: 'ガジェット・アプリ・サブスク', industry: [3,0,0,0,1,0,0,0,2,0,0,0,0,0,0] },
+      { text: 'スポーツ用品・フィットネス', industry: [0,2,0,0,1,0,0,1,1,0,0,0,0,0,0] },
+      { text: '画材・デザインツール・文具', industry: [1,0,0,1,1,0,1,1,2,0,0,0,0,0,0] },
+      { text: 'ライブ・映画・コンテンツ', industry: [0,0,0,0,0,0,0,0,3,0,0,0,0,1,0] },
+      { text: '本・セミナー・オンライン講座', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '食材・外食・カフェ', industry: [0,1,0,0,0,1,0,0,0,0,0,1,1,3,0] },
+      { text: 'アウトドア用品・自然食品', industry: [0,1,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '交際費・飲み会・贈り物', industry: [0,0,0,1,0,1,0,0,1,2,0,0,0,2,0] },
+      { text: '美容・化粧品・サプリ', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ファッション・アクセサリー', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: 'インテリア・家具・生活雑貨', industry: [0,0,0,0,1,1,3,1,0,0,0,0,0,0,0] },
+      { text: 'コスメ・スキンケア・ネイル', industry: [0,1,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: '釣り道具・海関連グッズ', industry: [0,0,0,0,0,0,0,0,0,0,0,1,3,0,0] },
+      { text: '交通費・車・移動関連', industry: [0,0,0,0,1,0,0,0,0,0,0,0,0,0,3] },
+      { text: '投資・貯蓄・資産運用', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '寄付・チャリティー・社会貢献', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '農業・園芸・自然食', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: 'ビジネス書・経営ツール・勉強', industry: [2,0,1,1,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q5', axis: 'interest', label: '継続してお金を使っている趣味は？',
+    choices: [
+      { text: 'ゲーム・ガジェット・デジタルコンテンツ', industry: [3,0,0,0,1,0,0,0,2,0,0,0,0,0,0] },
+      { text: 'スポーツ観戦・スポーツクラブ', industry: [0,2,0,1,0,0,0,1,2,0,0,0,0,0,0] },
+      { text: '絵画・写真・クリエイティブ活動', industry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: 'ライブ・コンサート・舞台観劇', industry: [0,0,0,1,0,0,0,1,3,0,0,0,0,1,0] },
+      { text: '資格取得・自己啓発・勉強', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: 'グルメ・料理教室・食べ歩き', industry: [0,1,0,0,0,1,0,0,0,0,0,1,1,3,0] },
+      { text: 'アウトドア・キャンプ・登山', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '交流・コミュニティ・習い事', industry: [0,1,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: '健康・フィットネス・美容医療', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ショッピング・ブランド・コレクション', industry: [0,0,1,0,0,3,0,2,0,0,0,0,0,0,0] },
+      { text: '旅行・ホテル・インテリア', industry: [0,0,0,0,0,1,2,0,1,0,0,0,0,2,1] },
+      { text: 'ファッション・コスメ定期購入', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '釣り・マリンスポーツ', industry: [0,0,0,0,0,0,0,0,1,0,0,1,3,0,0] },
+      { text: 'ドライブ・車のカスタム', industry: [0,0,0,0,2,0,0,0,0,0,0,0,0,0,3] },
+      { text: '投資・資産運用・マネー系セミナー', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: 'ボランティア・NPO活動・寄付', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '家庭菜園・農業体験', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '起業塾・ビジネスコミュニティ', industry: [2,0,1,0,0,1,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q6', axis: 'interest', label: '大きくお金を使ったものは？',
+    choices: [
+      { text: 'パソコン・最新ガジェット・スマホ', industry: [3,0,0,0,1,0,0,0,1,0,0,0,0,0,0] },
+      { text: 'スポーツ用品・ウェア・ジム入会', industry: [0,2,0,0,1,0,0,1,1,0,0,0,0,0,0] },
+      { text: 'カメラ・デザインソフト・機材', industry: [1,0,0,0,1,0,0,1,3,0,0,0,0,0,0] },
+      { text: 'ライブ遠征・フェス・舞台', industry: [0,0,0,0,0,0,0,0,3,0,0,0,0,1,0] },
+      { text: '資格・留学・スクール受講', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '高級食材・料理道具・食器', industry: [0,1,0,0,0,1,0,0,0,0,0,1,1,3,0] },
+      { text: 'アウトドア用品・キャンプ道具', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '旅行・記念日・人への贈り物', industry: [0,0,0,0,0,1,0,0,1,0,0,0,0,2,1] },
+      { text: '医療・美容整形・健康機器', industry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0] },
+      { text: 'ブランド品・高級ショッピング', industry: [0,0,1,0,0,2,0,3,0,0,0,0,0,0,0] },
+      { text: '引越し・家具・リノベーション', industry: [0,0,0,0,1,1,3,0,0,0,0,0,0,0,0] },
+      { text: 'ハイブランドファッション・宝飾品', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '釣り船・マリンレジャー用品', industry: [0,0,0,0,0,0,0,0,0,0,0,1,3,0,0] },
+      { text: '車・バイク・免許取得', industry: [0,0,0,0,2,0,0,0,0,0,0,0,0,0,3] },
+      { text: '不動産投資・株・FX', industry: [0,0,3,0,0,0,2,0,0,2,0,0,0,0,0] },
+      { text: '社会貢献・クラウドファンディング', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '農業設備・畑の土地', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '起業・会社設立・ビジネス投資', industry: [2,0,1,0,0,1,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q7', axis: 'interest', label: '平日の空き時間に自然とやってしまうことは？',
+    choices: [
+      { text: 'スマホでアプリ・ニュース・SNSチェック', industry: [3,0,0,0,0,1,0,0,2,0,0,0,0,0,0] },
+      { text: 'ストレッチ・軽い運動・散歩', industry: [0,3,0,0,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: '落書き・写真加工・デザイン', industry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: '音楽を聴く・動画を見る・ゲーム', industry: [0,0,0,0,0,0,0,0,3,0,0,0,0,1,0] },
+      { text: '本を読む・記事を読む・勉強', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '料理・スイーツ作り・レシピ検索', industry: [0,1,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '自然の写真を撮る・外を歩く', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '友達にLINE・人と話す', industry: [0,1,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: '美容ケア・ストレッチ・健康チェック', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ネットショッピング・価格比較', industry: [0,0,1,0,0,3,0,1,0,0,0,0,0,0,0] },
+      { text: '部屋の片付け・インテリア検索', industry: [0,0,0,0,0,1,3,1,0,0,0,0,0,0,0] },
+      { text: 'コスメ・ファッション情報収集', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '釣り動画・海関連コンテンツを見る', industry: [0,0,0,0,0,0,0,0,0,0,0,1,3,0,0] },
+      { text: '乗り物・旅行情報を調べる', industry: [0,0,0,0,0,0,0,0,1,0,0,0,0,1,3] },
+      { text: '家計簿・投資・お金の計算', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '社会問題・ニュースを調べる', industry: [0,1,0,1,0,0,0,0,1,1,3,0,0,0,0] },
+      { text: '植物の世話・自然に関する動画', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: 'ビジネス・経営情報を調べる', industry: [2,0,1,0,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q8', axis: 'interest', label: '休日に一番時間を使っていることは？',
+    choices: [
+      { text: 'プログラミング・ゲーム・動画編集', industry: [3,0,0,0,1,0,0,0,2,0,0,0,0,0,0] },
+      { text: 'スポーツ・ジム・アウトドア活動', industry: [0,3,0,0,0,0,0,1,1,0,0,1,0,0,0] },
+      { text: '絵を描く・写真撮影・DIY', industry: [1,0,0,0,2,0,2,1,2,0,0,0,0,0,0] },
+      { text: 'ライブ・映画・エンタメ鑑賞', industry: [0,0,0,0,0,0,0,0,3,0,0,0,0,1,0] },
+      { text: '読書・資格勉強・オンライン講座', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '料理・カフェ巡り・食べ歩き', industry: [0,1,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '登山・キャンプ・自然散策', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '友人・家族との交流・飲み会', industry: [0,0,0,1,0,1,0,0,1,1,0,0,0,2,0] },
+      { text: '美容・マッサージ・健康管理', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ショッピング・ウィンドウショッピング', industry: [0,0,0,0,0,3,0,2,0,0,0,0,0,0,0] },
+      { text: '旅行・ドライブ・ホテル滞在', industry: [0,0,0,0,0,1,1,0,1,0,0,0,0,2,2] },
+      { text: 'ファッション・コーディネート研究', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '釣り・海・川遊び', industry: [0,0,0,0,0,0,0,0,0,0,0,1,3,0,0] },
+      { text: 'ドライブ・鉄道旅・乗り物探訪', industry: [0,0,0,0,1,0,0,0,0,0,0,0,0,0,3] },
+      { text: '投資・マネー勉強・家計管理', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: 'ボランティア・地域活動・NPO', industry: [0,1,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '家庭菜園・農業体験・自然農法', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '起業準備・副業・ビジネス勉強', industry: [2,0,1,0,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q9', axis: 'interest', label: 'SNSでついつい見てしまうジャンルは？',
+    choices: [
+      { text: 'テック・AI・ガジェット情報', industry: [3,0,0,0,1,0,0,0,1,1,0,0,0,0,0] },
+      { text: 'スポーツ・筋トレ・アスリート', industry: [0,3,0,0,0,0,0,1,1,0,0,0,0,0,0] },
+      { text: 'アート・デザイン・イラスト', industry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: '音楽・ライブ・エンタメ・芸能', industry: [0,0,0,0,0,0,0,1,3,0,0,0,0,1,0] },
+      { text: '自己啓発・学び・ビジネス本', industry: [1,0,1,2,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: 'グルメ・レシピ・カフェ・食レポ', industry: [0,0,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '自然・アウトドア・動物・環境', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '人間関係・コミュニティ・恋愛', industry: [0,1,0,2,0,0,0,0,1,1,0,0,0,0,0] },
+      { text: '美容・ダイエット・健康・医療', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ファッション・コーデ・トレンド', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: 'インテリア・住まい・建築', industry: [0,0,0,0,1,1,3,0,0,0,0,0,0,0,0] },
+      { text: 'コスメ・スキンケア・美容師', industry: [0,1,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: '釣り・海・マリンスポーツ', industry: [0,0,0,0,0,0,0,0,1,0,0,1,3,0,0] },
+      { text: '車・バイク・旅行・乗り物', industry: [0,0,0,0,1,0,0,0,0,0,0,0,0,1,3] },
+      { text: '投資・節約・お金・副業', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '社会問題・ニュース・政治', industry: [0,1,0,1,0,0,0,0,1,1,3,0,0,0,0] },
+      { text: '農業・自然食・サステナブル', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '起業・経営・ビジネス・マーケティング', industry: [2,0,1,0,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q10', axis: 'interest', label: '10代の頃、困っていた・気になっていたことを解決したくて興味を持ったこと・勉強したことは？',
+    choices: [
+      { text: 'パソコン・ネットの使い方がわからなかった', industry: [3,0,0,0,1,0,0,0,1,0,0,0,0,0,0] },
+      { text: '体力をつけたかった', industry: [0,3,0,0,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: '絵が下手・センスがなかった', industry: [0,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: '人前で話すのが苦手だった', industry: [0,0,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: '勉強が苦手・成績を上げたかった', industry: [1,0,1,3,0,0,0,0,0,1,1,0,0,0,0] },
+      { text: '料理ができない・食生活が乱れていた', industry: [0,1,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '環境問題・動物保護に関心があった', industry: [0,1,0,0,0,0,0,0,0,0,1,3,1,0,0] },
+      { text: '友達関係・コミュニケーションが苦手', industry: [0,1,0,2,0,1,0,0,0,2,0,0,0,1,0] },
+      { text: '肌荒れ・体型・健康が気になっていた', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'お金の使い方・節約を知りたかった', industry: [0,0,3,0,0,1,1,0,0,2,0,0,0,0,0] },
+      { text: '住まい・部屋づくりに興味があった', industry: [0,0,0,0,1,1,3,1,0,0,0,0,0,0,0] },
+      { text: 'ファッション・おしゃれがわからなかった', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '海・自然環境の問題が気になっていた', industry: [0,0,0,0,0,0,0,0,0,0,1,1,3,0,0] },
+      { text: '乗り物・地理・交通に興味があった', industry: [0,0,0,0,1,0,0,0,0,0,0,0,0,0,3] },
+      { text: 'お金・経済の仕組みが気になっていた', industry: [0,0,3,0,0,0,1,0,0,2,1,0,0,0,0] },
+      { text: '社会の不公平・困っている人を助けたかった', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '食の安全・自然食品に興味があった', industry: [0,1,0,0,0,0,0,0,0,0,0,3,0,1,0] },
+      { text: 'クラスをまとめたい・リーダーになりたかった', industry: [1,0,1,1,0,1,0,0,0,3,2,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q11', axis: 'interest', label: '20代の頃、困っていた・気になっていたことを解決したくて興味を持ったこと・勉強したことは？',
+    choices: [
+      { text: 'ITスキル・プログラミングを身につけたかった', industry: [3,0,0,0,1,0,0,0,1,1,0,0,0,0,0] },
+      { text: '体型・健康管理・ダイエットに取り組んだ', industry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0] },
+      { text: 'デザイン・クリエイティブスキルを磨いた', industry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: '人前でのプレゼン・話し方を改善したかった', industry: [0,0,0,2,0,1,0,0,1,3,0,0,0,0,0] },
+      { text: '資格・スキルアップ・キャリアを考えた', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '自炊・食生活・栄養管理を改善したかった', industry: [0,2,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '環境問題・サステナブルな生き方に興味を持った', industry: [0,1,0,0,0,0,0,0,0,0,1,3,1,0,0] },
+      { text: '人間関係・コミュニケーションを改善したかった', industry: [0,1,0,2,0,1,0,0,0,2,0,0,0,1,0] },
+      { text: '肌・美容・メンタルヘルスを改善したかった', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: '家計管理・貯金・お金の勉強をした', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '一人暮らし・住まい・インテリアに興味を持った', industry: [0,0,0,0,1,1,3,1,0,0,0,0,0,0,0] },
+      { text: 'ファッション・自分磨きに力を入れた', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '海・自然・環境保護に関心を持った', industry: [0,0,0,0,0,0,0,0,0,0,1,1,3,0,0] },
+      { text: '車・交通・旅行に興味を持った', industry: [0,0,0,0,1,0,0,0,1,0,0,0,0,1,3] },
+      { text: '投資・資産運用・お金の増やし方を学んだ', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '社会貢献・ボランティア・NPOに関わった', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '食の安全・オーガニック・農業に興味を持った', industry: [0,1,0,0,0,0,0,0,0,0,0,3,0,1,0] },
+      { text: '起業・副業・ビジネスを始めたかった', industry: [2,0,1,0,0,1,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q12', axis: 'interest', label: '今現在、困っている・気になっていることを解決したくて興味を持っていること・勉強していることは？',
+    choices: [
+      { text: 'AI・DX・最新テクノロジーを活用したい', industry: [3,0,1,0,1,0,0,0,1,2,0,0,0,0,0] },
+      { text: '体力維持・健康寿命・パフォーマンス向上', industry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0] },
+      { text: 'クリエイティブスキル・副業で表現したい', industry: [1,0,0,0,1,0,0,2,3,0,0,0,0,0,0] },
+      { text: '発信力・SNS・コンテンツ制作を学びたい', industry: [1,0,0,1,0,1,0,1,3,1,0,0,0,0,0] },
+      { text: 'キャリアアップ・資格・専門性を高めたい', industry: [1,1,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '食の安全・腸活・栄養学を学んでいる', industry: [0,2,0,0,0,0,0,1,0,0,0,1,0,3,0] },
+      { text: '環境問題・脱炭素・サステナブルな生活', industry: [0,1,0,0,0,0,0,0,0,0,1,3,1,0,0] },
+      { text: '人間関係・心理学・コーチングを学んでいる', industry: [0,1,0,2,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: 'アンチエイジング・美容医療・メンタルケア', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: '資産形成・FIRE・お金の自由を目指している', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '住まい・不動産・理想の暮らしを考えている', industry: [0,0,1,0,0,0,3,0,0,0,0,0,0,0,0] },
+      { text: 'パーソナルスタイル・ブランディングを磨きたい', industry: [0,0,0,0,0,1,0,3,1,1,0,0,0,0,0] },
+      { text: '海洋問題・水産資源・自然保護に関心がある', industry: [0,0,0,0,0,0,0,0,0,0,1,1,3,0,0] },
+      { text: '物流・モビリティ・移動の未来に興味がある', industry: [1,0,0,0,1,0,0,0,0,0,0,0,0,0,3] },
+      { text: '経済・金融・投資の仕組みを深く学びたい', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '社会問題・貧困・格差解消に取り組みたい', industry: [0,1,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '農業・食料問題・自給自足に興味がある', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '経営・組織づくり・リーダーシップを学んでいる', industry: [2,0,1,1,0,0,0,0,0,3,1,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q13', axis: 'interest', label: '最近読んだ本・記事・動画のジャンルは？',
+    choices: [
+      { text: 'IT・AI・テクノロジー・プログラミング', industry: [3,0,1,0,1,0,0,0,1,1,0,0,0,0,0] },
+      { text: 'スポーツ・フィットネス・栄養', industry: [0,3,0,0,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'アート・デザイン・クリエイティブ', industry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: 'エンタメ・音楽・映画・ドラマ', industry: [0,0,0,0,0,0,0,0,3,0,0,0,0,1,0] },
+      { text: '自己啓発・勉強法・教育', industry: [1,0,1,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: 'グルメ・料理・食文化', industry: [0,1,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '自然・環境・アウトドア', industry: [0,1,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '心理学・人間関係・コミュニケーション', industry: [0,1,0,2,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '美容・健康・医療・ダイエット', industry: [0,2,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: 'ファッション・トレンド・ライフスタイル', industry: [0,0,0,0,0,1,0,3,1,0,0,0,0,0,0] },
+      { text: '不動産・インテリア・建築', industry: [0,0,1,0,1,0,3,0,0,0,0,0,0,0,0] },
+      { text: 'コスメ・スキンケア・美容師', industry: [0,1,0,0,0,0,0,3,0,0,0,0,0,0,0] },
+      { text: '海・釣り・マリンスポーツ', industry: [0,0,0,0,0,0,0,0,0,0,0,1,3,0,0] },
+      { text: '旅行・乗り物・交通', industry: [0,0,0,0,0,0,0,0,1,0,0,0,0,2,3] },
+      { text: 'お金・投資・経済・副業', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '社会問題・政治・ニュース', industry: [0,1,0,1,0,0,0,0,1,1,3,0,0,0,0] },
+      { text: '農業・自然食・サステナブル', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: 'ビジネス・経営・マーケティング・起業', industry: [2,0,1,0,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q14', axis: 'interest', label: '今一番行きたい場所・体験したいことは？',
+    choices: [
+      { text: 'シリコンバレー・最先端テクノロジーの現場', industry: [3,0,1,0,1,0,0,0,0,2,0,0,0,0,0] },
+      { text: 'スポーツの聖地・オリンピック観戦', industry: [0,3,0,0,0,0,0,0,2,0,0,0,0,0,0] },
+      { text: '世界の美術館・アート・デザインの街', industry: [0,0,0,0,1,0,1,2,3,0,0,0,0,0,0] },
+      { text: '音楽フェス・ブロードウェイ・映画の舞台', industry: [0,0,0,0,0,0,0,1,3,0,0,0,0,1,0] },
+      { text: '海外留学・世界の教育機関・図書館', industry: [1,0,0,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '世界の絶品グルメ・有名シェフのレストラン', industry: [0,0,0,0,0,1,0,0,0,0,0,0,0,3,0] },
+      { text: '国立公園・秘境・手つかずの自然', industry: [0,1,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '異文化交流・世界中の人と繋がる体験', industry: [0,0,0,2,0,1,0,0,1,2,0,0,0,1,0] },
+      { text: '最先端の美容・医療・ウェルネス施設', industry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0] },
+      { text: '世界のショッピング都市・マーケット', industry: [0,0,0,0,0,3,0,2,0,0,0,0,0,0,0] },
+      { text: '憧れのホテル・建築・住空間を体験', industry: [0,0,0,0,1,0,3,0,0,0,0,0,0,2,0] },
+      { text: 'パリコレ・ミラノ・ファッションの聖地', industry: [0,0,0,0,0,0,0,3,1,0,0,0,0,0,0] },
+      { text: '離島・ダイビング・マリンスポーツの名所', industry: [0,1,0,0,0,0,0,0,1,0,0,0,3,1,0] },
+      { text: '豪華クルーズ・鉄道旅・乗り物の旅', industry: [0,0,0,0,0,0,0,0,1,0,0,0,0,2,3] },
+      { text: 'ウォール街・投資の現場・経済の中心地', industry: [0,0,3,0,0,0,0,0,0,2,0,0,0,0,0] },
+      { text: '発展途上国・ボランティア・社会貢献の現場', industry: [0,1,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '農村・自然農法・サステナブルな暮らし', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '起業家・世界のビジネスの現場', industry: [2,0,1,0,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+  {
+    id: 'Q15', axis: 'interest', label: 'もし今から勉強するとしたら何を学びたい？',
+    choices: [
+      { text: 'プログラミング・AI・データサイエンス', industry: [3,0,1,0,1,0,0,0,0,2,0,0,0,0,0] },
+      { text: 'スポーツ科学・トレーニング理論・栄養学', industry: [0,3,0,0,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'グラフィックデザイン・映像制作・写真', industry: [1,0,0,0,0,0,0,2,3,0,0,0,0,0,0] },
+      { text: '音楽・演技・エンタメプロデュース', industry: [0,0,0,0,0,0,0,0,3,0,0,0,0,1,0] },
+      { text: '教育学・コーチング・ティーチング', industry: [0,1,0,3,0,0,0,0,0,2,1,0,0,0,0] },
+      { text: '料理・製菓・フードコーディネート', industry: [0,1,0,0,0,1,0,0,0,0,0,1,0,3,0] },
+      { text: '環境学・自然科学・エコロジー', industry: [0,1,0,0,0,0,0,0,0,0,1,3,1,0,0] },
+      { text: '心理学・カウンセリング・コーチング', industry: [0,2,0,2,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '医学・看護・美容皮膚科・栄養管理', industry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0] },
+      { text: 'マーケティング・EC・小売ビジネス', industry: [1,0,0,0,0,3,0,1,1,1,0,0,0,0,0] },
+      { text: '建築・インテリアデザイン・不動産', industry: [0,0,0,0,1,0,3,1,0,0,0,0,0,0,0] },
+      { text: 'ファッションデザイン・スタイリスト', industry: [0,0,0,0,0,0,0,3,1,0,0,0,0,0,0] },
+      { text: '水産学・海洋学・マリンビジネス', industry: [0,0,0,0,0,0,0,0,0,0,0,1,3,0,0] },
+      { text: '物流・交通工学・モビリティ', industry: [0,0,0,0,1,0,0,0,0,0,0,0,0,0,3] },
+      { text: 'ファイナンス・会計・経済学', industry: [0,0,3,0,0,0,1,0,0,2,0,0,0,0,0] },
+      { text: '社会福祉・国際協力・NPOマネジメント', industry: [0,2,0,1,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '農学・食料科学・有機農業', industry: [0,0,0,0,0,0,0,0,0,0,0,3,1,1,0] },
+      { text: '経営学・MBA・リーダーシップ', industry: [2,0,1,1,0,0,0,0,0,3,0,0,0,0,0] }
+    ]
+  },
+
+  // ── 強み（Q16〜Q30）──
+  {
+    id: 'Q16', axis: 'strength', label: '幼少期に得意だったことは？',
+    choices: [
+      { text: '機械・パソコン・ゲームの操作', job: [0,0,3,1,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: '体を動かすこと・運動・スポーツ', job: [1,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0] },
+      { text: '絵を描く・工作・ものを作ること', job: [0,1,2,3,0,0,0,0,0,0,1,0,0,0,2,1,0,1] },
+      { text: '歌・楽器・表現すること', job: [0,1,0,2,0,0,0,0,0,1,0,1,0,0,1,3,0,0] },
+      { text: '暗記・勉強・知識を吸収すること', job: [0,1,1,0,2,1,2,1,0,2,3,0,0,0,0,0,0,0] },
+      { text: '料理・お菓子作り・手先を使うこと', job: [0,1,1,1,1,0,0,0,1,0,0,2,0,1,1,0,0,1] },
+      { text: '生き物の世話・植物を育てること', job: [0,0,0,0,1,2,0,0,2,1,1,0,0,3,0,0,0,0] },
+      { text: '人の話を聞く・友達と仲良くすること', job: [2,0,0,0,0,2,0,2,2,1,0,2,0,0,0,1,1,0] },
+      { text: '人の体調・気持ちに気づくこと', job: [0,0,0,0,0,1,0,2,3,1,0,2,0,0,1,0,0,0] },
+      { text: '物を売る・交換する・交渉すること', job: [3,1,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0] },
+      { text: '積み木・ブロック・空間を作ること', job: [0,2,2,2,1,0,0,1,0,0,1,0,0,0,0,0,0,2] },
+      { text: 'おしゃれ・コーディネートすること', job: [0,1,0,2,0,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '魚を釣る・海で遊ぶこと', job: [0,0,0,0,1,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '地図を読む・乗り物を覚えること', job: [0,1,0,0,2,0,0,0,0,0,1,0,3,0,0,0,0,0] },
+      { text: 'お金の計算・数字を扱うこと', job: [1,1,0,0,2,0,3,1,0,0,1,0,0,0,0,0,1,0] },
+      { text: '困っている人を助けること', job: [0,0,0,0,0,2,0,2,3,2,0,1,0,0,0,0,0,0] },
+      { text: '植物・虫・自然を観察すること', job: [0,0,0,0,1,0,0,0,0,0,3,0,0,3,0,0,0,0] },
+      { text: 'みんなをまとめる・仕切ること', job: [1,2,0,0,1,2,0,1,0,1,0,0,0,0,0,0,3,0] }
+    ]
+  },
+  {
+    id: 'Q17', axis: 'strength', label: '仕事で得意なことは？',
+    choices: [
+      { text: '顧客への提案・交渉・クロージング', job: [3,1,0,0,0,0,1,1,0,0,0,1,0,0,0,0,1,0] },
+      { text: '企画書作成・アイデア出し・戦略立案', job: [1,3,1,1,0,0,0,2,0,0,1,0,0,0,0,1,1,0] },
+      { text: 'システム開発・プログラミング・自動化', job: [0,1,3,1,1,0,1,0,0,0,1,0,0,0,0,0,0,1] },
+      { text: 'デザイン・資料作成・ビジュアル表現', job: [0,1,1,3,0,0,0,0,0,0,0,0,0,0,2,2,0,0] },
+      { text: 'スケジュール管理・正確な事務処理', job: [0,0,0,0,3,0,2,0,0,0,0,0,1,0,0,0,1,0] },
+      { text: '部下育成・採用・人材開発', job: [0,1,0,0,0,3,0,1,1,2,0,0,0,0,0,0,2,0] },
+      { text: '数字分析・予算管理・データ処理', job: [0,1,1,0,2,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: '課題発見・問題解決・改善提案', job: [1,2,1,0,1,0,1,3,0,0,1,0,0,0,0,0,1,0] },
+      { text: '患者・利用者のケア・寄り添うこと', job: [0,0,0,0,0,1,0,1,3,2,0,2,0,0,0,0,0,0] },
+      { text: '研修・プレゼン・わかりやすく伝えること', job: [1,1,0,1,0,2,0,1,0,3,0,0,0,0,0,2,1,0] },
+      { text: '専門知識の深掘り・調査・レポート作成', job: [0,1,1,0,1,0,2,2,0,0,3,0,0,0,0,1,0,0] },
+      { text: '接客・おもてなし・場の雰囲気づくり', job: [2,0,0,0,0,1,0,0,2,0,0,3,0,0,0,0,0,0] },
+      { text: '配送管理・在庫管理・効率化', job: [0,1,0,0,2,0,1,0,0,0,0,0,3,0,0,0,0,1] },
+      { text: '現場作業・生産管理・品質管理', job: [0,0,1,0,2,0,1,0,0,0,0,0,1,2,0,0,0,3] },
+      { text: 'ヘアメイク・スタイリング・美容施術', job: [0,0,0,2,1,0,0,0,1,0,0,1,0,0,3,0,0,0] },
+      { text: 'SNS発信・広報・コンテンツ制作', job: [1,2,1,2,0,0,0,0,0,1,0,0,0,0,0,3,0,0] },
+      { text: 'チームをまとめる・意思決定・リーダーシップ', job: [1,2,0,0,1,2,0,1,0,1,0,0,0,0,0,0,3,0] },
+      { text: '機械整備・修理・メンテナンス', job: [0,0,2,0,2,0,0,0,0,0,1,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q18', axis: 'strength', label: 'プライベートで得意なことは？',
+    choices: [
+      { text: 'アプリ・ガジェット・PCの設定や使いこなし', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: '体を動かすこと・人を運動に誘うこと', job: [1,0,0,0,0,1,0,0,1,1,0,0,1,1,0,0,1,0] },
+      { text: '手作り・DIY・ものを修理・工夫すること', job: [0,1,2,2,1,0,0,0,0,0,1,0,0,0,1,0,0,3] },
+      { text: '写真・動画・音楽で場を盛り上げること', job: [0,1,1,2,0,0,0,0,0,0,0,1,0,0,0,3,0,0] },
+      { text: '調べること・情報収集・まとめること', job: [0,2,0,0,2,0,1,2,0,0,3,0,0,0,0,1,0,0] },
+      { text: '料理・おもてなし・人に食べさせること', job: [0,0,0,1,1,1,0,0,1,0,0,3,0,1,0,0,0,0] },
+      { text: '植物・動物の世話・自然の中で過ごすこと', job: [0,0,0,0,1,2,0,0,2,0,1,0,0,3,0,0,0,0] },
+      { text: '人の話を聞く・相談に乗ること', job: [1,0,0,0,0,2,0,3,2,2,0,1,0,0,0,0,0,0] },
+      { text: '体調管理・健康アドバイス・美容ケア', job: [0,0,0,0,1,1,0,1,3,1,0,0,0,0,2,0,0,0] },
+      { text: 'お得情報を見つける・交渉・節約すること', job: [2,1,0,0,1,0,2,0,0,0,0,0,0,0,0,0,0,0] },
+      { text: '部屋づくり・模様替え・空間を整えること', job: [0,1,0,2,3,0,0,0,0,0,0,0,0,0,1,0,0,1] },
+      { text: 'コーディネート・おしゃれのアドバイス', job: [0,1,0,2,0,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '魚釣り・アウトドア・自然の中での活動', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '旅行計画・地図読み・乗り物の知識', job: [0,2,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '家計管理・投資・お金の計算', job: [0,1,0,0,2,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'SNS・ブログ・人に情報を発信すること', job: [1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0] },
+      { text: '仲間をまとめる・幹事・場を仕切ること', job: [2,1,0,0,1,1,0,0,0,1,0,1,0,0,0,0,3,0] },
+      { text: '壊れたものを直す・機械いじり・整備', job: [0,0,2,0,1,0,0,0,0,0,1,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q19', axis: 'strength', label: '子供の頃、周りから褒められたことは？',
+    choices: [
+      { text: 'パソコン・機械の扱いが上手', job: [0,0,3,1,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: '運動神経がいい・体を動かすのが上手', job: [0,0,0,0,0,0,0,0,1,0,0,0,2,1,0,0,1,0] },
+      { text: '絵が上手・センスがある・器用', job: [0,1,1,3,0,0,0,0,0,0,0,0,0,0,2,1,0,1] },
+      { text: '歌が上手・表現力がある・目立つ', job: [0,0,0,2,0,0,0,0,0,1,0,1,0,0,1,3,0,0] },
+      { text: '頭がいい・記憶力がいい・勉強ができる', job: [0,1,1,0,1,1,2,1,0,2,3,0,0,0,0,0,0,0] },
+      { text: '料理が上手・手先が器用', job: [0,0,1,1,1,0,0,0,1,0,0,2,0,1,1,0,0,2] },
+      { text: '動物や植物の扱いが上手・優しい', job: [0,0,0,0,1,2,0,0,2,1,1,0,0,3,0,0,0,0] },
+      { text: '話を聞くのが上手・友達が多い', job: [2,0,0,0,0,2,0,2,2,1,0,2,0,0,0,0,1,0] },
+      { text: '気が利く・人の気持ちがわかる', job: [1,0,0,0,0,1,0,2,3,1,0,2,0,0,1,0,0,0] },
+      { text: '口が上手・説得力がある・交渉上手', job: [3,1,0,0,0,0,0,1,0,1,0,1,0,0,0,1,1,0] },
+      { text: '空間認識が高い・図工が得意', job: [0,1,2,2,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: 'おしゃれ・センスがいい・スタイリッシュ', job: [0,1,0,2,0,0,0,0,0,0,0,1,0,0,3,1,0,0] },
+      { text: '自然の中での活動が上手・度胸がある', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '方向感覚がいい・乗り物に詳しい', job: [0,1,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '計算が早い・数字に強い', job: [1,0,0,0,2,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: '優しい・思いやりがある・人助けが好き', job: [0,0,0,0,0,2,0,2,3,2,0,1,0,0,0,0,0,0] },
+      { text: '自然・生き物に詳しい・観察眼がある', job: [0,0,0,0,1,0,0,0,0,0,3,0,0,3,0,0,0,0] },
+      { text: 'リーダーシップがある・まとめ上手', job: [1,2,0,0,1,2,0,1,0,1,0,0,0,0,0,0,3,0] }
+    ]
+  },
+  {
+    id: 'Q20', axis: 'strength', label: '仕事で上司・同僚から褒められることは？',
+    choices: [
+      { text: 'ITツールの活用・デジタル化の推進', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1] },
+      { text: 'バイタリティ・行動力・フットワークの軽さ', job: [3,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,1,0] },
+      { text: '資料のわかりやすさ・デザインセンス', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,1,2,0,0] },
+      { text: 'プレゼン力・場を盛り上げる力', job: [1,1,0,1,0,0,0,0,0,2,0,1,0,0,0,3,1,0] },
+      { text: '正確さ・丁寧さ・ミスの少なさ', job: [0,0,0,0,3,0,2,0,0,0,0,0,1,1,0,0,0,1] },
+      { text: '後輩への指導・人を育てる力', job: [0,1,0,0,0,3,0,1,1,2,0,0,0,0,0,0,2,0] },
+      { text: '数字への強さ・分析力・論理的思考', job: [0,1,0,0,1,0,3,2,0,0,2,0,0,0,0,0,0,0] },
+      { text: '問題解決力・改善提案の多さ', job: [1,2,1,0,1,0,1,3,0,0,1,0,0,0,0,0,1,0] },
+      { text: '患者・顧客への寄り添い方・共感力', job: [0,0,0,0,0,1,0,1,3,2,0,2,0,0,0,0,0,0] },
+      { text: '説明のわかりやすさ・教え方の上手さ', job: [1,0,0,0,0,2,0,1,0,3,0,0,0,0,0,2,0,0] },
+      { text: '専門知識の深さ・調査力・探究心', job: [0,1,1,0,1,0,2,1,0,0,3,0,0,0,0,0,0,0] },
+      { text: '接客クオリティ・気配り・ホスピタリティ', job: [2,0,0,0,0,0,0,0,2,0,0,3,0,0,0,0,0,0] },
+      { text: '現場対応力・効率化・段取りの良さ', job: [0,1,0,0,2,0,1,1,0,0,0,0,3,0,0,0,0,1] },
+      { text: '現場作業の丁寧さ・品質へのこだわり', job: [0,0,1,1,2,0,0,0,0,0,1,0,1,2,0,0,0,3] },
+      { text: '美的センス・技術力・仕上がりの良さ', job: [0,0,0,2,1,0,0,0,1,0,0,1,0,0,3,0,0,0] },
+      { text: '発信力・情報共有・コンテンツの質', job: [1,1,0,1,0,0,0,0,0,1,0,0,0,0,0,3,0,0] },
+      { text: 'リーダーシップ・チームをまとめる力', job: [1,2,0,0,0,2,0,1,0,1,0,0,0,0,0,0,3,0] },
+      { text: '機械トラブルへの対応・整備の正確さ', job: [0,0,2,0,2,0,0,0,0,0,1,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q21', axis: 'strength', label: 'プライベートで友人・家族から褒められることは？',
+    choices: [
+      { text: '機械やアプリのトラブル解決が早い', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: '体力がある・アクティブ・健康的', job: [1,0,0,0,0,0,0,0,1,0,0,0,2,1,0,0,1,0] },
+      { text: 'センスがいい・手作りが上手・器用', job: [0,1,1,3,1,0,0,0,0,0,0,0,0,0,2,0,0,1] },
+      { text: '場を盛り上げる・面白い・エンタメ力', job: [1,0,0,1,0,0,0,0,0,1,0,2,0,0,0,3,0,0] },
+      { text: '物知り・調べ上手・知識が豊富', job: [0,1,0,0,1,0,1,2,0,0,3,0,0,0,0,1,0,0] },
+      { text: '料理が美味しい・おもてなしが上手', job: [0,0,0,0,1,1,0,0,1,0,0,3,0,1,0,0,0,0] },
+      { text: '自然・生き物への知識・丁寧な扱い', job: [0,0,0,0,1,1,0,0,1,0,1,0,0,3,0,0,0,0] },
+      { text: '話を聞いてくれる・相談しやすい', job: [1,0,0,0,0,2,0,3,2,2,0,1,0,0,0,0,0,0] },
+      { text: '肌がきれい・健康的・美容の知識がある', job: [0,0,0,0,0,0,0,1,2,0,0,0,0,0,3,0,0,0] },
+      { text: '交渉上手・お得情報に詳しい・節約上手', job: [3,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0] },
+      { text: '部屋がおしゃれ・整理整頓が上手', job: [0,1,0,1,3,0,0,0,0,0,0,0,0,0,1,0,0,0] },
+      { text: 'おしゃれ・コーディネートセンスがある', job: [0,0,0,2,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: 'アウトドア・自然での活動が頼もしい', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '旅行計画が上手・道に詳しい', job: [0,1,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: 'お金の管理が上手・投資に詳しい', job: [0,0,0,0,2,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'SNSが上手・情報発信のセンスがある', job: [1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0] },
+      { text: '仕切り上手・グループをまとめる力がある', job: [2,1,0,0,1,1,0,0,0,1,0,1,0,0,0,0,3,0] },
+      { text: '壊れたものを直せる・器用で頼りになる', job: [0,0,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q22', axis: 'strength', label: '自然とできてしまうことは？',
+    choices: [
+      { text: '複雑な機械やシステムを直感的に使いこなせる', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: '体を動かすこと・リズムに乗ること', job: [0,0,0,0,0,0,0,0,1,0,0,0,2,1,0,0,0,0] },
+      { text: '頭の中でビジュアルをイメージできる', job: [0,2,1,3,0,0,0,0,0,0,1,0,0,0,1,1,0,0] },
+      { text: '人を楽しませる・場の空気を読める', job: [1,0,0,1,0,0,0,0,0,1,0,3,0,0,0,2,0,0] },
+      { text: '情報を素早く整理・分類できる', job: [0,2,0,0,3,0,1,2,0,0,2,0,0,0,0,0,0,0] },
+      { text: '食材を見ただけで料理のイメージができる', job: [0,0,0,1,0,0,0,0,0,0,0,3,0,1,0,0,0,0] },
+      { text: '動植物の変化・異常に気づける', job: [0,0,0,0,1,1,0,0,0,0,2,0,0,3,0,0,0,0] },
+      { text: '初対面でも自然と打ち解けられる', job: [2,0,0,0,0,1,0,1,1,1,0,3,0,0,0,0,0,0] },
+      { text: '人の体調・感情の変化にすぐ気づける', job: [0,0,0,0,0,1,0,2,3,2,0,1,0,0,1,0,0,0] },
+      { text: '相手のニーズを先読みして提案できる', job: [3,1,0,0,0,0,0,2,1,0,0,1,0,0,0,0,1,0] },
+      { text: '空間のバランス・レイアウトがわかる', job: [0,1,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,2] },
+      { text: '色・素材・デザインの組み合わせがわかる', job: [0,0,0,3,0,0,0,0,0,0,0,0,0,0,2,1,0,0] },
+      { text: '自然の中での方向感覚・天候の読み方', job: [0,0,0,0,0,0,0,0,0,0,1,0,2,3,0,0,0,0] },
+      { text: '地図・路線・移動ルートが頭に入る', job: [0,0,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '数字を見ると傾向やパターンがわかる', job: [0,1,0,0,1,0,3,2,0,0,2,0,0,0,0,0,0,0] },
+      { text: '困っている人にすぐ気づいて動ける', job: [0,0,0,0,0,2,0,1,3,2,0,1,0,0,0,0,0,0] },
+      { text: '植物の状態・土の質・天候を読める', job: [0,0,0,0,0,0,0,0,0,0,2,0,0,3,0,0,0,0] },
+      { text: '機械や道具の仕組みを自然と理解できる', job: [0,0,2,0,1,0,0,0,0,0,1,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q23', axis: 'strength', label: '他人を見てイライラしてしまうことは？',
+    choices: [
+      { text: 'ITツールを使いこなせない・非効率な作業をしている', job: [0,0,3,0,2,0,0,0,0,0,1,0,0,0,0,0,0,1] },
+      { text: '体を動かさない・健康管理ができていない', job: [0,0,0,0,0,0,0,0,2,0,0,0,1,1,0,0,0,0] },
+      { text: 'センスがない・見た目に気を使わない', job: [0,0,0,3,0,0,0,0,0,0,0,0,0,0,2,1,0,0] },
+      { text: '空気が読めない・場を盛り下げる', job: [1,0,0,0,0,0,0,0,0,1,0,3,0,0,0,1,0,0] },
+      { text: '調べればわかることを調べない・情報収集が甘い', job: [0,1,0,0,2,0,1,2,0,0,3,0,0,0,0,0,0,0] },
+      { text: '料理が雑・食事を大切にしない', job: [0,0,0,0,1,0,0,0,0,0,0,3,0,1,0,0,0,0] },
+      { text: '自然・生き物を粗末に扱う', job: [0,0,0,0,0,1,0,0,1,0,2,0,0,3,0,0,0,0] },
+      { text: '人の話を聞かない・自分勝手', job: [1,0,0,0,0,2,0,2,2,2,0,1,0,0,0,0,1,0] },
+      { text: '人の気持ちに無頓着・気が利かない', job: [0,0,0,0,0,1,0,1,3,1,0,2,0,0,1,0,0,0] },
+      { text: '交渉・提案が下手・機会を逃す', job: [3,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0] },
+      { text: '整理整頓ができない・空間が雑然としている', job: [0,0,0,0,3,0,0,0,0,0,0,0,0,0,0,0,0,1] },
+      { text: '見た目・清潔感に無頓着', job: [0,0,0,1,0,0,0,0,1,0,0,0,0,0,3,0,0,0] },
+      { text: '自然の中でのマナーが悪い', job: [0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,0] },
+      { text: '道に迷う・段取りが悪い・時間管理ができない', job: [0,0,0,0,2,0,0,1,0,0,0,0,3,0,0,0,0,0] },
+      { text: 'お金の管理が雑・数字に無頓着', job: [0,0,0,0,1,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: '困っている人を見て見ぬふりをする', job: [0,0,0,0,0,2,0,1,3,2,0,1,0,0,0,0,0,0] },
+      { text: '食べ物・自然を粗末にする', job: [0,0,0,0,0,0,0,0,0,0,1,1,0,3,0,0,0,0] },
+      { text: '機械を雑に扱う・壊しても気にしない', job: [0,0,2,0,1,0,0,0,0,0,1,0,0,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q24', axis: 'strength', label: '人から頼まれやすいことは？',
+    choices: [
+      { text: 'パソコン・スマホのトラブル対応・設定', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,2] },
+      { text: '体を動かす作業・引っ越し・力仕事', job: [0,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,1] },
+      { text: 'デザイン・資料作成・写真撮影', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,1,2,0,0] },
+      { text: '司会・盛り上げ役・イベント企画', job: [1,1,0,0,0,0,0,0,0,1,0,2,0,0,0,3,1,0] },
+      { text: '調べ物・情報収集・まとめ作業', job: [0,1,0,0,2,0,1,2,0,0,3,0,0,0,0,0,0,0] },
+      { text: '料理・手料理のふるまい・差し入れ', job: [0,0,0,0,0,0,0,0,1,0,0,3,0,1,0,0,0,0] },
+      { text: '植物・ペットの世話・自然関連の相談', job: [0,0,0,0,0,1,0,0,1,0,2,0,0,3,0,0,0,0] },
+      { text: '悩み相談・話を聞くこと', job: [0,0,0,0,0,2,0,3,2,2,0,0,0,0,0,0,0,0] },
+      { text: '健康・美容・ダイエットのアドバイス', job: [0,0,0,0,0,1,0,1,3,0,0,0,0,0,2,0,0,0] },
+      { text: '交渉・値引き・営業的なお願い事', job: [3,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0] },
+      { text: '部屋の片付け・模様替えのアドバイス', job: [0,0,0,1,3,0,0,0,0,0,0,0,0,0,1,0,0,0] },
+      { text: 'ファッション・コーディネートのアドバイス', job: [0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: 'アウトドア・自然での活動のサポート', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '旅行・移動計画・ルート案内', job: [0,1,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: 'お金の相談・家計管理・投資アドバイス', job: [0,0,0,0,1,0,3,2,0,0,0,0,0,0,0,0,0,0] },
+      { text: '困っている人へのサポート・ボランティア', job: [0,0,0,0,0,2,0,1,3,2,0,0,0,0,0,0,0,0] },
+      { text: '家庭菜園・農作業・自然食のアドバイス', job: [0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,0] },
+      { text: '機械・家電の修理・組み立て', job: [0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q25', axis: 'strength', label: '学生時代に達成したことは？',
+    choices: [
+      { text: 'プログラミング・アプリ・ゲーム制作', job: [0,0,3,1,0,0,0,0,0,0,1,0,0,0,0,0,0,1] },
+      { text: 'スポーツ大会・体育祭での活躍・入賞', job: [0,0,0,0,0,0,0,0,1,0,0,0,1,1,0,0,1,0] },
+      { text: '作品制作・コンテスト入賞・文化祭での展示', job: [0,1,1,3,0,0,0,0,0,0,0,0,0,0,2,1,0,0] },
+      { text: '文化祭・学園祭でのステージ・発表', job: [0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,3,0,0] },
+      { text: '成績向上・資格取得・受験合格', job: [0,1,0,0,2,1,1,0,0,2,3,0,0,0,0,0,0,0] },
+      { text: '調理実習・料理コンテスト・手料理の評価', job: [0,0,0,0,0,0,0,0,0,0,0,3,0,1,1,0,0,0] },
+      { text: '自然観察・環境活動・生き物の飼育', job: [0,0,0,0,0,1,0,0,0,0,2,0,0,3,0,0,0,0] },
+      { text: '生徒会・クラスをまとめた経験', job: [1,1,0,0,1,2,0,1,0,1,0,0,0,0,0,0,3,0] },
+      { text: '保健委員・献血活動・人の体調ケア', job: [0,0,0,0,0,1,0,0,3,2,0,1,0,0,0,0,0,0] },
+      { text: '文化祭での販売・学校内での交渉', job: [3,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0] },
+      { text: '建築模型・工作・空間デザインの作品', job: [0,1,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,2] },
+      { text: 'ファッションショー・おしゃれで注目された', job: [0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '林間学校・自然体験・アウトドア活動', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '旅行計画・修学旅行のリーダー・地図読み', job: [0,1,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '簿記・数学・経済の授業での活躍', job: [0,0,0,0,1,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'ボランティア・福祉施設訪問・地域活動', job: [0,0,0,0,0,2,0,1,2,2,0,0,0,0,0,0,0,0] },
+      { text: '農業体験・畑づくり・自然関連の研究', job: [0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,0] },
+      { text: '部活のキャプテン・生徒会長・リーダー経験', job: [1,2,0,0,1,2,0,1,0,1,0,0,0,0,0,0,3,0] }
+    ]
+  },
+  {
+    id: 'Q26', axis: 'strength', label: '仕事で一番うまくいったことは？',
+    choices: [
+      { text: 'システム導入・業務効率化・DX推進', job: [0,1,3,0,1,0,1,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: '営業目標達成・新規開拓・契約獲得', job: [3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0] },
+      { text: '資料・デザイン制作で高評価を得た', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,1,2,0,0] },
+      { text: 'プレゼン・イベント・発表で成功した', job: [1,1,0,1,0,0,0,0,0,1,0,1,0,0,0,3,1,0] },
+      { text: '業務改善・マニュアル整備・正確な処理', job: [0,0,0,0,3,0,1,1,0,0,0,0,1,0,0,0,0,0] },
+      { text: '社内研修・勉強会・ナレッジ共有', job: [0,1,0,0,0,3,0,0,0,2,0,0,0,0,0,1,1,0] },
+      { text: 'データ分析・レポート作成・予算管理', job: [0,1,1,0,1,0,3,1,0,0,2,0,0,0,0,0,0,0] },
+      { text: '問題解決・クレーム対応・改善提案', job: [1,1,0,0,1,0,0,3,0,0,0,1,0,0,0,0,1,0] },
+      { text: '患者・顧客との信頼関係構築・ケア', job: [0,0,0,0,0,1,0,1,3,2,0,2,0,0,0,0,0,0] },
+      { text: '部下・後輩の育成・チームの成長', job: [0,1,0,0,0,3,0,0,0,2,0,0,0,0,0,0,2,0] },
+      { text: '専門知識を活かした提案・調査・研究', job: [0,1,0,0,0,0,1,2,0,0,3,0,0,0,0,1,0,0] },
+      { text: '顧客満足度向上・接客品質の改善', job: [2,0,0,0,0,0,0,1,1,0,0,3,0,0,0,0,0,0] },
+      { text: '物流効率化・コスト削減・納期改善', job: [0,1,0,0,2,0,1,1,0,0,0,0,3,0,0,0,0,0] },
+      { text: '生産性向上・品質改善・現場改善', job: [0,0,1,0,2,0,1,1,0,0,0,0,1,2,0,0,0,3] },
+      { text: '美容技術の向上・顧客リピート率向上', job: [0,0,0,1,0,0,0,0,1,0,0,1,0,0,3,0,0,0] },
+      { text: 'SNS・広報活動・メディア掲載', job: [1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0] },
+      { text: 'チームマネジメント・組織改革・目標達成', job: [1,2,0,0,0,2,0,1,0,1,0,0,0,0,0,0,3,0] },
+      { text: '設備トラブルゼロ・整備精度の向上', job: [0,0,1,0,2,0,0,0,0,0,0,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q27', axis: 'strength', label: 'プライベートで頑張って達成したことは？',
+    choices: [
+      { text: 'アプリ開発・プログラミング習得・資格取得', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0] },
+      { text: 'マラソン完走・筋トレ目標達成・スポーツ大会出場', job: [0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,0,0,0] },
+      { text: '作品制作・個展開催・クリエイティブ活動', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,1,2,0,0] },
+      { text: 'YouTube・SNS・ライブ活動での成果', job: [1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,3,0,0] },
+      { text: '資格・語学・自己啓発の継続', job: [0,1,0,0,1,1,1,0,0,2,3,0,0,0,0,0,0,0] },
+      { text: '料理教室・手料理のレベルアップ・レシピ開発', job: [0,0,0,0,0,0,0,0,0,0,0,3,0,1,1,0,0,0] },
+      { text: '自然保護活動・ペットの飼育・ガーデニング', job: [0,0,0,0,0,1,0,0,1,0,1,0,0,3,0,0,0,0] },
+      { text: '人間関係の改善・コミュニティ立ち上げ', job: [1,0,0,0,0,2,0,1,1,2,0,0,0,0,0,0,1,0] },
+      { text: 'ダイエット成功・健康改善・美容の結果', job: [0,0,0,0,0,0,0,0,2,0,0,0,0,0,3,0,0,0] },
+      { text: 'フリマ・副業・交渉で成果を出した', job: [3,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0] },
+      { text: '部屋のリノベーション・DIY・引っ越し成功', job: [0,0,1,1,2,0,0,0,0,0,0,0,0,0,0,0,0,3] },
+      { text: 'ファッション・コーディネートで注目された', job: [0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '登山・釣り・アウトドアでの目標達成', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '旅行計画の成功・バックパッカー経験', job: [0,1,0,0,1,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '資産形成・投資・貯蓄目標の達成', job: [0,0,0,0,1,0,3,1,0,0,0,0,0,0,0,0,0,0] },
+      { text: 'ボランティア・地域活動・社会貢献の継続', job: [0,0,0,0,0,2,0,1,2,2,0,0,0,0,0,0,0,0] },
+      { text: '家庭菜園・自給自足・農業体験の成功', job: [0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0] },
+      { text: '副業・起業・ビジネスでの成果', job: [2,2,0,0,0,0,1,0,0,0,0,0,0,0,0,0,2,0] }
+    ]
+  },
+  {
+    id: 'Q28', axis: 'strength', label: '周囲10人と比べて得意だと思うことは？',
+    choices: [
+      { text: 'ITツール・デジタル機器の活用', job: [0,0,3,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1] },
+      { text: '体力・運動能力・フィジカルの強さ', job: [0,0,0,0,0,0,0,0,1,0,0,0,2,2,0,0,0,0] },
+      { text: 'センス・デザイン・ビジュアル表現', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,2,1,0,0] },
+      { text: '場を盛り上げる・エンタメ力・話術', job: [1,0,0,0,0,0,0,0,0,1,0,2,0,0,0,3,0,0] },
+      { text: '情報収集・調査・まとめる力', job: [0,2,0,0,2,0,1,2,0,0,3,0,0,0,0,0,0,0] },
+      { text: '料理・食に関する知識・技術', job: [0,0,0,0,0,0,0,0,0,0,0,3,0,1,0,0,0,0] },
+      { text: '自然・生き物への知識・観察眼', job: [0,0,0,0,0,0,0,0,0,0,2,0,0,3,0,0,0,0] },
+      { text: '人の話を聞く・共感する力', job: [1,0,0,0,0,2,0,2,3,2,0,1,0,0,0,0,0,0] },
+      { text: '健康・美容・体のケアの知識', job: [0,0,0,0,0,0,0,0,3,0,0,0,0,0,2,0,0,0] },
+      { text: '交渉・説得・営業力', job: [3,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0] },
+      { text: '空間把握・整理整頓・レイアウト', job: [0,0,0,1,3,0,0,0,0,0,0,0,0,0,0,0,0,1] },
+      { text: 'ファッション・おしゃれセンス', job: [0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: 'アウトドア・自然での行動力', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '方向感覚・段取り・移動計画', job: [0,1,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '数字・計算・お金の管理', job: [0,0,0,0,1,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: '人への思いやり・サポート力', job: [0,0,0,0,0,2,0,1,3,2,0,1,0,0,0,0,0,0] },
+      { text: '農業・自然・食に関する知識', job: [0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,0] },
+      { text: '機械・家電の修理・整備力', job: [0,0,2,0,1,0,0,0,0,0,0,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q29', axis: 'strength', label: '職場で自分にしかできないと思うことは？',
+    choices: [
+      { text: 'システム・ツールの構築・自動化', job: [0,0,3,0,1,0,1,0,0,0,1,0,0,0,0,0,0,1] },
+      { text: '体力勝負の現場対応・フットワーク', job: [1,0,0,0,0,0,0,0,0,0,0,0,2,2,0,0,0,0] },
+      { text: 'デザイン・資料のビジュアル化', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,1,2,0,0] },
+      { text: '場を盛り上げる・発表・プレゼン', job: [1,1,0,0,0,0,0,0,0,1,0,1,0,0,0,3,1,0] },
+      { text: '素早い情報収集・調査・分析', job: [0,1,0,0,1,0,2,2,0,0,3,0,0,0,0,0,0,0] },
+      { text: '食・料理に関する提案・知識', job: [0,0,0,0,0,0,0,0,0,0,0,3,0,1,0,0,0,0] },
+      { text: '自然・環境に関する専門知識', job: [0,0,0,0,0,0,0,0,0,0,2,0,0,3,0,0,0,0] },
+      { text: 'チームの雰囲気づくり・相談役', job: [1,0,0,0,0,2,0,2,2,2,0,0,0,0,0,0,1,0] },
+      { text: '健康・美容・ケアの専門知識', job: [0,0,0,0,0,0,0,0,3,0,0,0,0,0,2,0,0,0] },
+      { text: '顧客への提案・交渉・クロージング', job: [3,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0] },
+      { text: '整理整頓・空間づくり・効率化', job: [0,0,0,0,3,0,0,0,0,0,0,0,1,0,0,0,0,1] },
+      { text: 'センスを活かしたスタイリング・演出', job: [0,0,0,2,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: '自然・現場での行動力・体験知識', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '移動・物流・ルート最適化', job: [0,0,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '数字・データ・財務の管理', job: [0,0,0,0,1,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: '困っている人へのサポート・傾聴', job: [0,0,0,0,0,2,0,1,3,2,0,1,0,0,0,0,0,0] },
+      { text: '農業・食・自然に関する現場知識', job: [0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,0] },
+      { text: '機械・設備のトラブル対応・整備', job: [0,0,2,0,1,0,0,0,0,0,0,0,1,0,0,0,0,3] }
+    ]
+  },
+  {
+    id: 'Q30', axis: 'strength', label: '初対面の人に「すごい」と言われることは？',
+    choices: [
+      { text: 'ITやデジタルの知識・最新技術への詳しさ', job: [0,0,3,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0] },
+      { text: '体力・運動神経・アクティブさ', job: [0,0,0,0,0,0,0,0,1,0,0,0,2,2,0,0,0,0] },
+      { text: 'デザインセンス・クリエイティブな発想', job: [0,1,0,3,0,0,0,0,0,0,0,0,0,0,1,1,0,0] },
+      { text: 'トーク力・場の盛り上げ方・面白さ', job: [1,0,0,0,0,0,0,0,0,1,0,3,0,0,0,2,0,0] },
+      { text: '知識の広さ・調べる力・記憶力', job: [0,1,0,0,1,0,1,1,0,0,3,0,0,0,0,0,0,0] },
+      { text: '料理の腕前・食への造詣の深さ', job: [0,0,0,0,0,0,0,0,0,0,0,3,0,1,1,0,0,0] },
+      { text: '自然・生き物への知識・愛情', job: [0,0,0,0,0,1,0,0,1,0,2,0,0,3,0,0,0,0] },
+      { text: '聞き上手・共感力・懐の深さ', job: [1,0,0,0,0,2,0,2,3,2,0,1,0,0,0,0,0,0] },
+      { text: '美容・健康管理・生活習慣の良さ', job: [0,0,0,0,0,0,0,0,2,0,0,0,0,0,3,0,0,0] },
+      { text: '交渉力・説得力・度胸のよさ', job: [3,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0] },
+      { text: '整理整頓・空間づくりのセンス', job: [0,0,0,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0] },
+      { text: 'おしゃれ・ファッションセンス', job: [0,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,0,0] },
+      { text: 'アウトドア・自然での経験・度胸', job: [0,0,0,0,0,0,0,0,0,0,1,0,1,3,0,0,0,0] },
+      { text: '旅行・移動の知識・段取りの良さ', job: [0,1,0,0,2,0,0,0,0,0,0,0,3,0,0,0,0,0] },
+      { text: '数字の強さ・お金の知識・投資経験', job: [0,0,0,0,1,0,3,1,0,0,1,0,0,0,0,0,0,0] },
+      { text: '思いやり・人への優しさ・サポート力', job: [0,0,0,0,0,2,0,1,3,2,0,1,0,0,0,0,0,0] },
+      { text: '農業・自然食・環境への知識', job: [0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,0] },
+      { text: 'リーダーシップ・決断力・カリスマ性', job: [1,2,0,0,0,1,0,1,0,1,0,0,0,0,0,0,3,0] }
+    ]
+  },
+
+  // ── 価値観（Q31〜Q45）──
+  {
+    id: 'Q31', axis: 'value', label: 'どんな社会課題に関心がありますか？',
+    choices: [
+      { text: 'テクノロジー・イノベーションで社会を変えたい', company: [3,1,1,0,2,0,1] },
+      { text: '人の命・健康・福祉を守りたい', company: [1,1,2,1,0,2,3] },
+      { text: '教育・次世代の可能性を広げたい', company: [1,1,1,1,0,2,3] },
+      { text: '環境・自然・地球を守りたい', company: [2,0,1,1,0,1,3] },
+      { text: '地域・コミュニティを元気にしたい', company: [0,0,2,3,0,2,2] },
+      { text: '経済・産業・日本を強くしたい', company: [2,3,1,0,2,1,0] },
+      { text: '格差・不平等・弱者を支援したい', company: [1,0,1,1,0,2,3] }
+    ]
+  },
+  {
+    id: 'Q32', axis: 'value', label: 'どんなミッションを持つ会社に惹かれますか？',
+    choices: [
+      { text: '世界を変える・革新を起こす会社', company: [3,1,0,0,2,0,1] },
+      { text: '人の命・生活を守り支える会社', company: [1,1,2,1,0,2,3] },
+      { text: '次世代・教育に貢献する会社', company: [1,1,2,1,0,2,3] },
+      { text: '環境・自然を守る会社', company: [2,0,1,1,0,1,3] },
+      { text: '地域・まちを元気にする会社', company: [0,0,2,3,0,2,2] },
+      { text: '日本経済・産業を強くする会社', company: [1,3,2,0,2,1,0] },
+      { text: '格差をなくし公平な社会を作る会社', company: [1,0,1,1,0,2,3] }
+    ]
+  },
+  {
+    id: 'Q33', axis: 'value', label: '自分の使命は何だと思いますか？',
+    choices: [
+      { text: '革新・挑戦で世界を変えること', company: [3,1,0,0,2,0,1] },
+      { text: '人を癒し・守り・支えること', company: [0,1,2,2,0,2,3] },
+      { text: '人を育て・導き・教えること', company: [1,1,2,1,0,2,2] },
+      { text: '自然・環境を次世代に残すこと', company: [1,0,1,2,0,1,3] },
+      { text: '地域・コミュニティを豊かにすること', company: [0,0,2,3,0,2,2] },
+      { text: '経済・産業を強くすること', company: [2,3,1,0,2,1,0] },
+      { text: '格差をなくし誰もが幸せな社会を作ること', company: [1,0,1,1,0,2,3] }
+    ]
+  },
+  {
+    id: 'Q34', axis: 'value', label: '仕事とプライベートのバランスはどうしたいですか？',
+    choices: [
+      { text: '仕事最優先・とにかく仕事に没頭したい', company: [3,1,1,0,3,0,1] },
+      { text: '仕事8割・プライベート2割', company: [2,2,1,0,2,0,1] },
+      { text: '仕事6割・プライベート4割', company: [1,2,3,1,1,1,1] },
+      { text: '仕事とプライベートを完全に分けたい', company: [0,2,1,2,0,3,1] },
+      { text: 'プライベート優先・定時で帰りたい', company: [0,1,1,2,0,3,1] },
+      { text: '状況によって柔軟に変えたい', company: [2,1,2,1,2,1,1] },
+      { text: '副業・複業もやりたい', company: [3,0,1,2,1,0,1] }
+    ]
+  },
+  {
+    id: 'Q35', axis: 'value', label: '収入と時間どちらを優先しますか？',
+    choices: [
+      { text: '収入最優先・高ければ高いほどいい', company: [2,2,0,0,3,0,0] },
+      { text: '収入重視だが時間もある程度確保したい', company: [2,2,1,0,3,0,0] },
+      { text: '収入と時間のバランスを取りたい', company: [1,2,3,1,1,1,1] },
+      { text: '時間重視だが収入もある程度確保したい', company: [1,1,2,2,0,2,1] },
+      { text: '時間最優先・収入は最低限でいい', company: [0,0,1,2,0,3,2] },
+      { text: '収入よりやりがい・ミッションを優先したい', company: [2,0,1,1,0,1,3] },
+      { text: '今は収入より成長・経験を積みたい', company: [3,1,1,0,2,0,1] }
+    ]
+  },
+  {
+    id: 'Q37', axis: 'value', label: 'どんなペースで仕事をしたいですか？',
+    choices: [
+      { text: 'とにかく速く・スピード最優先', company: [3,1,1,0,3,0,0] },
+      { text: '速いが品質も大切にしたい', company: [2,2,2,0,2,0,0] },
+      { text: 'スピードと丁寧さのバランスを取りたい', company: [1,2,3,1,1,1,1] },
+      { text: '丁寧さ重視・確実にこなしたい', company: [0,2,2,2,0,3,1] },
+      { text: '自分のペースで進めたい', company: [1,0,1,3,0,2,1] },
+      { text: 'チームに合わせて柔軟に対応したい', company: [1,2,2,2,1,1,2] },
+      { text: '状況によって使い分けたい', company: [2,1,2,1,2,1,1] }
+    ]
+  },
+  {
+    id: 'Q38', axis: 'value', label: '新しいことへの挑戦と安定どちらを好みますか？',
+    choices: [
+      { text: '常に新しいことに挑戦したい・変化大歓迎', company: [3,1,1,0,3,0,1] },
+      { text: '挑戦重視だが一定の安定も欲しい', company: [2,2,2,0,2,0,1] },
+      { text: '挑戦と安定のバランスを取りたい', company: [1,2,3,1,1,1,1] },
+      { text: '安定重視だが新しいことも少し取り入れたい', company: [0,2,2,2,0,2,1] },
+      { text: 'とにかく安定・変化は最小限がいい', company: [0,1,1,2,0,3,0] },
+      { text: '組織の方針に従って柔軟に対応したい', company: [0,2,2,2,1,2,1] },
+      { text: '今は安定より成長・経験を積みたい', company: [3,1,1,0,2,0,1] }
+    ]
+  },
+  {
+    id: 'Q39', axis: 'value', label: 'どんな職場の人間関係を好みますか？',
+    choices: [
+      { text: '仕事仲間として適度な距離感がいい', company: [2,2,1,0,3,1,0] },
+      { text: 'チームで助け合える仲間がいい', company: [2,1,2,1,1,1,2] },
+      { text: '家族のようにアットホームな関係がいい', company: [0,0,2,3,0,1,2] },
+      { text: '仲良しグループのようにワイワイしたい', company: [1,0,2,3,0,0,2] },
+      { text: '必要最低限のコミュニケーションでいい', company: [1,1,1,0,3,1,0] },
+      { text: 'メンターや上司との深い関係を大切にしたい', company: [2,2,1,1,1,1,1] },
+      { text: '国籍・年齢関係なくフラットな関係がいい', company: [3,1,1,0,3,0,1] }
+    ]
+  },
+  {
+    id: 'Q40', axis: 'value', label: '仕事の裁量はどちらが好みですか？',
+    choices: [
+      { text: '全て自分で決めたい・完全な裁量が欲しい', company: [3,0,1,2,2,0,1] },
+      { text: '大きな裁量を持ちながらチームと進めたい', company: [3,1,1,1,2,0,1] },
+      { text: 'ある程度の裁量を持ちつつ上司に相談したい', company: [1,2,3,1,1,1,1] },
+      { text: '役割分担が明確で自分の範囲をこなしたい', company: [0,2,2,1,1,2,1] },
+      { text: '細分化された仕事を正確にこなしたい', company: [0,2,1,1,0,3,0] },
+      { text: '状況によって裁量の大きさを変えたい', company: [2,1,2,1,2,1,1] },
+      { text: '指示に従いながら着実に仕事をしたい', company: [0,1,2,2,0,3,1] }
+    ]
+  },
+  {
+    id: 'Q41', axis: 'value', label: 'どんな環境・マネジメントの時に力を発揮できましたか？',
+    choices: [
+      { text: '自由に任せてもらえる環境', company: [3,0,1,2,2,0,1] },
+      { text: '目標だけ与えられてプロセスは自由な環境', company: [3,1,1,1,2,0,1] },
+      { text: '上司と定期的に相談しながら進める環境', company: [1,2,3,1,1,1,1] },
+      { text: 'チームで協力して進める環境', company: [1,1,2,2,0,1,3] },
+      { text: '明確なルール・手順がある環境', company: [0,2,1,1,0,3,0] },
+      { text: '厳しくも成長させてくれる上司がいる環境', company: [2,2,1,0,3,0,0] },
+      { text: '穏やかで安心して働ける環境', company: [0,1,2,3,0,2,2] }
+    ]
+  },
+  {
+    id: 'Q42', axis: 'value', label: 'キャリアで一番大切にしたいことは？',
+    choices: [
+      { text: '専門性を極めてスペシャリストになりたい', company: [1,2,2,0,3,1,0] },
+      { text: '幅広い経験を積んでゼネラリストになりたい', company: [2,2,3,1,1,1,0] },
+      { text: '管理職・リーダーとして人を率いたい', company: [1,3,2,0,2,1,0] },
+      { text: '社会貢献・ミッションのために働きたい', company: [1,0,1,1,0,2,3] },
+      { text: '安定したキャリアを長く続けたい', company: [0,2,2,2,0,3,0] },
+      { text: 'グローバルに活躍できるキャリアを築きたい', company: [2,2,0,0,3,0,1] },
+      { text: '地域・コミュニティに根ざしたキャリアを歩みたい', company: [0,0,2,3,0,2,2] }
+    ]
+  },
+  {
+    id: 'Q43', axis: 'value', label: 'どんな評価のされ方が嬉しいですか？',
+    choices: [
+      { text: '数字・結果だけで公平に評価されたい', company: [2,2,1,0,3,0,0] },
+      { text: 'プロセスと結果の両方を評価されたい', company: [1,2,3,1,1,1,1] },
+      { text: 'チームへの貢献度を評価されたい', company: [1,1,2,2,0,1,3] },
+      { text: '専門性・スキルを評価されたい', company: [2,2,1,0,3,1,0] },
+      { text: '年功序列・経験年数で評価されたい', company: [0,2,1,2,0,3,0] },
+      { text: '社会への貢献度・ミッションで評価されたい', company: [1,0,1,1,0,2,3] },
+      { text: '上司・仲間からの信頼で評価されたい', company: [1,1,2,3,0,1,2] }
+    ]
+  },
+  {
+    id: 'Q44', axis: 'value', label: '報酬で一番重視するものは？',
+    choices: [
+      { text: '基本給・とにかく高い給料がいい', company: [1,2,1,0,3,0,0] },
+      { text: 'インセンティブ・成果報酬で稼ぎたい', company: [3,1,1,0,3,0,0] },
+      { text: '基本給＋ボーナスのバランスがいい', company: [1,3,2,0,2,1,0] },
+      { text: '福利厚生・社会保障が充実していてほしい', company: [0,2,2,1,0,3,1] },
+      { text: '給料より安定・長く働ける環境がいい', company: [0,2,2,2,0,3,0] },
+      { text: '給料よりやりがい・ミッションを重視したい', company: [2,0,1,1,0,1,3] },
+      { text: '給料より成長・スキルアップ環境を重視したい', company: [3,1,1,0,2,0,1] }
+    ]
+  },
+  {
+    id: 'Q45', axis: 'value', label: '5年後どんな自分になっていたいですか？',
+    choices: [
+      { text: '業界トップレベルのスペシャリスト', company: [2,2,1,0,3,1,0] },
+      { text: 'チームを率いるリーダー・マネージャー', company: [2,3,2,0,2,1,0] },
+      { text: '社会に貢献できる仕事をしている自分', company: [1,0,1,1,0,2,3] },
+      { text: '安定した生活・キャリアを築いている自分', company: [0,2,2,2,0,3,0] },
+      { text: 'グローバルに活躍している自分', company: [2,2,0,0,3,0,1] },
+      { text: '地域・コミュニティに貢献している自分', company: [0,0,2,3,0,2,2] },
+      { text: '新しいビジネス・プロジェクトを立ち上げている自分', company: [3,1,1,0,2,0,1] }
+    ]
+  }
+];
+
+// 無料版の質問（15問）: Q1,Q3,Q5,Q7,Q9,Q16,Q18,Q20,Q22,Q24,Q31,Q34,Q38,Q42,Q45
+const FREE_QUESTION_IDS = ['Q1','Q3','Q5','Q7','Q9','Q16','Q18','Q20','Q22','Q24','Q31','Q34','Q38','Q42','Q45'];
+
+
+// ── 年収データ（doda 2025年版・30代平均）──
+// 出典：転職サービス「doda」平均年収ランキング2025
+
+const SALARY_DATA = {
+  // 業界別30代平均年収（万円）
+  industry: {
+    'IT・情報通信':    { avg: 540, range: '450〜700' },
+    '医療・福祉':      { avg: 420, range: '350〜550' },
+    '金融・保険':      { avg: 545, range: '450〜750' },
+    '教育':           { avg: 400, range: '330〜500' },
+    '製造・メーカー':  { avg: 480, range: '400〜600' },
+    '小売・卸売':      { avg: 420, range: '350〜520' },
+    '不動産・建設':    { avg: 529, range: '420〜650' },
+    '美容・ファッション':{ avg: 380, range: '300〜480' },
+    'エンタメ・メディア':{ avg: 430, range: '350〜560' },
+    'コンサルティング': { avg: 698, range: '500〜1000' },
+    '公務員・行政':    { avg: 480, range: '400〜580' },
+    '農業・林業':      { avg: 350, range: '280〜420' },
+    '漁業':           { avg: 340, range: '270〜410' },
+    '宿泊・飲食':      { avg: 395, range: '300〜480' },
+    '運輸・物流':      { avg: 430, range: '360〜520' },
+  },
+
+  // 職種別年収補正（万円）※業界年収に加算
+  job: {
+    '売る・提案する・交渉する':       +30,
+    '企画する・考える・戦略を立てる': +80,
+    '作る・開発する・プログラムする': +60,
+    'デザインする・表現する・描く':   -10,
+    '管理する・整理する・正確にこなす':-40,
+    '育てる・教える・引き出す':       -20,
+    '数字を扱う・分析する・計算する': +50,
+    '問題を解決する・アドバイスする': +100,
+    '癒す・支える・ケアする':         -30,
+    '教える・伝える・導く':           -20,
+    '研究する・深く追求する・発見する':+20,
+    'もてなす・接客する・気配りする': -50,
+    '運ぶ・動かす・効率化する':       -30,
+    '育てる・収穫する・自然と関わる': -60,
+    '美しくする・スタイリングする':   -40,
+    '発信する・伝える・表現する':     -10,
+    'まとめる・決断する・率いる':     +120,
+    '修理する・整備する・メンテナンスする': -20,
+  },
+
+  // 会社タイプ別年収補正（万円）
+  company: {
+    'ベンチャー・スタートアップ': -20,
+    '大手・上場企業':             +100,
+    '中堅・中小企業':             0,
+    '零細・家族経営':             -80,
+    '外資系企業':                 +150,
+    '公務員・行政':               0,
+    'NPO・社会貢献団体':          -100,
+  }
+};
+
+// 動詞→職種名の変換テーブル
+const JOB_NAMES = {
+  '売る・提案する・交渉する':          '営業・販売職',
+  '企画する・考える・戦略を立てる':    '企画・マーケティング職',
+  '作る・開発する・プログラムする':    'ITエンジニア・開発職',
+  'デザインする・表現する・描く':      'デザイナー・クリエイター職',
+  '管理する・整理する・正確にこなす':  '事務・管理職',
+  '育てる・教える・引き出す':          '人事・採用・教育職',
+  '数字を扱う・分析する・計算する':    '経理・財務・分析職',
+  '問題を解決する・アドバイスする':    'コンサルタント・アドバイザー職',
+  '癒す・支える・ケアする':            '医療・福祉・介護職',
+  '教える・伝える・導く':              '教育・指導者職',
+  '研究する・深く追求する・発見する':  '研究・専門職',
+  'もてなす・接客する・気配りする':    '接客・サービス職',
+  '運ぶ・動かす・効率化する':          '物流・運輸職',
+  '育てる・収穫する・自然と関わる':    '農業・漁業・生産職',
+  '美しくする・スタイリングする':      '美容・ファッション職',
+  '発信する・伝える・表現する':        'メディア・広報職',
+  'まとめる・決断する・率いる':        '管理職・経営職',
+  '修理する・整備する・メンテナンスする': '技術・整備職',
+};
+
+// ── 人生グラフ質問データ ──
+// 各区間：充実度スライダー(-10〜+10) + 理由選択 + 判断基準選択
+
+const LIFE_PERIODS = [
+  { id: 'LP1', label: '幼少期', age: '0〜6歳' },
+  { id: 'LP2', label: '小学校低学年', age: '7〜9歳' },
+  { id: 'LP3', label: '小学校高学年', age: '10〜12歳' },
+  { id: 'LP4', label: '中学生', age: '13〜15歳' },
+  { id: 'LP5', label: '高校生', age: '16〜18歳' },
+  { id: 'LP6', label: '大学・専門学校', age: '19〜22歳' },
+  { id: 'LP7', label: '社会人1〜3年目', age: '23〜25歳' },
+  { id: 'LP8', label: '社会人4〜6年目', age: '26〜28歳' },
+  { id: 'LP9', label: '社会人7〜9年目', age: '29〜31歳' },
+  { id: 'LP10', label: '現在', age: '32歳〜' },
+];
+
+// Q②：充実・下降の主な理由
+// positiveIndustry/positiveJob: 上昇時の加算ポイント
+// negativeIndustry/negativeJob: 下降時の減算ポイント（ミスマッチにも加算）
+const LIFE_REASONS = [
+  {
+    id: 'LR1',
+    text: '人と関わることが楽しかった・辛かった',
+    positiveIndustry: [0,2,0,2,0,1,0,0,1,2,1,0,0,1,0],
+    positiveJob:      [2,1,0,0,0,2,0,1,2,2,0,3,0,0,0,1,1,0],
+    negativeIndustry: [0,2,0,2,0,1,0,0,1,2,1,0,0,1,0],
+    negativeJob:      [2,1,0,0,0,2,0,1,2,2,0,3,0,0,0,1,1,0],
+    mismatch: '接客・営業・チームワーク重視の環境',
+  },
+  {
+    id: 'LR2',
+    text: '勉強・学びが面白かった・苦手だった',
+    positiveIndustry: [2,1,1,2,0,0,0,0,0,2,1,0,0,0,0],
+    positiveJob:      [0,2,1,0,1,1,1,2,0,2,3,0,0,0,0,1,0,0],
+    negativeIndustry: [2,1,1,2,0,0,0,0,0,2,1,0,0,0,0],
+    negativeJob:      [0,2,1,0,1,1,1,2,0,2,3,0,0,0,0,1,0,0],
+    mismatch: '専門職・研究職・教育系の環境',
+  },
+  {
+    id: 'LR3',
+    text: '体を動かすことが充実していた・できなかった',
+    positiveIndustry: [0,2,0,0,1,0,0,1,1,0,0,1,1,0,1],
+    positiveJob:      [1,0,0,0,0,0,0,0,1,0,0,0,2,1,0,0,1,1],
+    negativeIndustry: [0,2,0,0,1,0,0,1,1,0,0,1,1,0,1],
+    negativeJob:      [1,0,0,0,0,0,0,0,1,0,0,0,2,1,0,0,1,1],
+    mismatch: 'デスクワーク中心・運動不足になる環境',
+  },
+  {
+    id: 'LR4',
+    text: '創作・表現活動が楽しかった・できなかった',
+    positiveIndustry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0],
+    positiveJob:      [0,2,1,3,0,0,0,0,0,1,1,0,0,0,1,3,0,0],
+    negativeIndustry: [1,0,0,0,1,0,1,2,3,0,0,0,0,0,0],
+    negativeJob:      [0,2,1,3,0,0,0,0,0,1,1,0,0,0,1,3,0,0],
+    mismatch: 'クリエイティブ活動が制限される環境',
+  },
+  {
+    id: 'LR5',
+    text: 'お金・生活の安定があった・なかった',
+    positiveIndustry: [1,0,3,0,0,1,2,0,0,1,0,0,0,0,0],
+    positiveJob:      [1,1,0,0,2,0,3,1,0,0,1,0,0,0,0,0,1,0],
+    negativeIndustry: [1,0,3,0,0,1,2,0,0,1,0,0,0,0,0],
+    negativeJob:      [1,1,0,0,2,0,3,1,0,0,1,0,0,0,0,0,1,0],
+    mismatch: 'NPO・零細・給与が低い環境',
+  },
+  {
+    id: 'LR6',
+    text: '仕事・役割にやりがいがあった・なかった',
+    positiveIndustry: [2,1,1,1,1,1,1,1,1,2,1,0,0,1,1],
+    positiveJob:      [1,2,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2,0],
+    negativeIndustry: [2,1,1,1,1,1,1,1,1,2,1,0,0,1,1],
+    negativeJob:      [1,2,1,1,1,1,1,2,1,1,1,1,1,1,1,1,2,0],
+    mismatch: '裁量がなく指示待ちになる環境',
+  },
+  {
+    id: 'LR7',
+    text: '自然・環境と関われていた・いなかった',
+    positiveIndustry: [0,1,0,0,0,0,0,0,0,0,1,3,2,0,0],
+    positiveJob:      [0,0,0,0,0,1,0,0,1,0,1,0,0,3,0,0,0,0],
+    negativeIndustry: [0,1,0,0,0,0,0,0,0,0,1,3,2,0,0],
+    negativeJob:      [0,0,0,0,0,1,0,0,1,0,1,0,0,3,0,0,0,0],
+    mismatch: '屋内・都市型・自然と無縁の環境',
+  },
+  {
+    id: 'LR8',
+    text: '家族・人間関係が良かった・辛かった',
+    positiveIndustry: [0,2,0,1,0,0,0,1,0,1,1,0,0,1,0],
+    positiveJob:      [1,0,0,0,0,2,0,1,2,2,0,1,0,0,1,0,1,0],
+    negativeIndustry: [0,2,0,1,0,0,0,1,0,1,1,0,0,1,0],
+    negativeJob:      [1,0,0,0,0,2,0,1,2,2,0,1,0,0,1,0,1,0],
+    mismatch: '人間関係が密すぎる環境（零細・家族経営等）',
+  },
+  {
+    id: 'LR9',
+    text: '健康・体調が良かった・悪かった',
+    positiveIndustry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0],
+    positiveJob:      [0,0,0,0,0,1,0,1,3,1,0,0,0,0,2,0,0,0],
+    negativeIndustry: [0,3,0,0,0,0,0,2,0,0,0,0,0,0,0],
+    negativeJob:      [0,0,0,0,0,1,0,1,3,1,0,0,0,0,2,0,0,0],
+    mismatch: '長時間労働・体力消耗が激しい環境',
+  },
+  {
+    id: 'LR10',
+    text: '自由・裁量があった・なかった',
+    positiveIndustry: [2,0,1,0,1,0,1,1,2,2,0,0,0,0,0],
+    positiveJob:      [1,2,1,1,1,0,0,1,0,0,1,0,0,0,0,2,2,0],
+    negativeIndustry: [2,0,1,0,1,0,1,1,2,2,0,0,0,0,0],
+    negativeJob:      [1,2,1,1,1,0,0,1,0,0,1,0,0,0,0,2,2,0],
+    mismatch: '細かいルール・管理が多い環境（公務員・大手等）',
+  },
+];
+
+// Q③：判断基準 → 会社タイプに連動
+// positiveCompany: 上昇時の加算, negativeCompany: 下降時の減算
+const LIFE_CRITERIA = [
+  {
+    id: 'LC1',
+    text: '安定・リスク回避を重視した',
+    positiveCompany: [0,2,1,1,0,3,0],
+    negativeCompany: [0,2,1,1,0,3,0],
+    mismatch: 'ベンチャー・外資系（変化が激しい環境）',
+  },
+  {
+    id: 'LC2',
+    text: '人間関係・周りの期待を重視した',
+    positiveCompany: [0,1,2,3,0,1,1],
+    negativeCompany: [0,1,2,3,0,1,1],
+    mismatch: '個人成果主義・ドライな人間関係の環境',
+  },
+  {
+    id: 'LC3',
+    text: '自分のやりたいことを重視した',
+    positiveCompany: [3,1,1,0,2,0,1],
+    negativeCompany: [3,1,1,0,2,0,1],
+    mismatch: '裁量がなく指示に従うだけの環境',
+  },
+  {
+    id: 'LC4',
+    text: 'お金・収入を重視した',
+    positiveCompany: [1,2,1,0,3,0,0],
+    negativeCompany: [1,2,1,0,3,0,0],
+    mismatch: 'NPO・社会貢献団体（低賃金の環境）',
+  },
+  {
+    id: 'LC5',
+    text: '成長・スキルアップを重視した',
+    positiveCompany: [2,1,2,0,2,0,1],
+    negativeCompany: [2,1,2,0,2,0,1],
+    mismatch: '成長機会が少ない環境（年功序列・停滞した組織）',
+  },
+  {
+    id: 'LC6',
+    text: '社会貢献・意義を重視した',
+    positiveCompany: [1,0,1,1,0,2,3],
+    negativeCompany: [1,0,1,1,0,2,3],
+    mismatch: '利益優先・社会的意義が感じにくい環境',
+  },
+  {
+    id: 'LC7',
+    text: '楽しさ・ワクワク感を重視した',
+    positiveCompany: [3,0,1,1,2,0,1],
+    negativeCompany: [3,0,1,1,2,0,1],
+    mismatch: '単調・ルーティンワーク中心の環境',
+  },
+];
+
+// 充実度による倍率
+function getLifeMultiplier(score) {
+  const abs = Math.abs(score);
+  if(abs >= 8) return 2.0;
+  if(abs >= 4) return 1.0;
+  if(abs >= 1) return 0.5;
+  return 0;
+}
+
+
+// ══ APP STATE ══
+let currentQ = 0;
+let answers = {};
+let lifeScores = {}; // {periodIdx: {score, reason, criteria}}
+let scores = {
+  industry: new Array(15).fill(0),
+  job: new Array(18).fill(0),
+  company: new Array(7).fill(0)
+};
+
+const TOTAL_Q = QUESTIONS.length; // 45問
+const LIFE_TOTAL = LIFE_PERIODS.length * 3; // 30問
+const PHASE_QUIZ = 'quiz';
+const PHASE_LIFE = 'life';
+let phase = PHASE_QUIZ;
+let lifePeriodIdx = 0;
+let lifeStep = 0; // 0=slider, 1=reason, 2=criteria
+
+const AXIS_LABELS = {interest:'🔍 興味・関心', strength:'💪 強み', value:'🧭 価値観'};
+
+// ══ SCREENS ══
+function showScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+function startQuiz() {
+  // 途中保存データがあれば復元確認
+  const saved = loadProgress();
+  if(saved && saved.currentQ > 0) {
+    if(confirm(`前回の続きから再開しますか？
+（Q${saved.currentQ + 1}から）`)) {
+      currentQ = saved.currentQ;
+      answers = saved.answers;
+      scores = saved.scores;
+      phase = saved.phase || PHASE_QUIZ;
+      showScreen('quiz');
+      document.getElementById('btn-next').onclick = nextQuestion;
+      renderQuestion();
+      return;
+    }
+  }
+  clearProgress();
+  showScreen('quiz');
+  document.getElementById('btn-next').onclick = nextQuestion;
+  renderQuestion();
+}
+
+function saveProgress() {
+  try {
+    localStorage.setItem('tsuyomi_progress', JSON.stringify({
+      currentQ, answers, scores, phase,
+      savedAt: Date.now()
+    }));
+  } catch(e) {}
+}
+
+function loadProgress() {
+  try {
+    const data = localStorage.getItem('tsuyomi_progress');
+    if(!data) return null;
+    const parsed = JSON.parse(data);
+    // 24時間以上前のデータは無効
+    if(Date.now() - parsed.savedAt > 86400000) {
+      clearProgress();
+      return null;
+    }
+    return parsed;
+  } catch(e) { return null; }
+}
+
+function clearProgress() {
+  try { localStorage.removeItem('tsuyomi_progress'); } catch(e) {}
+}
+
+// 初期化時に支払い完了チェック
+window.addEventListener('DOMContentLoaded', () => {
+  checkPaidReturn();
+});
+
+// ══ PROGRESS ══
+// フェーズ情報マップ
+const PHASE_INFO = [
+  // Q1-5: 幼少期〜現在の好きなこと
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'あなたの業界適性を分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'時代ごとの興味の変遷を追跡中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'大人になってからの関心を分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'お金の使い方から本音の興味を発見中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'継続している趣味・関心を分析中...'},
+  // Q6-10
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'大きな投資先から本当の価値観を探索中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'無意識の行動パターンを分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'時間の使い方から優先順位を分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'SNSの閲覧傾向から本音を探索中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'10代の原体験から天職の種を発見中...'},
+  // Q11-15
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'20代の課題意識から成長動機を分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'現在の関心から未来の方向性を予測中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'インプットの傾向から知的関心を分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'行きたい場所から価値観を分析中...'},
+  {badge:'phase-interest', label:'🔍 興味・関心', status:'学びたいことから将来の方向性を発見中...'},
+  // Q16-20: 強み
+  {badge:'phase-strength', label:'💪 強み', status:'幼少期から染み付いた才能を発掘中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'仕事での得意パターンを分析中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'プライベートの得意から天性の強みを探索中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'他者評価から気づいていない強みを発見中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'職場での高評価ポイントを分析中...'},
+  // Q21-25
+  {badge:'phase-strength', label:'💪 強み', status:'周囲からの評価で強みの輪郭を描き中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'無意識にできることから才能を発掘中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'イライラの裏側に隠れた強みを分析中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'頼られる理由から強みの核心を探索中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'学生時代の達成体験から強みを発見中...'},
+  // Q26-30
+  {badge:'phase-strength', label:'💪 強み', status:'仕事での成功体験を深く分析中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'プライベートの達成から隠れた能力を探索中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'周囲と比較して突出した強みを特定中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'あなただけの唯一の強みを特定中...'},
+  {badge:'phase-strength', label:'💪 強み', status:'第一印象で伝わる強みを分析中...'},
+  // Q31-35: 価値観
+  {badge:'phase-value', label:'🧭 価値観', status:'社会課題への関心から企業理念の相性を分析中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'惹かれる企業ミッションから文化適性を分析中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'あなたの使命感から最適な組織を探索中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'働き方の好みから最適な環境を分析中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'収入と時間のバランス感覚を分析中...'},
+  // Q36-40
+  {badge:'phase-value', label:'🧭 価値観', status:'仕事のペース感から文化適性を探索中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'挑戦vs安定の好みから最適な組織を分析中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'理想の人間関係から職場文化を特定中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'裁量の好みから最適な役職・組織を分析中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'力を発揮できる環境パターンを分析中...'},
+  // Q41-45
+  {badge:'phase-value', label:'🧭 価値観', status:'キャリア観から最適なキャリアパスを探索中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'評価への考え方から組織文化の相性を分析中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'報酬への価値観から最適な企業を特定中...'},
+  {badge:'phase-value', label:'🧭 価値観', status:'5年後の姿から逆算してキャリアを設計中...'},
+];
+
+function updateProgress() {
+  let done = currentQ;
+  if(phase === PHASE_LIFE) done = QUESTIONS.length + lifePeriodIdx * 3 + lifeStep;
+  const pct = Math.round(done / TOTAL_Q * 100);
+  const remaining = phase === PHASE_LIFE ? LIFE_TOTAL - (lifePeriodIdx * 3 + lifeStep) : TOTAL_Q - done;
+
+  const pfill = document.getElementById('progress-fill');
+  const qcounter = document.getElementById('q-counter');
+  const qremain = document.getElementById('q-remaining');
+  const badge = document.getElementById('q-phase-badge');
+  const status = document.getElementById('q-phase-status');
+  const axisLabel = document.getElementById('q-axis-label');
+
+  if(pfill) pfill.style.width = pct + '%';
+  if(qcounter) qcounter.textContent = `Q${done+1} / ${TOTAL_Q}`;
+  
+  // ブロック別の残り問数表示
+  let remainText = '';
+  if(phase === PHASE_LIFE) {
+    remainText = `人生グラフ 残り${LIFE_PERIODS.length - lifePeriodIdx}区間`;
+  } else if(currentQ < 15) {
+    remainText = `興味・関心ブロック 残り${15 - currentQ}問`;
+  } else if(currentQ < 30) {
+    remainText = `強みブロック 残り${30 - currentQ}問`;
+  } else {
+    remainText = `価値観ブロック 残り${45 - currentQ}問`;
+  }
+  if(qremain) qremain.textContent = remainText;
+
+  if(phase === PHASE_LIFE) {
+    if(badge) { badge.className = 'quiz-phase-badge phase-life'; badge.textContent = '📈 人生グラフ'; }
+    const periodName = LIFE_PERIODS[lifePeriodIdx] ? LIFE_PERIODS[lifePeriodIdx].label : '';
+    const stepLabels = ['充実度を入力中...', '理由を分析中...', '判断基準を分析中...'];
+    if(status) status.textContent = `【${periodName}】の${stepLabels[lifeStep] || ''}`;
+    if(axisLabel) axisLabel.textContent = '📈 人生グラフ';
+  } else if(currentQ < PHASE_INFO.length) {
+    const info = PHASE_INFO[currentQ];
+    if(badge) { badge.className = 'quiz-phase-badge ' + info.badge; badge.textContent = info.label; }
+    if(status) status.textContent = info.status;
+    if(axisLabel) axisLabel.textContent = info.label;
+  }
+}
+
+// ══ QUIZ PHASE ══
+function renderQuestion() {
+  if(phase === PHASE_LIFE) { renderLifeQuestion(); return; }
+
+  const q = QUESTIONS[currentQ];
+  updateProgress();
+
+  const axisClass = q.axis;
+  const axisLabel = AXIS_LABELS[q.axis] || '';
+  const axisLabelEl = document.getElementById('q-axis-label');
+  if(axisLabelEl) axisLabelEl.textContent = axisLabel;
+
+  const sel = answers[currentQ] || [];
+  const maxSel = 3;
+
+  let html = `
+    <div class="quiz-q-label ${axisClass}">${axisLabel}</div>
+    <div class="quiz-q-text">${q.label}</div>
+    <p class="quiz-q-hint">最もあてはまるものを最大3つ選んでください</p>
+    <button onclick="skipQuestion()" style="background:none;border:none;font-size:12px;color:#94a3b8;cursor:pointer;font-family:inherit;padding:0;margin-bottom:8px;text-decoration:underline">該当するものがない場合はスキップ →</button>
+    <div class="choices-grid">
+  `;
+  q.choices.forEach((c, i) => {
+    const isSelected = sel.includes(i);
+    html += `<button class="choice-btn${isSelected?' selected':''}" onclick="toggleChoice(${i})">${c.text}</button>`;
+  });
+  html += '</div>';
+  document.getElementById('quiz-body').innerHTML = html;
+  updateNextBtn();
+}
+
+function toggleChoice(idx) {
+  if(!answers[currentQ]) answers[currentQ] = [];
+  const sel = answers[currentQ];
+  const pos = sel.indexOf(idx);
+  if(pos >= 0) {
+    sel.splice(pos, 1);
+  } else {
+    if(sel.length >= 3) return;
+    sel.push(idx);
+  }
+  renderQuestion();
+}
+
+function updateNextBtn() {
+  let hasAnswer = false;
+  if(phase === PHASE_QUIZ) hasAnswer = (answers[currentQ] || []).length > 0;
+  if(phase === PHASE_LIFE) {
+    const ls = lifeScores[lifePeriodIdx];
+    if(lifeStep === 0) hasAnswer = ls !== undefined && ls.score !== undefined;
+    else if(lifeStep === 1) hasAnswer = ls !== undefined && ls.reason !== undefined;
+    else if(lifeStep === 2) hasAnswer = ls !== undefined && ls.criteria !== undefined;
+  }
+  const btn = document.getElementById('btn-next');
+  const isLast = phase === PHASE_LIFE && lifePeriodIdx === LIFE_PERIODS.length - 1 && lifeStep === 2;
+  btn.textContent = isLast ? '診断結果を見る →' : '次へ →';
+  btn.className = 'btn-next' + (hasAnswer ? ' active' : '');
+}
+
+function addQuizScore() {
+  const q = QUESTIONS[currentQ];
+  const sel = answers[currentQ] || [];
+  sel.forEach(idx => {
+    const c = q.choices[idx];
+    if(q.axis === 'interest' && c.industry) c.industry.forEach((pt,i) => { scores.industry[i] += pt; });
+    else if(q.axis === 'strength' && c.job) c.job.forEach((pt,i) => { scores.job[i] += pt; });
+    else if(q.axis === 'value' && c.company) c.company.forEach((pt,i) => { scores.company[i] += pt; });
+  });
+}
+
+function skipQuestion() {
+  // スキップ：スコアを加算せずに次へ
+  if(phase === PHASE_QUIZ) {
+    currentQ++;
+    if(currentQ >= QUESTIONS.length) {
+      showScreen('loading');
+      animateLoading();
+      setTimeout(showResults, 2800);
+      return;
+    }
+    renderQuestion();
+  } else {
+    nextLifeStep();
+  }
+  window.scrollTo(0,0);
+}
+
+function nextQuestion() {
+  const btn = document.getElementById('btn-next');
+  if(!btn.classList.contains('active')) return;
+
+  if(phase === PHASE_QUIZ) {
+    addQuizScore();
+    currentQ++;
+    if(currentQ >= QUESTIONS.length) {
+      // 45問完了 → ローディングへ
+      clearProgress();
+      showScreen('loading');
+      animateLoading();
+      setTimeout(showResults, 2800);
+      return;
+    }
+    saveProgress();
+    renderQuestion();
+  } else {
+    nextLifeStep();
+  }
+  window.scrollTo(0,0);
+}
+
+// ══ SECTION BREAK ══
+function renderLifeBreak() {
+  document.getElementById('quiz-body').innerHTML = `
+    <div class="section-break">
+      <div class="section-break-icon">📈</div>
+      <div class="section-break-title">次は「人生グラフ」</div>
+      <div class="section-break-text">あなたの人生の各時期を振り返り、充実度・理由・判断基準を入力します。<br>これにより診断の精度がさらに高まります。</div>
+    </div>
+  `;
+  const alEl = document.getElementById('q-axis-label');
+  if(alEl) alEl.textContent = '📈 人生グラフ';
+  updateProgress();
+  const btn = document.getElementById('btn-next');
+  btn.textContent = 'はじめる →';
+  btn.className = 'btn-next active';
+  btn.onclick = () => {
+    document.getElementById('btn-next').onclick = nextQuestion;
+    lifePeriodIdx = 0; lifeStep = 0;
+    if(!lifeScores[0]) lifeScores[0] = {score: 0};
+    renderLifeQuestion();
+    window.scrollTo(0,0);
+  };
+}
+
+// ══ LIFE PHASE ══
+function renderLifeQuestion() {
+  const alEl2 = document.getElementById('q-axis-label');
+  if(alEl2) alEl2.textContent = '📈 人生グラフ';
+  updateProgress();
+
+  const period = LIFE_PERIODS[lifePeriodIdx];
+  // スライダーのデフォルト値0をあらかじめ設定しておく
+  if(!lifeScores[lifePeriodIdx]) lifeScores[lifePeriodIdx] = {score: 0};
+  else if(lifeScores[lifePeriodIdx].score === undefined) lifeScores[lifePeriodIdx].score = 0;
+
+  let html = `
+    <div class="life-period-header">
+      <div class="life-period-age">${period.age}</div>
+      <div class="life-period-name">${period.label}</div>
+    </div>
+  `;
+
+  if(lifeStep === 0) {
+    const curVal = lifeScores[lifePeriodIdx].score !== undefined ? lifeScores[lifePeriodIdx].score : 0;
+    const color = curVal > 0 ? '#2563eb' : curVal < 0 ? '#dc2626' : '#64748b';
+    const label = curVal >= 8 ? '最高！充実していた' : curVal >= 4 ? 'まあまあ良かった' : curVal >= 1 ? '少し良かった' : curVal === 0 ? '普通' : curVal >= -3 ? '少し辛かった' : curVal >= -7 ? '辛かった' : 'どん底だった';
+    html += `
+      <div class="slider-wrap">
+        <div class="slider-label">この時期の充実度は？</div>
+        <div class="slider-score-display">
+          <div class="slider-score-num" id="score-num" style="color:${color}">${curVal > 0 ? '+' : ''}${curVal}</div>
+          <div class="slider-score-text" id="score-label">${label}</div>
+        </div>
+        <input type="range" class="life-slider" id="life-slider" min="-10" max="10" value="${curVal}" oninput="updateSlider(this.value)">
+        <div class="slider-labels"><span>-10 どん底</span><span>0 普通</span><span>+10 最高</span></div>
+      </div>
+    `;
+    // スタイル
+    html += `<style>
+      .life-slider{background:linear-gradient(to right,#dc2626 0%,#f97316 30%,#e2e8f0 50%,#93c5fd 70%,#2563eb 100%)}
+      .life-slider::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;background:#0f172a;border-radius:50%;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
+    </style>`;
+  } else if(lifeStep === 1) {
+    const curScore = lifeScores[lifePeriodIdx].score || 0;
+    const direction = curScore > 0 ? '充実・上昇' : curScore < 0 ? '下降・不調' : '普通';
+    const selReason = lifeScores[lifePeriodIdx].reason;
+    html += `
+      <div class="quiz-q-text" style="margin-bottom:4px">この時期の主な理由は？</div>
+      <p class="quiz-q-hint">充実度に最も影響した要因を1つ選んでください（${direction}の理由）</p>
+      <div class="choices-grid">
+    `;
+    LIFE_REASONS.forEach((r, i) => {
+      html += `<button class="choice-btn${selReason===i?' selected':''}" onclick="selectLifeReason(${i})">${r.text}</button>`;
+    });
+    html += '</div>';
+  } else if(lifeStep === 2) {
+    const selCriteria = lifeScores[lifePeriodIdx].criteria;
+    html += `
+      <div class="quiz-q-text" style="margin-bottom:4px">この時期の判断基準は？</div>
+      <p class="quiz-q-hint">大きな選択をする時、何を重視していましたか？</p>
+      <div class="choices-grid">
+    `;
+    LIFE_CRITERIA.forEach((c, i) => {
+      html += `<button class="choice-btn${selCriteria===i?' selected':''}" onclick="selectLifeCriteria(${i})">${c.text}</button>`;
+    });
+    html += '</div>';
+  }
+
+  document.getElementById('quiz-body').innerHTML = html;
+  updateNextBtn();
+
+  // スライダーの初期スタイル＆ボタン有効化
+  if(lifeStep === 0) {
+    const slider = document.getElementById('life-slider');
+    if(slider) {
+      updateSlider(slider.value);
+    }
+    // step0は常にボタン有効（スライダーはデフォルト値があるため）
+    const btn = document.getElementById('btn-next');
+    if(btn) btn.className = 'btn-next active';
+  }
+}
+
+function updateSlider(val) {
+  const v = parseInt(val);
+  if(!lifeScores[lifePeriodIdx]) lifeScores[lifePeriodIdx] = {};
+  lifeScores[lifePeriodIdx].score = v;
+  const color = v > 0 ? '#2563eb' : v < 0 ? '#dc2626' : '#64748b';
+  const label = v >= 8 ? '最高！充実していた' : v >= 4 ? 'まあまあ良かった' : v >= 1 ? '少し良かった' : v === 0 ? '普通' : v >= -3 ? '少し辛かった' : v >= -7 ? '辛かった' : 'どん底だった';
+  const numEl = document.getElementById('score-num');
+  const labelEl = document.getElementById('score-label');
+  if(numEl) { numEl.textContent = (v > 0 ? '+' : '') + v; numEl.style.color = color; }
+  if(labelEl) labelEl.textContent = label;
+  // スライダーは常にスコアが設定されているので直接ボタンを有効化
+  const btn = document.getElementById('btn-next');
+  if(btn) btn.className = 'btn-next active';
+}
+
+function selectLifeReason(idx) {
+  if(!lifeScores[lifePeriodIdx]) lifeScores[lifePeriodIdx] = {};
+  lifeScores[lifePeriodIdx].reason = idx;
+  renderLifeQuestion();
+}
+
+function selectLifeCriteria(idx) {
+  if(!lifeScores[lifePeriodIdx]) lifeScores[lifePeriodIdx] = {};
+  lifeScores[lifePeriodIdx].criteria = idx;
+  renderLifeQuestion();
+}
+
+function nextLifeStep() {
+  document.getElementById('btn-next').onclick = nextQuestion;
+  lifeStep++;
+  if(lifeStep > 2) {
+    // この区間完了 → スコア加算
+    addLifeScore(lifePeriodIdx);
+    lifePeriodIdx++;
+    lifeStep = 0;
+    if(lifePeriodIdx >= LIFE_PERIODS.length) {
+      // 人生グラフ完了
+      onLifeQuizComplete();
+      return;
+    }
+  }
+  renderLifeQuestion();
+  window.scrollTo(0,0);
+}
+
+function addLifeScore(idx) {
+  const ls = lifeScores[idx];
+  if(!ls) return;
+  const score = ls.score || 0;
+  const multiplier = getLifeMultiplier(score);
+  if(multiplier === 0) return;
+
+  const reasonIdx = ls.reason;
+  const criteriaIdx = ls.criteria;
+  const isPositive = score > 0;
+
+  if(reasonIdx !== undefined) {
+    const reason = LIFE_REASONS[reasonIdx];
+    if(isPositive) {
+      reason.positiveIndustry.forEach((pt,i) => { scores.industry[i] += pt * multiplier; });
+      reason.positiveJob.forEach((pt,i) => { scores.job[i] += pt * multiplier; });
+    } else {
+      reason.negativeIndustry.forEach((pt,i) => { scores.industry[i] -= pt * multiplier; });
+      reason.negativeJob.forEach((pt,i) => { scores.job[i] -= pt * multiplier; });
+    }
+  }
+
+  if(criteriaIdx !== undefined) {
+    const criteria = LIFE_CRITERIA[criteriaIdx];
+    if(isPositive) {
+      criteria.positiveCompany.forEach((pt,i) => { scores.company[i] += pt * multiplier; });
+    } else {
+      criteria.negativeCompany.forEach((pt,i) => { scores.company[i] -= pt * multiplier; });
+    }
+  }
+}
+
+function animateLoading() {
+  setTimeout(() => document.getElementById('ls4').className = 'loading-step done', 500);
+  setTimeout(() => document.getElementById('ls5').className = 'loading-step active', 800);
+  setTimeout(() => document.getElementById('ls5').className = 'loading-step done', 1800);
+}
+
+// ══ RESULTS ══
+function getRanked(arr, labels) {
+  return arr.map((score,i) => ({name:labels[i], score: Math.max(0,score)}))
+    .sort((a,b) => b.score - a.score);
+}
+
+function showResults() {
+  const indRanked = getRanked(scores.industry, INDUSTRIES);
+  const jobRanked = getRanked(scores.job, JOBS);
+  const comRanked = getRanked(scores.company, COMPANY_TYPES);
+
+  window._ranked = {ind:indRanked, job:jobRanked, com:comRanked};
+
+  // FREE RESULT
+  // 強みTOP3を表示
+  const jobMax = jobRanked[0].score || 1;
+  const medals = ['🥇','🥈','🥉'];
+  const top3html = jobRanked.slice(0,3).map((j,i) => {
+    const verb = JOB_VERB_DESC[j.name] ? JOB_VERB_DESC[j.name].verb : JOB_SHORT[j.name] || j.name;
+    const pct = Math.round(j.score/jobMax*100);
+    return `<div class="top1-item" style="margin-bottom:8px">
+      <span class="top1-rank">${medals[i]}</span>
+      <span class="top1-name">${verb}</span>
+      <span class="top1-score">${pct}%</span>
+    </div>`;
+  }).join('') + `<div class="lock-item"><span class="lock-rank">?</span><span class="lock-name">4位以下は完全版で解放</span><span class="lock-icon">🔒</span></div>`;
+  document.getElementById('free-job').innerHTML = top3html;
+
+  const mismatchCount = calcMismatches(indRanked, jobRanked, comRanked).length;
+  document.getElementById('free-mismatch-count').textContent = mismatchCount;
+
+  showScreen('result-free');
+}
+
+function agentClicked() {
+  // エージェントリンクをクリックしたら解放ボタンを表示
+  setTimeout(() => {
+    document.getElementById('agent-complete-btn').style.display = 'block';
+    document.getElementById('agent-waiting').style.display = 'none';
+  }, 1500);
+}
+
+function agentUnlock() {
+  document.getElementById('agent-modal').style.display = 'none';
+  showPaidResult();
+}
+
+function unlockPaid() {
+  const STRIPE_LINK = 'https://buy.stripe.com/5kQ7sD8qjfWE7Xy3249Ve00';
+
+  // 診断データをlocalStorageに一時保存
+  localStorage.setItem('tsuyomi_scores', JSON.stringify(scores));
+  localStorage.setItem('tsuyomi_life', JSON.stringify(lifeScores));
+  localStorage.setItem('tsuyomi_ranked', JSON.stringify(window._ranked));
+
+  // コード入力モーダルを表示
+  showCodeModal();
+  
+  // 別タブでStripeを開く
+  window.open(STRIPE_LINK, '_blank');
+}
+
+function showCodeModal() {
+  const modal = document.getElementById('code-modal');
+  if(modal) modal.style.display = 'block';
+}
+
+function submitCode() {
+  const input = document.getElementById('code-input');
+  const error = document.getElementById('code-error');
+  const code = input ? input.value : '';
+  
+  if(verifyCode(code)) {
+    document.getElementById('code-modal').style.display = 'none';
+    // localStorageからデータを復元
+    try {
+      const savedScores = localStorage.getItem('tsuyomi_scores');
+      const savedLife = localStorage.getItem('tsuyomi_life');
+      const savedRanked = localStorage.getItem('tsuyomi_ranked');
+      if(savedScores && savedRanked) {
+        scores = JSON.parse(savedScores);
+        lifeScores = JSON.parse(savedLife) || {};
+        window._ranked = JSON.parse(savedRanked);
+      }
+    } catch(e) { console.error(e); }
+    showPaidResult();
+  } else {
+    if(error) error.style.display = 'block';
+  }
+}
+
+// コード認証で解放
+const VALID_CODES = ['TSUYOMI-21'];
+
+function checkPaidReturn() {
+  // ?paid=trueによるバイパスは無効化（セキュリティ対策）
+  return false;
+}
+
+function verifyCode(code) {
+  return VALID_CODES.includes(code.trim().toUpperCase());
+}
+
+function showPaidResult() {
+  const {ind, job, com} = window._ranked;
+  document.getElementById('paid-date').textContent = new Date().toLocaleDateString('ja-JP') + ' 診断';
+  showScreen('result-paid');
+  renderRadar(ind, job, com);
+  renderAllRankings(ind, job, com);
+  setupSalarySimulator(ind, job, com);
+  renderMismatch(ind, job, com);
+  renderStrengthText(ind, job, com);
+  renderRoadmap(ind, job, com);
+  renderSelfPR(ind, job, com);
+  renderShareText(ind, job, com);
+}
+
+// ── RADAR ──
+const JOB_SHORT = {
+  '売る・提案する・交渉する':        '提案・交渉',
+  '企画する・考える・戦略を立てる':  '企画・戦略',
+  '作る・開発する・プログラムする':  '開発・実装',
+  'デザインする・表現する・描く':    'デザイン',
+  '管理する・整理する・正確にこなす':'管理・整理',
+  '育てる・教える・引き出す':        '育てる',
+  '数字を扱う・分析する・計算する':  '分析・数値',
+  '問題を解決する・アドバイスする':  '問題解決',
+  '癒す・支える・ケアする':          '癒す・ケア',
+  '教える・伝える・導く':            '伝える・導く',
+  '研究する・深く追求する・発見する':'研究・追求',
+  'もてなす・接客する・気配りする':  'もてなす',
+  '運ぶ・動かす・効率化する':        '効率化',
+  '育てる・収穫する・自然と関わる':  '自然・収穫',
+  '美しくする・スタイリングする':    'スタイリング',
+  '発信する・伝える・表現する':      '発信・表現',
+  'まとめる・決断する・率いる':      'まとめる・率いる',
+  '修理する・整備する・メンテナンスする':'整備・修理',
+};
+
+function renderRadar(ind, job, com) {
+  const ctx = document.getElementById('radar-chart').getContext('2d');
+  if(window.myRadarChart) { window.myRadarChart.destroy(); }
+  const jobMax = job[0].score || 1;
+  const medals = ['🥇','🥈','🥉'];
+  const labels = job.map((j,i) => {
+    const short = JOB_SHORT[j.name] || j.name;
+    return i < 3 ? `${medals[i]} ${short}` : `${i+1}位 ${short}`;
+  });
+  const data = job.map(j => Math.round(j.score / jobMax * 100));
+  const bgColors = job.map((_,i) =>
+    i===0 ? 'rgba(37,99,235,0.85)' :
+    i===1 ? 'rgba(124,58,237,0.75)' :
+    i===2 ? 'rgba(124,58,237,0.55)' :
+    'rgba(203,213,225,0.6)'
+  );
+  const borderColors = job.map((_,i) =>
+    i===0 ? '#2563eb' : i<=2 ? '#7c3aed' : '#cbd5e1'
+  );
+
+  window.myRadarChart = new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels,
+      datasets:[{
+        label:'強みスコア',
+        data,
+        backgroundColor: bgColors,
+        borderColor: borderColors,
+        borderWidth: 1.5,
+        borderRadius: 6,
+      }]
+    },
+    options:{
+      indexAxis:'y',
+      responsive:true,
+      maintainAspectRatio:false,
+      scales:{
+        x:{
+          beginAtZero:true, max:100,
+          grid:{color:'#f1f5f9'},
+          ticks:{font:{size:10}, callback: v => v+'%'},
+          border:{display:false}
+        },
+        y:{
+          grid:{display:false},
+          ticks:{
+            font:{size:10, family:'Noto Sans JP'},
+            color: '#374151',
+          },
+          border:{display:false}
+        }
+      },
+      plugins:{
+        legend:{display:false},
+        tooltip:{callbacks:{label:ctx=>`強みスコア：${ctx.raw}%`}}
+      }
+    }
+  });
+}
+
+// ── LIFE GRAPH ──
+function renderLifeGraph() {
+  const ctx = document.getElementById('life-chart').getContext('2d');
+  if(window.myLifeChart) { window.myLifeChart.destroy(); }
+  const labels = LIFE_PERIODS.map(p => p.age + '\n' + p.label);
+  const data = LIFE_PERIODS.map((_,i) => lifeScores[i] ? lifeScores[i].score || 0 : 0);
+  const pointColors = data.map(v => v >= 6 ? '#2563eb' : v <= -6 ? '#dc2626' : v > 0 ? '#60a5fa' : v < 0 ? '#fca5a5' : '#94a3b8');
+  const pointRadii = data.map(v => Math.abs(v) >= 6 ? 8 : 5);
+
+  window.myLifeChart = new Chart(ctx, {
+    type:'line',
+    data:{
+      labels,
+      datasets:[
+        // 上昇エリア（プラス）
+        {
+          label:'充実度',
+          data,
+          borderColor:'#2563eb',
+          backgroundColor: (ctx) => {
+            const chart = ctx.chart;
+            const {ctx: c, chartArea} = chart;
+            if(!chartArea) return 'rgba(37,99,235,0.08)';
+            const gradient = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+            gradient.addColorStop(0, 'rgba(37,99,235,0.15)');
+            gradient.addColorStop(0.5, 'rgba(148,163,184,0.05)');
+            gradient.addColorStop(1, 'rgba(220,38,38,0.12)');
+            return gradient;
+          },
+          borderWidth:3,
+          tension:0.35,
+          fill:true,
+          pointBackgroundColor:pointColors,
+          pointBorderColor:'white',
+          pointBorderWidth:2,
+          pointRadius:pointRadii,
+          pointHoverRadius:10,
+        }
+      ]
+    },
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      scales:{
+        y:{
+          min:-10, max:10,
+          grid:{
+            color: ctx => ctx.tick.value === 0 ? '#64748b' : '#f1f5f9',
+            lineWidth: ctx => ctx.tick.value === 0 ? 2.5 : 1,
+          },
+          ticks:{
+            font:{size:10},
+            color: ctx => ctx.tick.value > 0 ? '#2563eb' : ctx.tick.value < 0 ? '#dc2626' : '#0f172a',
+            fontWeight: ctx => ctx.tick.value === 0 ? 'bold' : 'normal',
+            callback: v => v === 0 ? '±0 普通' : v > 0 ? '+'+v : v
+          },
+          border:{dash:[4,4]}
+        },
+        x:{
+          grid:{display:false},
+          ticks:{font:{size:9},maxRotation:35,color:'#64748b'}
+        }
+      },
+      plugins:{
+        legend:{display:false},
+        tooltip:{
+          callbacks:{
+            label: ctx => {
+              const v = ctx.raw;
+              const period = LIFE_PERIODS[ctx.dataIndex];
+              const ls = lifeScores[ctx.dataIndex];
+              const scoreLabel = v >= 8?'最高！':v>=4?'充実':v>=1?'まあまあ':v===0?'普通':v>=-3?'少し辛い':v>=-7?'辛い':'どん底';
+              let tip = [`${period.label}：${v>0?'+':''}${v}点（${scoreLabel}）`];
+              if(ls && ls.reason !== undefined) tip.push(`理由：${LIFE_REASONS[ls.reason].text.split('・')[0]}`);
+              return tip;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  // 詳細な一貫性分析
+  const peaks = data.map((v,i)=>({v,i})).filter(x=>x.v>=4).sort((a,b)=>b.v-a.v);
+  const valleys = data.map((v,i)=>({v,i})).filter(x=>x.v<=-4).sort((a,b)=>a.v-b.v);
+  const consistent = data.filter(v=>v>=3).length >= 5;
+
+  let insightParts = [];
+
+  // 充実ピーク分析
+  if(peaks.length > 0) {
+    const topPeak = peaks[0];
+    const peakPeriods = peaks.slice(0,3).map(p=>LIFE_PERIODS[p.i].label).join('・');
+    const peakReason = lifeScores[topPeak.i]?.reason !== undefined ? LIFE_REASONS[lifeScores[topPeak.i].reason].text.split('・')[0] : null;
+    const peakCriteria = lifeScores[topPeak.i]?.criteria !== undefined ? LIFE_CRITERIA[lifeScores[topPeak.i].criteria].text : null;
+    let peakText = `✅ 充実していた時期：${peakPeriods}（最高${topPeak.v > 0?'+':''}${topPeak.v}点）
+`;
+    if(peakReason) peakText += `→ 充実の主な理由：「${peakReason}」
+このような環境・状況にいる時、あなたは自然と力を発揮できています。`;
+    if(peakCriteria) peakText += `
+→ この時期の判断基準：「${peakCriteria}」
+この価値観に沿った選択をした時期に充実感が高まっています。`;
+    insightParts.push(peakText);
+  }
+
+  // 辛かった時期の分析
+  if(valleys.length > 0) {
+    const topValley = valleys[0];
+    const valleyPeriods = valleys.slice(0,3).map(v=>LIFE_PERIODS[v.i].label).join('・');
+    const valleyReason = lifeScores[topValley.i]?.reason !== undefined ? LIFE_REASONS[lifeScores[topValley.i].reason].text.split('・')[0] : null;
+    const valleyCriteria = lifeScores[topValley.i]?.criteria !== undefined ? LIFE_CRITERIA[lifeScores[topValley.i].criteria].text : null;
+    let valleyText = `
+⚠️ 辛かった時期：${valleyPeriods}（最低${topValley.v}点）
+`;
+    if(valleyReason) valleyText += `→ 下降の主な理由：「${valleyReason}」
+これはあなたにとってのエネルギーが下がる条件です。転職先でも同様の状況を避けることが重要です。`;
+    if(valleyCriteria) valleyText += `
+→ この時期の判断基準：「${valleyCriteria}」
+この基準で選択した時期に充実度が下がっています。今後の選択では注意が必要です。`;
+    insightParts.push(valleyText);
+  }
+
+  // 一貫性の分析
+  if(peaks.length > 0 && valleys.length > 0) {
+    const peakReason = lifeScores[peaks[0].i]?.reason;
+    const valleyReason = lifeScores[valleys[0].i]?.reason;
+    if(peakReason !== undefined && valleyReason !== undefined && peakReason !== valleyReason) {
+      insightParts.push(`
+💡 一貫性の発見：
+充実していた時期と辛かった時期で、明確に異なる条件が影響しています。これはあなたの価値観が明確であることを示しています。強み発見カルテの「人生の取扱説明書」に詳細を反映しています。`);
+    }
+  }
+
+  if(insightParts.length === 0) {
+    insightParts.push('あなたの人生は比較的安定した充実度を保っています。大きな浮き沈みが少なく、環境への適応力が高いことを示しています。');
+  }
+
+  // 段落分けして表示
+  const insightText = insightParts.join('');
+  const insightEl = document.getElementById('life-insight');
+  insightEl.innerHTML = insightText
+    .split('\n')
+    .map(line => {
+      if(line.startsWith('✅')) return `<div style="margin-bottom:6px;font-weight:700;color:#059669">${line}</div>`;
+      if(line.startsWith('⚠️')) return `<div style="margin-top:10px;margin-bottom:6px;font-weight:700;color:#dc2626">${line}</div>`;
+      if(line.startsWith('💡')) return `<div style="margin-top:10px;margin-bottom:6px;font-weight:700;color:#7c3aed">${line}</div>`;
+      if(line.startsWith('→')) return `<div style="padding-left:14px;margin-bottom:4px;color:#374151">${line}</div>`;
+      if(line === '') return '<div style="margin-top:6px"></div>';
+      return `<div style="margin-bottom:3px;color:#374151">${line}</div>`;
+    }).join('');
+}
+
+// ── ALL RANKINGS ──
+function renderAllRankings(ind, job, com) {
+  const renderBars = (ranked, nameMap) => {
+    const max = ranked[0].score || 1;
+    return ranked.map((item,i) => {
+      const pct = Math.round(item.score/max*100);
+      const name = nameMap ? (nameMap[item.name]||item.name) : item.name;
+      const cls = i===0?'bar-top1':i<3?'bar-top3':'bar-other';
+      return `<div class="bar-item">
+        <span class="bar-rank">${i+1}</span>
+        <span class="bar-label" style="font-size:${name.length>8?'10px':'11px'}">${name}</span>
+        <div class="bar-track"><div class="bar-fill ${cls}" style="width:${pct}%"></div></div>
+        <span class="bar-pct">${pct}%</span>
+      </div>`;
+    }).join('');
+  };
+  document.getElementById('tab-industry').innerHTML = renderBars(ind, null);
+  document.getElementById('tab-job').innerHTML = renderBars(job, JOB_NAMES);
+  document.getElementById('tab-company').innerHTML = renderBars(com, null);
+}
+
+function switchMainTab(e, tabId) {
+  // メインタブの切り替え
+  document.querySelectorAll('#screen-result-paid > .result-wrap > .result-inner > .tabs > .tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#tab-strength, #tab-career, #tab-manual, #tab-action').forEach(t => t.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+  // 強みタブに切り替えた時はチャートを再描画
+  if(tabId === 'tab-strength' && window._ranked) {
+    setTimeout(() => renderRadar(window._ranked.ind, window._ranked.job, window._ranked.com), 100);
+  }
+}
+
+function switchTab(e, name) {
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  e.target.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+
+// ── SALARY ──
+function setupSalarySimulator(ind, job, com) {
+  const indSel = document.getElementById('sal-industry');
+  const jobSel = document.getElementById('sal-job');
+  const comSel = document.getElementById('sal-company');
+  INDUSTRIES.forEach(n => { const o=document.createElement('option'); o.value=n; o.textContent=n; indSel.appendChild(o); });
+  JOBS.forEach(n => { const o=document.createElement('option'); o.value=n; o.textContent=JOB_NAMES[n]||n; jobSel.appendChild(o); });
+  COMPANY_TYPES.forEach(n => { const o=document.createElement('option'); o.value=n; o.textContent=n; comSel.appendChild(o); });
+  indSel.value = ind[0].name;
+  jobSel.value = job[0].name;
+  comSel.value = com[0].name;
+  calcSalary();
+}
+
+function calcSalary() {
+  const indName = document.getElementById('sal-industry').value;
+  const jobName = document.getElementById('sal-job').value;
+  const comName = document.getElementById('sal-company').value;
+  const indData = SALARY_DATA.industry[indName] || {avg:450, range:'350〜550'};
+  const jobAdj = SALARY_DATA.job[jobName] || 0;
+  const comAdj = SALARY_DATA.company[comName] || 0;
+  const total = indData.avg + jobAdj + comAdj;
+  const rangeMin = parseInt(indData.range.split('〜')[0]) + jobAdj + comAdj;
+  const rangeMax = parseInt(indData.range.split('〜')[1]) + jobAdj + comAdj;
+  const salEl = document.getElementById('salary-amount');
+  const salRange = document.getElementById('salary-range');
+  const salBreak = document.getElementById('salary-breakdown');
+  if(salEl) salEl.textContent = total + '万円'; // 非表示
+  if(salRange) salRange.textContent = `${rangeMin}万円 〜 ${rangeMax}万円`;
+  if(salBreak) salBreak.textContent = `業界平均${indData.avg}万 + 職種${jobAdj>=0?'+':''}${jobAdj}万 + 会社${comAdj>=0?'+':''}${comAdj}万`;
+}
+
+// ── MISMATCH ──
+function calcMismatches(ind, job, com) {
+  const items = [];
+  const indMax = ind[0].score||1, jobMax = job[0].score||1, comMax = com[0].score||1;
+  ind.slice(-4).forEach(i => { if(i.score/indMax < 0.25) items.push({title:`⚠️ ${i.name}業界`,text:`興味・関心スコアが極めて低い業界です。モチベーションが続かないリスクがあります。`}); });
+  job.slice(-4).forEach(j => { if(j.score/jobMax < 0.25) items.push({title:`⚠️ ${JOB_NAMES[j.name]||j.name}`,text:`あなたの強みプロファイルと大きく乖離した職種です。この職種では強みを活かしにくい可能性があります。`}); });
+  com.slice(-2).forEach(c => { if(c.score/comMax < 0.25) items.push({title:`⚠️ ${c.name}`,text:`価値観・働き方と合わない会社タイプです。入社後にカルチャーギャップを感じるリスクがあります。`}); });
+  // 人生グラフからのミスマッチ
+  Object.values(lifeScores).forEach(ls => {
+    if(ls && ls.score <= -6) {
+      if(ls.reason !== undefined) {
+        const r = LIFE_REASONS[ls.reason];
+        if(r && r.mismatch) items.push({title:`⚠️ 地雷職場（人生グラフより）`,text:`あなたが「どん底」を経験した時期と似た環境：${r.mismatch}`});
+      }
+      if(ls.criteria !== undefined) {
+        const c = LIFE_CRITERIA[ls.criteria];
+        if(c && c.mismatch) items.push({title:`⚠️ 地雷環境（価値観より）`,text:c.mismatch});
+      }
+    }
+  });
+  return [...new Map(items.map(i=>[i.title,i])).values()]; // 重複除去
+}
+
+// 地雷職場の詳細理由テキスト
+function getMismatchReason(type, name, ind, job, com) {
+  const topInd = ind[0].name;
+  const topCom = com[0].name;
+  const verb = JOB_VERB_DESC[job[0].name] ? JOB_VERB_DESC[job[0].name].verb : job[0].name;
+  if(type === 'industry') {
+    return `「${topInd}」への関心が高い一方、「${name}」へのスコアは著しく低い結果です。興味のない業界ではモチベーション維持が困難になりやすく、長期的なキャリアリスクとなります。`;
+  } else if(type === 'job') {
+    return `あなたの強み「${verb}」とこの職種は方向性が大きく異なります。強みが活かせない職種では成果が出にくく、自己効力感が下がり続けるリスクがあります。`;
+  } else if(type === 'company') {
+    return `価値観分析では「${topCom}」との相性が最高でした。「${name}」はあなたの働き方・裁量スタイルと反対方向にあり、入社後3〜6ヶ月でカルチャーギャップを強く感じるリスクがあります。`;
+  } else if(type === 'life') {
+    return `人生グラフでどん底を経験した時期と似た環境パターンが検出されました。同じパターンを繰り返さないよう、意識的に避けることが重要です。`;
+  }
+  return '';
+}
+
+function calcMismatches(ind, job, com) {
+  const items = [];
+  const indMax = ind[0].score||1, jobMax = job[0].score||1, comMax = com[0].score||1;
+  ind.slice(-4).forEach(i => {
+    if(i.score/indMax < 0.25) items.push({
+      title:`⚠️ ${i.name}業界`,
+      text:`あなたの興味・関心スコアが極めて低い業界です。`,
+      detail: getMismatchReason('industry', i.name, ind, job, com),
+      type:'industry', name:i.name
+    });
+  });
+  job.slice(-4).forEach(j => {
+    if(j.score/jobMax < 0.25) items.push({
+      title:`⚠️ ${JOB_NAMES[j.name]||j.name}`,
+      text:`あなたの強みプロファイルと大きく乖離した職種です。`,
+      detail: getMismatchReason('job', JOB_NAMES[j.name]||j.name, ind, job, com),
+      type:'job', name:j.name
+    });
+  });
+  com.slice(-2).forEach(c => {
+    if(c.score/comMax < 0.25) items.push({
+      title:`⚠️ ${c.name}`,
+      text:`価値観・働き方と合わない会社タイプです。`,
+      detail: getMismatchReason('company', c.name, ind, job, com),
+      type:'company', name:c.name
+    });
+  });
+  Object.values(lifeScores).forEach(ls => {
+    if(ls && ls.score <= -6) {
+      if(ls.reason !== undefined) {
+        const r = LIFE_REASONS[ls.reason];
+        if(r && r.mismatch) items.push({
+          title:`⚠️ 地雷職場（人生グラフより）`,
+          text:`過去に辛かった時期と似た環境：${r.mismatch}`,
+          detail: getMismatchReason('life', r.mismatch, ind, job, com),
+          type:'life', name:r.mismatch
+        });
+      }
+      if(ls.criteria !== undefined) {
+        const c = LIFE_CRITERIA[ls.criteria];
+        if(c && c.mismatch) items.push({
+          title:`⚠️ 地雷環境（価値観より）`,
+          text:c.mismatch,
+          detail:`価値観の分析と人生グラフを照合した結果、この環境があなたのエネルギーを著しく低下させる可能性があります。判断基準と環境のミスマッチは、長期的な消耗につながりやすいパターンです。`,
+          type:'life', name:c.mismatch
+        });
+      }
+    }
+  });
+  return [...new Map(items.map(i=>[i.title,i])).values()];
+}
+
+function renderMismatch(ind, job, com) {
+  const items = calcMismatches(ind, job, com);
+  const el = document.getElementById('mismatch-full');
+  if(items.length === 0) {
+    el.innerHTML = '<p style="font-size:13px;color:#64748b;padding:10px">特に大きなミスマッチは検出されませんでした。あなたの興味・強み・価値観は比較的バランスよく分布しています。</p>';
+  } else {
+    el.innerHTML = items.map(i=>`
+      <div class="mismatch-full-item">
+        <div class="mismatch-full-title">${i.title}</div>
+        <div class="mismatch-full-text" style="margin-bottom:8px">${i.text}</div>
+        <div style="background:#ffe4e6;border-radius:8px;padding:10px;font-size:12px;color:#7f1d1d;line-height:1.7">
+          <span style="font-weight:700">📋 詳細な理由：</span><br>${i.detail}
+        </div>
+      </div>`).join('');
+  }
+}
+
+// ── LIFE MANUAL ──
+const LIFE_THEME_TEMPLATES = {
+  // [職種カテゴリ][業界カテゴリ] → テーマ文
+  // 職種カテゴリ: sell/plan/create/design/manage/grow/analyze/solve/heal/teach/research/serve/move/nature/beauty/express/lead/repair
+  // 業界カテゴリ: tech/health/finance/edu/maker/retail/estate/fashion/entertain/consult/public/agri/fish/food/logistics
+
+  sell:     { tech:'最先端のテクノロジーで人々の課題を解決し、新しい価値を届けること', health:'人の命と健康を守るために、最善の選択肢を提供し続けること', finance:'お金の力で人々の未来を守り、豊かな人生を支援すること', edu:'次世代の可能性を広げるために、学びの扉を開き続けること', maker:'優れたものを世に届け、人々の生活をより豊かにすること', retail:'人々が本当に必要なものを見つける手助けをし続けること', estate:'人々が安心して暮らせる場所を提供し、生活の基盤を作ること', fashion:'美しさと自信を人々に届け、自己表現を支援すること', entertain:'感動と楽しさを届け、人々の日常に彩りを加えること', consult:'人と組織の課題を解決し、成長を加速させること', public:'社会の公正と安全を守り、すべての人が生きやすい環境を作ること', agri:'大地の恵みを人々に届け、持続可能な未来を育てること', fish:'海の豊かさを守りながら、人々に自然の恵みを届けること', food:'食の喜びを通じて、人々に幸福と健康を提供すること', logistics:'社会のインフラを支え、必要なものを必要な人に届けること' },
+  plan:     { tech:'革新的なアイデアで社会の課題を解決し、テクノロジーで未来を創ること', health:'人の健康と幸せを実現するための仕組みを設計し続けること', finance:'人々の経済的自由を実現するための戦略を描き続けること', edu:'学びの可能性を広げる仕組みを作り、未来の社会を設計すること', maker:'より良い製品・サービスを生み出すアイデアで社会に貢献すること', retail:'人々の生活を豊かにするビジネスを設計し、価値を創造すること', estate:'人々が理想の暮らしを手に入れるための場所と仕組みを作ること', fashion:'トレンドを先読みし、人々に新しい美の価値を提供し続けること', entertain:'感動を生む体験を設計し、人々の心を動かし続けること', consult:'組織と人の可能性を最大化する戦略を描き、社会を前進させること', public:'より良い社会の設計図を描き、公共の利益のために行動すること', agri:'自然と人間の共存を設計し、持続可能な未来の農業を実現すること', fish:'水産資源の未来を守る仕組みを作り、海の豊かさを次世代に伝えること', food:'食の文化と産業を革新し、人々に新しい食体験を届けること', logistics:'社会インフラの最適化を設計し、人々の生活を支え続けること' },
+  solve:    { tech:'テクノロジーの力で社会課題を解決し、世界をより良くし続けること', health:'医療・福祉の課題を解決し、すべての人が健やかに生きられる社会を作ること', finance:'経済的な課題を解決し、人々が安心して未来を描けるよう支援すること', edu:'学びの障壁を取り除き、すべての人に成長の機会を届けること', maker:'ものづくりの課題を解決し、人々の生活をより便利で豊かにすること', retail:'流通・販売の課題を解決し、必要なものを必要な人に届けること', estate:'住まいと土地の課題を解決し、人々が安心して暮らせる環境を作ること', fashion:'美と産業の課題を解決し、人々が自分らしく輝ける社会を作ること', entertain:'エンタメの可能性を最大化し、人々の心に感動を届け続けること', consult:'人と組織の悩みを解決し、成長と変革を支援し続けること', public:'社会の不公正・課題を解決し、すべての人が幸せに生きられる社会を作ること', agri:'農業・食の課題を解決し、人々と大地をつなぎ続けること', fish:'水産・海洋の課題を解決し、豊かな海を次世代に残すこと', food:'食の課題を解決し、すべての人に美味しさと健康を届けること', logistics:'物流・交通の課題を解決し、社会のインフラを支え続けること' },
+  heal:     { health:'人の心と体を癒し、一人ひとりが笑顔で生きられる社会を作ること', edu:'人の心に寄り添い、学びと成長を支援し続けること', consult:'人の悩みに寄り添い、最善の答えを一緒に見つけ続けること', fashion:'美と健康で人々を輝かせ、自己肯定感を高め続けること', food:'食の力で人々を癒し、心と体の健康を守り続けること', public:'困っている人に寄り添い、社会的弱者を支援し続けること', default:'人の心と体を癒し、困っている人に寄り添い続けること' },
+  lead:     { tech:'革新的なチームを率い、テクノロジーで世界を変え続けること', health:'医療・福祉の現場を率いて、人々の命と健康を守ること', finance:'経済の力を最大化するチームを率い、社会を豊かにすること', edu:'次世代を育てるリーダーとして、学びの未来を切り拓くこと', maker:'ものづくりの現場を率い、世界に誇る製品を生み出し続けること', consult:'組織の変革をリードし、人と企業の可能性を最大化すること', public:'社会のリーダーとして、より公正で豊かな未来を切り拓くこと', default:'チームを率いて、社会に大きな価値を生み出し続けること' },
+  grow:     { edu:'人の可能性を引き出し、一人ひとりの成長を支援し続けること', health:'人々の健康と成長を支え、より良い生き方を共に探し続けること', consult:'人と組織の成長を引き出し、最大のポテンシャルを発揮させること', public:'次世代の人材を育て、社会の未来を担う力を育み続けること', default:'人の才能を引き出し、成長と変革を支援し続けること' },
+  teach:    { edu:'知識と経験を次世代に伝え、学びの喜びを広め続けること', health:'正しい健康知識を伝え、人々がより良い生き方を選べるよう導くこと', consult:'知恵と経験を伝え、人々が自分らしい答えを見つけられるよう導くこと', default:'大切なことを伝え、人々の人生をより豊かに導き続けること' },
+  research: { tech:'未知の技術を探求し、人類の可能性を広げ続けること', health:'医療・科学の謎を解明し、人々の命と健康を守る知識を積み上げること', edu:'学問の深みを追求し、新しい知識で社会に貢献し続けること', default:'真実を追い求め、深い専門知識で社会に貢献し続けること' },
+  create:   { tech:'テクノロジーで新しいものを生み出し、世界に革新をもたらすこと', maker:'優れた製品を作り上げ、人々の生活をより豊かにし続けること', entertain:'クリエイティブな力で感動を生み出し、世界を彩り続けること', default:'新しいものを生み出す力で、社会に価値と感動をもたらし続けること' },
+  design:   { fashion:'美しさとセンスで人々を輝かせ、自己表現の喜びを届け続けること', entertain:'デザインの力で世界をより美しくし、人々の心を動かし続けること', default:'美しいデザインで人々の生活を豊かにし、感動を届け続けること' },
+  express:  { entertain:'発信する力で社会に影響を与え、人々の心を動かし続けること', fashion:'美と文化を発信し、人々の生き方に新しい視点を届け続けること', default:'伝える力で世界とつながり、大切なメッセージを届け続けること' },
+  manage:   { finance:'数字と秩序で組織を支え、人々が安心して働ける環境を作ること', public:'正確さと誠実さで社会を支え、人々の信頼に応え続けること', default:'確かな管理力で組織を支え、人々が安心して力を発揮できる環境を作ること' },
+  analyze:  { finance:'数字の力で未来を予測し、人々の経済的な安心を守り続けること', tech:'データの力で社会課題を解決し、より良い意思決定を支援すること', default:'深い分析力で真実を明らかにし、より良い選択を支援し続けること' },
+  beauty:   { fashion:'人々を美しく輝かせ、自信と幸せを届け続けること', health:'美と健康で人々の自己肯定感を高め、より良い生き方を支援すること', default:'美しさの力で人々を輝かせ、自信と笑顔を届け続けること' },
+  serve:    { food:'心のこもったもてなしで人々を幸せにし、忘れられない体験を届けること', entertain:'最高のホスピタリティで人々の特別な瞬間を演出し続けること', default:'真心のこもったサービスで人々に幸せな体験を届け続けること' },
+  move:     { logistics:'社会のインフラを支え、必要なものを必要な人に届け続けること', default:'人・モノの流れを最適化し、社会を効率的に動かし続けること' },
+  nature:   { agri:'大地と共に生き、人々に安全で美味しい食を届け続けること', fish:'海の恵みを守りながら、人々と自然をつなぎ続けること', default:'自然と人間の橋渡し役として、持続可能な未来を育て続けること' },
+  repair:   { maker:'ものを大切に修理・整備し、長く使える社会を支え続けること', logistics:'社会インフラを守り、人々の安全な移動と生活を支え続けること', default:'壊れたものを直す力で、人々の生活を守り支え続けること' },
+};
+
+// 職種→カテゴリ変換
+const JOB_CATEGORY = {
+  '売る・提案する・交渉する': 'sell',
+  '企画する・考える・戦略を立てる': 'plan',
+  '作る・開発する・プログラムする': 'create',
+  'デザインする・表現する・描く': 'design',
+  '管理する・整理する・正確にこなす': 'manage',
+  '育てる・教える・引き出す': 'grow',
+  '数字を扱う・分析する・計算する': 'analyze',
+  '問題を解決する・アドバイスする': 'solve',
+  '癒す・支える・ケアする': 'heal',
+  '教える・伝える・導く': 'teach',
+  '研究する・深く追求する・発見する': 'research',
+  'もてなす・接客する・気配りする': 'serve',
+  '運ぶ・動かす・効率化する': 'move',
+  '育てる・収穫する・自然と関わる': 'nature',
+  '美しくする・スタイリングする': 'beauty',
+  '発信する・伝える・表現する': 'express',
+  'まとめる・決断する・率いる': 'lead',
+  '修理する・整備する・メンテナンスする': 'repair',
+};
+
+// 業界→カテゴリ変換
+const IND_CATEGORY = {
+  'IT・情報通信': 'tech', '医療・福祉': 'health', '金融・保険': 'finance',
+  '教育': 'edu', '製造・メーカー': 'maker', '小売・卸売': 'retail',
+  '不動産・建設': 'estate', '美容・ファッション': 'fashion', 'エンタメ・メディア': 'entertain',
+  'コンサルティング': 'consult', '公務員・行政': 'public', '農業・林業': 'agri',
+  '漁業': 'fish', '宿泊・飲食': 'food', '運輸・物流': 'logistics',
+};
+
+// 幸福条件・エネルギー低下条件のテンプレート
+// モチベーションの上げ方テンプレート
+const MOTIVATION_TIPS = {
+  sell:    ['目標数字を可視化して達成感を積み重ねる','競争相手を決めて勝負する','お客様からの感謝の言葉を集める'],
+  plan:    ['新しいアイデアをノートに書き出す','成功事例を読んで刺激をもらう','小さなプロジェクトを自分で立ち上げる'],
+  create:  ['好きな作品・コードに触れてインプットする','完成品を誰かに見せてフィードバックをもらう','新しい技術・ツールを試す'],
+  design:  ['好きなデザインを集めてビジョンボードを作る','作品を発信して反応をもらう','美しいものに触れる時間を意識的に作る'],
+  manage:  ['タスクリストを整理して達成感を得る','仕組み化・効率化に成功した瞬間を記録する','正確さが評価される環境に身を置く'],
+  grow:    ['教えた人の成長を記録する','自分自身が新しいことを学ぶ','感謝された言葉をメモしておく'],
+  analyze: ['データから面白い発見をする','仮説を立てて検証するプロセスを楽しむ','専門書・論文を読んで知識を深める'],
+  solve:   ['難しい課題を解決した記録をつける','「なぜ？」を5回繰り返して本質を掘り下げる','解決策を人に説明して整理する'],
+  heal:    ['感謝された瞬間を日記に書く','サポートした人の変化を観察する','自分自身のケアを大切にする'],
+  teach:   ['教えた内容を自分でも復習する','「わかった！」という瞬間に立ち会う','自分の言葉でわかりやすく伝える練習をする'],
+  research:['深掘りしたいテーマに没頭する時間を作る','専門家と意見交換する','発見した知識を誰かに話す'],
+  serve:   ['お客様の笑顔を直接見る','サービスの細部にこだわる','チームで協力して成果を出す'],
+  move:    ['作業効率が上がった瞬間を記録する','体を動かすルーティンを作る','段取りを自分で考えて実行する'],
+  nature:  ['自然の中で時間を過ごす','生き物の成長を観察する','季節の変化を感じながら作業する'],
+  beauty:  ['自分の作品・施術の写真を記録する','技術向上を実感できる練習をする','美しいものに囲まれた環境を整える'],
+  express: ['アウトプットして反応をもらう','影響を受けた人から直接フィードバックをもらう','新しい表現方法を試す'],
+  lead:    ['チームの成果を一緒に喜ぶ','ビジョンを言語化して共有する','決断した結果を振り返り改善する'],
+  repair:  ['修理・整備が完了した瞬間の達成感を味わう','技術が向上した記録をつける','道具・設備を大切に手入れする'],
+};
+
+// 上司・部下との付き合い方テンプレート
+const RELATIONSHIP_TIPS = {
+  sell:    { boss:'目標と成果を数字で報告する。結果で信頼を勝ち取る上司が多い', peer:'競争しながらも情報共有する関係が理想。Win-Winを意識する', sub:'目標設定を一緒に考え、達成できたら一緒に喜ぶ' },
+  plan:    { boss:'アイデアを資料にまとめて提案する。ビジョンを共有することで信頼を得る', peer:'お互いのアイデアを掛け合わせることで最高のアウトプットが生まれる', sub:'考える機会を与え、主体性を引き出す' },
+  create:  { boss:'進捗を定期的に見せ、完成イメージを共有する', peer:'技術的な知見を共有し、一緒に課題を解決する', sub:'詰め込みすぎず、創造する余白を与える' },
+  design:  { boss:'作成意図を言語化して説明できるようにする', peer:'デザインのフィードバックを積極的に交換する', sub:'センスを否定せず、方向性だけを指示する' },
+  manage:  { boss:'正確な情報と進捗報告で信頼を積み上げる', peer:'情報共有をこまめに行い、全体の整合性を保つ', sub:'明確なルール・基準を示し、安心して動ける環境を作る' },
+  grow:    { boss:'成長意欲を伝え、フィードバックをもらう機会を作る', peer:'互いの強みを認め合い、教え合う関係を作る', sub:'小さな成長を見逃さず、具体的に褒める' },
+  analyze: { boss:'データに基づいた提案をする。感覚より根拠を重視する', peer:'分析結果を共有し、解釈の幅を広げる', sub:'考え方のプロセスを教え、自分で答えを出せるようにする' },
+  solve:   { boss:'問題と解決策をセットで報告する', peer:'課題を持ち寄り、一緒に解決策を考える', sub:'答えを与えず、一緒に考えるプロセスを大切にする' },
+  heal:    { boss:'チームの雰囲気や状態を丁寧に報告する', peer:'困った時にお互いサポートし合える関係を作る', sub:'話を聞く時間を意識的に作り、安心感を与える' },
+  teach:   { boss:'学んだことを報告し、成長を見せる', peer:'知識・情報をオープンに共有する', sub:'わかりやすく教え、理解度を確認しながら進める' },
+  research:{ boss:'調査結果をわかりやすくまとめて報告する', peer:'専門知識を交換し、一緒に深掘りする', sub:'好奇心を刺激し、自分で調べる楽しさを教える' },
+  serve:   { boss:'お客様の声をフィードバックとして報告する', peer:'気配りを分担し、チーム全体のサービスレベルを上げる', sub:'お客様を大切にする姿勢を背中で見せる' },
+  move:    { boss:'効率化のアイデアを積極的に提案する', peer:'作業分担を明確にし、全体最適を目指す', sub:'段取りを一緒に考え、動きやすい環境を整える' },
+  nature:  { boss:'長期的な視点での提案を大切にする', peer:'自然体で付き合い、無理なく協力し合う', sub:'じっくり育てる感覚で、焦らず関わる' },
+  beauty:  { boss:'仕事の質・仕上がりで評価を得る', peer:'技術的なフィードバックを積極的に交換する', sub:'技術の楽しさを伝え、向上心を引き出す' },
+  express: { boss:'発信した成果・反応を報告する', peer:'お互いの発信を応援し合う', sub:'表現することを恐れない環境を作る' },
+  lead:    { boss:'ビジョンと進捗を定期的に共有する', peer:'役割を明確にし、対等にリスペクトし合う', sub:'失敗を責めず、一緒に改善策を考える' },
+  repair:  { boss:'作業記録・改善提案を具体的に報告する', peer:'技術的な情報を共有し、お互いの専門性を活かす', sub:'安全・正確を最優先に、手順を丁寧に教える' },
+};
+
+const HAPPINESS_CONDITIONS = {
+  sell:    {good:['提案・交渉で成果が出る環境','お客様に貢献できる実感がある仕事','競争と達成感がある職場'], bad:['ルーティン事務が中心の仕事','数字の結果が見えにくい職場','人と関わらないデスクワーク']},
+  plan:    {good:['アイデアを形にできる裁量がある','戦略から実行まで関われる仕事','新しいことに挑戦できる環境'], bad:['指示通りにこなすだけの仕事','変化がなく単調な業務','創造性が求められない環境']},
+  create:  {good:['ゼロから作り上げる喜びがある','技術を磨き続けられる環境','自分の成果が形に残る仕事'], bad:['決められた手順だけをこなす仕事','自分のスキルが活かせない環境','成長機会が乏しい職場']},
+  design:  {good:['美的センスを活かせる仕事','自分のデザインが世に出る環境','クリエイティブな仲間がいる職場'], bad:['センスや個性が評価されない環境','表現の自由がない職場','審美眼が求められない仕事']},
+  manage:  {good:['正確さと丁寧さが評価される職場','ルールと秩序が整っている環境','成果が数字で見える仕事'], bad:['曖昧な指示・ルールがない職場','スピードより精度が軽視される環境','混乱した組織']},
+  grow:    {good:['人の成長を間近で感じられる仕事','教えた人が活躍する姿が見られる環境','人材育成に力を入れている組織'], bad:['人と関わらない孤独な仕事','成長を支援する文化がない職場','成果主義で人への投資がない環境']},
+  analyze: {good:['データと論理で意思決定できる環境','深く考える時間と機会がある仕事','分析結果が経営判断に活きる職場'], bad:['感覚・直感で動く組織','数字よりも空気感が重視される職場','論理的思考が活かせない環境']},
+  solve:   {good:['難しい課題に挑戦できる仕事','解決策を自分で考えられる裁量','成果がクライアント・社会に見える環境'], bad:['問題提起が歓迎されない職場','マニュアル通りの対応だけを求められる仕事','改善活動が評価されない組織']},
+  heal:    {good:['人の役に立てる実感がある仕事','感謝される機会が多い職場','心理的安全性が高い職場'], bad:['人と関わらない孤独な環境','競争・数字ばかりが重視される職場','人への配慮が薄い組織']},
+  teach:   {good:['知識・経験を伝える機会がある仕事','人の理解が深まる瞬間に立ち会える環境','継続的に学べる職場'], bad:['教える機会がなく孤立した仕事','学びへの投資がない組織','伝える相手がいない環境']},
+  research:{good:['深く追求できる時間と環境がある','専門性が評価される組織','新しい発見に挑戦できる仕事'], bad:['浅く広くこなすだけの仕事','専門性が軽視される職場','探求心が活かせない環境']},
+  serve:   {good:['お客様の笑顔が直接見える仕事','ホスピタリティが評価される職場','チームで協力できる環境'], bad:['人と関わらない仕事','サービス品質が軽視される組織','孤独な作業が続く職場']},
+  move:    {good:['効率化・改善の成果が見える仕事','現場で体を動かせる環境','段取りを自分で決められる裁量'], bad:['動き回れないデスクワーク中心の仕事','非効率が放置される職場','自分のペースで動けない環境']},
+  nature:  {good:['自然・生き物と関われる環境','季節・変化を感じながら働ける仕事','地に足のついた実感がある職場'], bad:['自然と無縁の室内ばかりの仕事','生産・自然から切り離された環境','机上だけの仕事']},
+  beauty:  {good:['美的センスを活かせる仕事','人が変わる瞬間に立ち会える環境','技術を磨き続けられる職場'], bad:['見た目・センスが重視されない環境','技術力が評価されない職場','審美眼が活かせない仕事']},
+  express: {good:['発信・表現の機会がある仕事','情報共有が活発な組織','影響力を実感できる環境'], bad:['発信が制限される職場','情報が閉鎖的な組織','創造的表現が求められない仕事']},
+  lead:    {good:['裁量を持ってチームを率いられる環境','意思決定に関われる仕事','成果がチームに直結する職場'], bad:['指示待ちを求められる環境','個人の裁量がない職場','リーダーシップが活かせない組織']},
+  repair:  {good:['技術で問題を解決できる仕事','手を動かして成果が出る環境','職人的な専門性が評価される職場'], bad:['機械・技術と無縁のデスクワーク','修理・改善を軽視する組織','技術力が評価されない環境']},
+};
+
+// 人生グラフから幸福条件を抽出
+function getLifeConditions() {
+  const goodReasons = [];
+  const badReasons = [];
+  const goodCriteria = [];
+  const badCriteria = [];
+
+  Object.values(lifeScores).forEach(ls => {
+    if(!ls) return;
+    const score = ls.score || 0;
+    if(score >= 4 && ls.reason !== undefined) goodReasons.push(ls.reason);
+    if(score <= -4 && ls.reason !== undefined) badReasons.push(ls.reason);
+    if(score >= 4 && ls.criteria !== undefined) goodCriteria.push(ls.criteria);
+    if(score <= -4 && ls.criteria !== undefined) badCriteria.push(ls.criteria);
+  });
+
+  // 最頻値を取得
+  const mode = arr => arr.length === 0 ? null : arr.sort((a,b) =>
+    arr.filter(v=>v===a).length - arr.filter(v=>v===b).length).pop();
+
+  return {
+    topGoodReason: mode(goodReasons),
+    topBadReason: mode(badReasons),
+    topGoodCriteria: mode(goodCriteria),
+    topBadCriteria: mode(badCriteria),
+  };
+}
+
+function renderLifeManual(ind, job, com) {
+  const jobCat = JOB_CATEGORY[job[0].name] || 'solve';
+  const indCat = IND_CATEGORY[ind[0].name] || 'default';
+  const jobCat2 = JOB_CATEGORY[job[1].name] || 'heal';
+  const verb1 = JOB_VERB_DESC[job[0].name] ? JOB_VERB_DESC[job[0].name].verb : job[0].name;
+  const verb2 = JOB_VERB_DESC[job[1].name] ? JOB_VERB_DESC[job[1].name].verb : job[1].name;
+  const verb3 = JOB_VERB_DESC[job[2].name] ? JOB_VERB_DESC[job[2].name].verb : job[2].name;
+
+  // 一貫テーマ生成
+  const themeMap = LIFE_THEME_TEMPLATES[jobCat] || LIFE_THEME_TEMPLATES['solve'];
+  const theme = themeMap[indCat] || themeMap['default'] || `${verb1}を通じて、${ind[0].name}分野で社会に貢献し続けること`;
+
+  // 幸福条件
+  const happyConds = HAPPINESS_CONDITIONS[jobCat] || HAPPINESS_CONDITIONS['solve'];
+  const lifeConditions = getLifeConditions();
+  const goodItems = [...happyConds.good];
+  const badItems = [...happyConds.bad];
+
+  if(lifeConditions.topGoodReason !== null) {
+    const reason = LIFE_REASONS[lifeConditions.topGoodReason];
+    if(reason) {
+      const reasonText = reason.text.split('・')[0].replace('楽しかった','が充実している環境').replace('面白かった','を深められる仕事').replace('充実していた','と関われる職場').replace('良かった','に恵まれた環境');
+      if(!goodItems.some(g => g.includes(reasonText.substring(0,4)))) goodItems.push(reasonText);
+    }
+  }
+  if(lifeConditions.topBadReason !== null) {
+    const reason = LIFE_REASONS[lifeConditions.topBadReason];
+    if(reason && reason.mismatch) {
+      if(!badItems.some(b => b.includes(reason.mismatch.substring(0,4)))) badItems.push(reason.mismatch);
+    }
+  }
+
+  const comTop = com[0].name;
+  if(comTop.includes('ベンチャー')) { goodItems.push('スピード感と変化がある環境'); badItems.push('変化のない安定志向の組織'); }
+  else if(comTop.includes('大手')) { goodItems.push('安定した基盤と大きな裁量がある環境'); badItems.push('不安定で先が見えない職場'); }
+  else if(comTop.includes('外資')) { goodItems.push('成果主義でフラットな評価制度'); badItems.push('年功序列・硬直した評価制度'); }
+  else if(comTop.includes('公務員')) { goodItems.push('社会への貢献実感がある安定した環境'); badItems.push('利益優先でミッションが感じにくい環境'); }
+  else if(comTop.includes('NPO')) { goodItems.push('社会貢献への強い使命感がある職場'); badItems.push('利益だけを追求する環境'); }
+  else if(comTop.includes('零細')) { goodItems.push('家族的なアットホームな職場環境'); badItems.push('大組織の細かいルールや官僚的な文化'); }
+
+  // モチベーションの上げ方
+  const motivations = MOTIVATION_TIPS[jobCat] || MOTIVATION_TIPS['solve'];
+
+  // 上司・部下との付き合い方
+  const relTips = RELATIONSHIP_TIPS[jobCat] || RELATIONSHIP_TIPS['solve'];
+
+  const el = document.getElementById('life-manual');
+  el.innerHTML = `
+    <div class="manual-theme">
+      <div class="manual-theme-label">🌟 あなたの人生の一貫テーマ</div>
+      <div class="manual-theme-text">「${theme}」</div>
+    </div>
+
+    <div class="manual-section">
+      <div class="manual-section-title">✅ あなたが幸福になりやすい条件</div>
+      <div class="manual-items">
+        ${goodItems.slice(0,5).map(item => `
+          <div class="manual-item-good">
+            <span class="manual-item-icon">✅</span>
+            <span class="manual-item-text">${item}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="manual-section">
+      <div class="manual-section-title">❌ ストレスが溜まりやすい環境（地雷）</div>
+      <div class="manual-items">
+        ${badItems.slice(0,5).map(item => `
+          <div class="manual-item-bad">
+            <span class="manual-item-icon">❌</span>
+            <span class="manual-item-text">${item}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="manual-section">
+      <div class="manual-section-title">🔥 あなたのモチベーションの上げ方</div>
+      <div class="manual-items">
+        ${motivations.map(tip => `
+          <div class="manual-item-good">
+            <span class="manual-item-icon">🔥</span>
+            <span class="manual-item-text">${tip}</span>
+          </div>`).join('')}
+      </div>
+    </div>
+
+    <div class="manual-section">
+      <div class="manual-section-title">👥 上司・部下・同僚との付き合い方</div>
+      <div class="manual-items">
+        <div class="manual-item-good">
+          <span class="manual-item-icon">⬆️</span>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:#059669;margin-bottom:3px">上司との関わり方</div>
+            <span class="manual-item-text">${relTips.boss}</span>
+          </div>
+        </div>
+        <div class="manual-item-good">
+          <span class="manual-item-icon">↔️</span>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:#059669;margin-bottom:3px">同僚との関わり方</div>
+            <span class="manual-item-text">${relTips.peer}</span>
+          </div>
+        </div>
+        <div class="manual-item-good">
+          <span class="manual-item-icon">⬇️</span>
+          <div>
+            <div style="font-size:11px;font-weight:700;color:#059669;margin-bottom:3px">部下との関わり方</div>
+            <span class="manual-item-text">${relTips.sub}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="manual-section">
+      <div class="manual-section-title">💪 あなたの強みサマリー</div>
+      <div class="manual-items">
+        <div class="manual-item-good">
+          <span class="manual-item-icon">🥇</span>
+          <span class="manual-item-text"><strong>${verb1}</strong>：あなたの核心的な強みです。意識せずとも自然に発揮できます。</span>
+        </div>
+        <div class="manual-item-good">
+          <span class="manual-item-icon">🥈</span>
+          <span class="manual-item-text"><strong>${verb2}</strong>：第二の強みです。${verb1}と組み合わせることで独自の価値を生みます。</span>
+        </div>
+        <div class="manual-item-good">
+          <span class="manual-item-icon">🥉</span>
+          <span class="manual-item-text"><strong>${verb3}</strong>：潜在的な強みです。意識して活かすとさらに輝きます。</span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ── STRENGTH TEXT ──
+// 動詞→強みの説明テキスト
+const JOB_VERB_DESC = {
+  '売る・提案する・交渉する': { verb:'提案・交渉する', desc:'相手のニーズを読み取り、最適な解決策を提示する力があります。交渉の場でも臆せず、Win-Winの合意を引き出せます。', example:'「お客様の課題を深くヒアリングし、最適な提案で〇〇の受注を達成しました」' },
+  '企画する・考える・戦略を立てる': { verb:'企画・戦略立案する', desc:'情報を整理し、未来を見据えた戦略を描く力があります。ゼロから企画を立ち上げ、チームを方向付けることが得意です。', example:'「〇〇の課題に対し、新しい企画を立案。実施後に〇〇の成果を達成しました」' },
+  '作る・開発する・プログラムする': { verb:'開発・実装する', desc:'アイデアを実際に動くものとして形にする力があります。技術的な課題にも粘り強く取り組み、完成度にこだわります。', example:'「〇〇のシステムを設計・開発し、業務効率を〇〇%改善しました」' },
+  'デザインする・表現する・描く': { verb:'デザイン・表現する', desc:'情報を視覚的にわかりやすく伝える力があります。美的センスと論理的な構成力を組み合わせた表現が得意です。', example:'「〇〇のデザインを担当し、ユーザーの直感的な理解を促進しました」' },
+  '管理する・整理する・正確にこなす': { verb:'管理・整理する', desc:'複雑な情報やタスクを整理し、ミスなく正確にこなす力があります。組織の縁の下の力持ちとして信頼されます。', example:'「〇〇プロジェクトの進行管理を担当し、納期ゼロ遅延を達成しました」' },
+  '育てる・教える・引き出す': { verb:'育てる・引き出す', desc:'人の可能性を信じ、その人に合った方法で成長を支援する力があります。相手の強みを引き出すことが自然にできます。', example:'「後輩・部下の育成を担当し、チーム全体のパフォーマンスを〇〇%向上させました」' },
+  '数字を扱う・分析する・計算する': { verb:'分析・数値管理する', desc:'データや数字から意味を読み取り、論理的な判断の根拠を示す力があります。感覚ではなく事実で語ることができます。', example:'「〇〇のデータを分析し、コスト削減の打ち手を特定。〇〇万円の削減を実現しました」' },
+  '問題を解決する・アドバイスする': { verb:'問題解決・アドバイスする', desc:'複雑な課題の本質を見抜き、実行可能な解決策を導き出す力があります。人や組織が困ったとき、頼られる存在です。', example:'「〇〇の課題に対し、根本原因を特定して解決策を実行。〇〇の改善を達成しました」' },
+  '癒す・支える・ケアする': { verb:'支える・ケアする', desc:'人の感情や状態に敏感に気づき、適切なサポートを提供する力があります。相手が安心して力を発揮できる環境を作れます。', example:'「チームメンバーの状態に気を配り、フォローすることでプロジェクトの離脱者ゼロを実現しました」' },
+  '教える・伝える・導く': { verb:'伝える・導く', desc:'複雑な内容をわかりやすく整理し、相手の理解を促す力があります。人を正しい方向へ自然に導くことができます。', example:'「〇〇の研修・勉強会を企画・実施し、チームのスキルアップに貢献しました」' },
+  '研究する・深く追求する・発見する': { verb:'深く追求・研究する', desc:'一つのテーマを徹底的に掘り下げ、誰も気づいていない知見を発見する力があります。専門性の深さで周囲と差をつけます。', example:'「〇〇分野を深く研究し、業界内で独自のノウハウを確立しました」' },
+  'もてなす・接客する・気配りする': { verb:'もてなす・気配りする', desc:'相手が何を求めているかを先読みし、期待を超えるサービスを提供する力があります。人を大切にする姿勢が自然に出ます。', example:'「顧客満足度向上に取り組み、リピート率〇〇%を達成しました」' },
+  '運ぶ・動かす・効率化する': { verb:'効率化・改善する', desc:'無駄を見つけ、プロセスを最適化する力があります。段取りよく動き、チーム全体のスピードを上げることができます。', example:'「〇〇業務のフロー改善を実施し、作業時間を〇〇%削減しました」' },
+  '育てる・収穫する・自然と関わる': { verb:'育てる・自然と関わる', desc:'生命の成長サイクルを理解し、粘り強く継続する力があります。自然の変化に敏感で、長期的な視点で物事を捉えます。', example:'「〇〇の生産現場で品質管理を担当し、収穫量〇〇%向上を達成しました」' },
+  '美しくする・スタイリングする': { verb:'美しくする・スタイリングする', desc:'美的センスと技術力で人・空間・ものを最高の状態に整える力があります。細部へのこだわりと完成度への追求が強みです。', example:'「〇〇のスタイリング・施術を担当し、顧客満足度〇〇%・リピート率〇〇%を達成しました」' },
+  '発信する・伝える・表現する': { verb:'発信・表現する', desc:'情報を魅力的にパッケージし、多くの人に届ける力があります。SNSやコンテンツを通じて影響力を持つことができます。', example:'「〇〇の情報発信を担当し、フォロワー〇〇人増・問い合わせ〇〇%増を達成しました」' },
+  'まとめる・決断する・率いる': { verb:'まとめる・率いる', desc:'多様な意見を整理し、チームを一つの方向に導く力があります。決断が速く、責任を持ってチームを前進させます。', example:'「〇〇人のチームをリードし、〇〇のプロジェクトを期日・予算内に完遂しました」' },
+  '修理する・整備する・メンテナンスする': { verb:'修理・整備する', desc:'機械や設備の状態を正確に把握し、最適な状態を維持する力があります。トラブル対応も冷静かつ迅速です。', example:'「〇〇設備の定期整備を担当し、故障率〇〇%削減・稼働率〇〇%を達成しました」' },
+};
+
+function renderStrengthText(ind, job, com) {
+  const topInd = ind[0].name;
+  const j1 = job[0].name, j2 = job[1].name, j3 = job[2].name;
+  const d1 = JOB_VERB_DESC[j1] || {verb:j1, desc:'あなたの核心的な強みです。', example:'「〇〇の経験を活かし、具体的な成果を達成しました」'};
+  const d2 = JOB_VERB_DESC[j2] || {verb:j2, desc:'第二の強みです。', example:''};
+  const d3 = JOB_VERB_DESC[j3] || {verb:j3, desc:'潜在的な強みです。', example:''};
+  const el = document.getElementById('strength-text');
+  el.innerHTML = `
+    <div class="strength-box">
+      <div class="strength-box-title">🥇 第一の強み：「${d1.verb}」</div>
+      <div class="strength-box-text">${d1.desc}<br><br><span style="font-size:12px;color:#7c3aed;font-weight:700">📝 職務経歴書フレーズ例：</span><br>${d1.example}</div>
+    </div>
+    <div class="strength-box">
+      <div class="strength-box-title">🥈 第二の強み：「${d2.verb}」</div>
+      <div class="strength-box-text">${d2.desc}<br><br><span style="font-size:12px;color:#7c3aed;font-weight:700">📝 職務経歴書フレーズ例：</span><br>${d2.example}</div>
+    </div>
+    <div class="strength-box">
+      <div class="strength-box-title">🥉 第三の強み（潜在）：「${d3.verb}」</div>
+      <div class="strength-box-text">${d3.desc}<br><br><span style="font-size:12px;color:#7c3aed;font-weight:700">📝 組み合わせで輝く：</span><br>「${d1.verb}」×「${d3.verb}」の組み合わせは${topInd}業界で特に価値を発揮します。</div>
+    </div>
+  `;
+}
+
+// ── LIFE QUIZ START（プレミアム特典） ──
+function startLifeQuiz() {
+  // 人生グラフ画面に切り替え
+  phase = PHASE_LIFE;
+  lifePeriodIdx = 0;
+  lifeStep = 0;
+  lifeScores = {};
+  if(!lifeScores[0]) lifeScores[0] = {score: 0};
+
+  // クイズ画面を再利用
+  document.getElementById('btn-next').onclick = nextQuestion;
+  showScreen('quiz');
+  renderLifeBreak();
+}
+
+// 人生グラフ完了後の処理
+function onLifeQuizComplete() {
+  const {ind, job, com} = window._ranked;
+  showScreen('result-paid');
+
+  // 人生グラフ結果を表示
+  document.getElementById('life-premium-teaser').style.display = 'none';
+  document.getElementById('life-graph-result').style.display = 'block';
+  document.getElementById('life-manual-card').style.display = 'block';
+
+  // グラフ・取扱説明書を描画
+  setTimeout(() => {
+    renderLifeGraph();
+    renderLifeManual(ind, job, com);
+    // ロードマップ・自己PRも更新
+    renderRoadmap(ind, job, com);
+    renderSelfPR(ind, job, com);
+  }, 100);
+}
+
+// ── ROADMAP ──
+function renderRoadmap(ind, job, com) {
+  const topInd = ind[0].name;
+  const topJob = JOB_NAMES[job[0].name]||job[0].name;
+  const topCom = com[0].name;
+  document.getElementById('roadmap').innerHTML = `
+    <div class="roadmap-item">
+      <div class="roadmap-month">1ヶ月目</div>
+      <div class="roadmap-content">
+        <div class="roadmap-title">自己分析の深掘り</div>
+        <div class="roadmap-text">この強み発見カルテをもとに、${topJob}での具体的な実績・エピソードを3つ書き出す。強みの言語化を完成させる。</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-month">2ヶ月目</div>
+      <div class="roadmap-content">
+        <div class="roadmap-title">市場調査・情報収集</div>
+        <div class="roadmap-text">${topInd}業界の求人を20件リサーチ。${topCom}の企業文化・待遇を比較調査する。転職エージェントに登録。</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-month">3ヶ月目</div>
+      <div class="roadmap-content">
+        <div class="roadmap-title">書類準備・応募開始</div>
+        <div class="roadmap-text">職務経歴書・履歴書を完成させる。この自己PR文をベースに企業ごとにカスタマイズ。10〜15社に応募。</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-month">4ヶ月目</div>
+      <div class="roadmap-content">
+        <div class="roadmap-title">面接対策・選考</div>
+        <div class="roadmap-text">面接練習を開始。${topJob}の強みを具体的なエピソードで伝える練習をする。一次・二次面接を突破する。</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-month">5ヶ月目</div>
+      <div class="roadmap-content">
+        <div class="roadmap-title">最終選考・条件交渉</div>
+        <div class="roadmap-text">最終面接・内定獲得。年収シミュレーターの${(document.getElementById('salary-amount') ? document.getElementById('salary-amount').textContent : '---万円')}を参考に条件交渉を行う。</div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-month">6ヶ月目</div>
+      <div class="roadmap-content">
+        <div class="roadmap-title">入社・新生活スタート</div>
+        <div class="roadmap-text">天職への第一歩を踏み出す。入社後も強みを意識して仕事に取り組む。</div>
+      </div>
+    </div>
+  `;
+}
+
+// ── SELF PR ──
+function renderSelfPR(ind, job, com) {
+  const topInd = ind[0].name;
+  const topCom = com[0].name;
+  // 動詞で表現
+  const verb1 = JOB_VERB_DESC[job[0].name] ? JOB_VERB_DESC[job[0].name].verb : JOB_SHORT[job[0].name] || job[0].name;
+  const verb2 = JOB_VERB_DESC[job[1].name] ? JOB_VERB_DESC[job[1].name].verb : JOB_SHORT[job[1].name] || job[1].name;
+  const verb3 = JOB_VERB_DESC[job[2].name] ? JOB_VERB_DESC[job[2].name].verb : JOB_SHORT[job[2].name] || job[2].name;
+
+  const prA = `私の強みは「${verb1}」と「${verb2}」です。
+
+これまでの経験を通じて、${verb1}力において具体的な成果を積み重ねてきました。特に論理的な思考とデータに基づいたアプローチで、チームの課題解決に貢献してきたと自負しています。
+
+${topInd}業界への興味は幼少期から一貫しており、この分野で長期的にキャリアを築きたいと考えています。${topCom}の環境で、「${verb1}」「${verb2}」の強みを最大限に発揮できると確信しています。
+
+御社においても、${verb1}力を活かして貢献できると考えており、ぜひ一緒に働きたいと思っています。`;
+
+  const prB = `${topInd}への情熱と、「${verb1}」という強みを武器に、今回の転職にチャレンジしています。
+
+私が仕事で一番充実感を感じるのは、${verb1}を通じて誰かの役に立てた瞬間です。さらに「${verb3}」という潜在的な強みも持っており、この2つを掛け合わせることで独自の価値を発揮できると考えています。
+
+御社の事業内容と私の強みの方向性が一致していると感じ、応募しました。${topCom}の文化の中で、自分らしく${verb1}力を発揮しながら成長していきたいと思っています。ぜひ一緒に働かせてください！`;
+
+  document.getElementById('pr-a').textContent = prA;
+  document.getElementById('pr-b').textContent = prB;
+}
+
+function copyPR() {
+  const prA = document.getElementById('pr-a').textContent;
+  const prB = document.getElementById('pr-b').textContent;
+  navigator.clipboard.writeText('【パターンA】\n' + prA + '\n\n【パターンB】\n' + prB)
+    .then(() => alert('コピーしました！'))
+    .catch(() => alert('コピーに失敗しました。手動でコピーしてください。'));
+}
+
+// ── SHARE ──
+function renderShareText(ind, job, com) {
+  const topInd = ind[0].name;
+  const topJob = JOB_SHORT[job[0].name] || job[0].name;
+  const topCom = com[0].name;
+
+  const shareText = `強み発見カルテをやってみた！
+
+🏭 向いている業界：${topInd}
+💼 強み：${topJob}
+🏢 会社タイプ：${topCom}
+
+あなたも診断してみて👇
+https://tenshoku-shinda.vercel.app
+
+#強み発見カルテ #転職 #自己分析 #AI副業`;
+
+  const preview = document.getElementById('share-preview');
+  if(preview) preview.textContent = shareText;
+  window._shareText = shareText;
+}
+
+function renderFreeShareText(ind, job, com) {
+  const topInd = ind[0].name;
+  const topJob = JOB_SHORT[job[0].name] || job[0].name;
+  const topCom = com[0].name;
+
+  const shareText = `強み発見カルテをやってみた！
+
+🏭 向いている業界：${topInd}
+💼 強み：${topJob}
+🏢 会社タイプ：${topCom}
+
+詳しい結果は強み発見カルテで確認👇
+https://tenshoku-shinda.vercel.app
+
+#強み発見カルテ #転職 #自己分析`;
+
+  const preview = document.getElementById('free-share-preview');
+  if(preview) preview.textContent = shareText;
+  window._freeShareText = shareText;
+}
+
+function freeShareToX() {
+  const text = window._freeShareText || '';
+  const url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+  window.open(url, '_blank');
+}
+
+function freeShareCopy() {
+  const text = window._freeShareText || '';
+  navigator.clipboard.writeText(text)
+    .then(() => alert('コピーしました！'))
+    .catch(() => alert('コピーに失敗しました。手動でコピーしてください。'));
+}
+
+function shareToX() {
+  const text = window._shareText || '';
+  const url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+  window.open(url, '_blank');
+}
+
+function copyShareText() {
+  const text = window._shareText || '';
+  navigator.clipboard.writeText(text)
+    .then(() => alert('コピーしました！'))
+    .catch(() => alert('コピーに失敗しました。手動でコピーしてください。'));
+}
+
+// ── DOWNLOAD ──
+function downloadPDF() {
+  const el = document.getElementById('paid-content');
+  html2pdf().set({
+    margin:10, filename:'強み発見カルテ.pdf',
+    image:{type:'jpeg',quality:0.95},
+    html2canvas:{scale:2, useCORS:true},
+    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
+  }).from(el).save();
+}
+
+function downloadWord() {
+  const {ind, job, com} = window._ranked;
+  const salary = (document.getElementById('salary-amount') ? document.getElementById('salary-amount').textContent : '---万円');
+  const range = document.getElementById('salary-range').textContent;
+  const prA = document.getElementById('pr-a').textContent;
+  const mismatches = calcMismatches(ind, job, com);
+
+  let content = `強み発見カルテ\n診断日：${new Date().toLocaleDateString('ja-JP')}\n${'='.repeat(40)}\n\n`;
+  content += `■ 向いている業界TOP3\n`;
+  ind.slice(0,3).forEach((i,n) => { content += `${n+1}位：${i.name}\n`; });
+  content += `\n■ あなたの強み（職種）TOP3\n`;
+  job.slice(0,3).forEach((j,n) => { content += `${n+1}位：${JOB_NAMES[j.name]||j.name}\n`; });
+  content += `\n■ 向いている会社タイプTOP3\n`;
+  com.slice(0,3).forEach((c,n) => { content += `${n+1}位：${c.name}\n`; });
+  content += `\n■ 推定年収\n${salary}\n${range}\n`;
+  content += `\n■ 地雷職場・ミスマッチ警告\n`;
+  mismatches.forEach(m => { content += `${m.title}\n${m.text}\n\n`; });
+  content += `\n■ 自己PR文（パターンA）\n${prA}\n`;
+
+  const blob = new Blob(['\ufeff'+content], {type:'text/plain;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = '強み発見カルテ.txt'; a.click();
+  URL.revokeObjectURL(url);
+}
+// ── LEGAL ──
+function showLegal(type) {
+  const modal = document.getElementById('legal-modal');
+  const el = document.getElementById('legal-content');
+  
+  if(type === 'tokusho') {
+    el.innerHTML = `
+      <h2 style="font-size:16px;font-weight:700;margin-bottom:16px;color:#0f172a">特定商取引法に基づく表記</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;width:40%;vertical-align:top">販売者名</td><td style="padding:8px 4px">ツヨミ</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;vertical-align:top">所在地</td><td style="padding:8px 4px">請求があれば遅滞なく開示します</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;vertical-align:top">連絡先</td><td style="padding:8px 4px">tsuyomi.info@gmail.com</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;vertical-align:top">販売価格</td><td style="padding:8px 4px">500円（税込）</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;vertical-align:top">支払方法</td><td style="padding:8px 4px">クレジットカード（Stripe決済）</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;vertical-align:top">引き渡し時期</td><td style="padding:8px 4px">決済完了後、認証コードを入力することで即時利用可能</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:8px 4px;color:#64748b;vertical-align:top">返品・キャンセル</td><td style="padding:8px 4px">デジタルコンテンツの性質上、決済完了後の返金はお受けできません。</td></tr>
+        <tr><td style="padding:8px 4px;color:#64748b;vertical-align:top">動作環境</td><td style="padding:8px 4px">インターネット接続環境・モダンブラウザ（Chrome・Safari・Firefox等）</td></tr>
+      </table>`;
+  } else if(type === 'privacy') {
+    el.innerHTML = `
+      <h2 style="font-size:16px;font-weight:700;margin-bottom:16px;color:#0f172a">プライバシーポリシー</h2>
+      <p style="margin-bottom:12px">ツヨミ（以下「当方」）は、強み発見カルテ（以下「本サービス」）における個人情報の取り扱いについて、以下のとおり定めます。</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">1. 取得する情報</h3>
+      <p style="margin-bottom:12px">本サービスでは、診断の回答データをお客様の端末内（localStorage）にのみ保存します。サーバーへの送信・外部への送信は行いません。</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">2. 第三者提供</h3>
+      <p style="margin-bottom:12px">取得した情報を第三者に提供することはありません。</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">3. アフィリエイトについて</h3>
+      <p style="margin-bottom:12px">本サービスはアフィリエイト広告を掲載しています。広告リンクをクリックした場合、提携先のサイトにおける情報収集についてはそれぞれのプライバシーポリシーに従います。</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">4. お問い合わせ</h3>
+      <p>tsuyomi.info@gmail.com</p>`;
+  } else if(type === 'terms') {
+    el.innerHTML = `
+      <h2 style="font-size:16px;font-weight:700;margin-bottom:16px;color:#0f172a">利用規約</h2>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">1. サービスについて</h3>
+      <p style="margin-bottom:12px">本サービス「強み発見カルテ」は、キャリア自己分析を目的とした診断ツールです。診断結果はあくまで参考情報であり、職業選択を保証するものではありません。</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">2. 禁止事項</h3>
+      <p style="margin-bottom:12px">・認証コードの第三者への共有・転売<br>・本サービスのコンテンツの無断転載・複製<br>・不正な方法による有料コンテンツへのアクセス</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">3. 免責事項</h3>
+      <p style="margin-bottom:12px">診断結果に基づく判断・行動の結果について、当方は責任を負いかねます。</p>
+      <h3 style="font-size:13px;font-weight:700;margin-bottom:6px;color:#0f172a">4. お問い合わせ</h3>
+      <p>tsuyomi.info@gmail.com</p>`;
+  }
+  
+  modal.style.display = 'block';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
